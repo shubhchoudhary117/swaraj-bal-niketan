@@ -1,0 +1,465 @@
+.sps-footer {
+    width: 100%;
+    background: var(--primary-color);
+    color: #c8d2e8;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.sps-footer__wave {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    margin-bottom: -2px;
+}
+
+.sps-footer__topbar {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #e5b800, #f5c518, #e5b800, transparent);
+}
+
+.sps-footer__inner {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 60px 20px 32px 20px;
+}
+
+/* ── MAIN GRID ─────────────────────── */
+.sps-footer__grid {
+    display: grid;
+    grid-template-columns: 2fr 1.1fr 1.4fr 1.3fr;
+    gap: 48px;
+}
+
+/* Large Desktop */
+@media (max-width: 1280px) {
+    .sps-footer__grid {
+        grid-template-columns: 1.8fr 1fr 1.3fr 1.2fr;
+        gap: 36px;
+    }
+}
+
+/* Tablet Landscape */
+@media (max-width: 1024px) {
+    .sps-footer__inner {
+        max-width: 95%;
+        padding: 48px 20px 28px 20px;
+    }
+
+    .sps-footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px 32px;
+    }
+
+    .sps-footer__desc {
+        max-width: 100%;
+    }
+}
+
+/* Tablet Portrait */
+@media (max-width: 768px) {
+    .sps-footer__inner {
+        max-width: 100%;
+        padding: 44px 24px 28px 24px;
+    }
+
+    .sps-footer__grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px 24px;
+    }
+
+    .sps-footer__bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .sps-footer__bottom-links {
+        justify-content: center;
+    }
+}
+
+/* Mobile Large */
+@media (max-width: 600px) {
+    .sps-footer__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .sps-footer__inner {
+        padding: 40px 20px 24px 20px;
+    }
+
+    .sps-footer__desc {
+        max-width: 100%;
+        font-size: 13px;
+    }
+}
+
+/* Mobile Small */
+@media (max-width: 380px) {
+    .sps-footer__inner {
+        padding: 32px 16px 20px 16px;
+    }
+
+    .sps-footer__logo-name {
+        font-size: 14px;
+    }
+
+    .sps-footer__logo-tagline {
+        font-size: 9px;
+    }
+
+    .sps-footer__col-title {
+        font-size: 14px;
+    }
+
+    .sps-footer__timing-row {
+        padding: 8px 10px;
+    }
+
+    .sps-footer__bottom-links {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+}
+
+/* ── LOGO COL ─────────────────────── */
+.sps-footer__logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.sps-footer__logo-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+.sps-footer__logo-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.sps-footer__logo-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: #f5c518;
+}
+
+.sps-footer__logo-name {
+    font-size: 17px;
+    font-weight: 600;
+    color: #ffffff;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+}
+
+.sps-footer__logo-tagline {
+    font-size: 10px;
+    color: #e5b800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 2px;
+}
+
+.sps-footer__desc {
+    font-size: 13.5px;
+    line-height: 1.8;
+    color: #8fa3c8;
+    max-width: 280px;
+    margin-bottom: 24px;
+}
+
+/* ── SOCIAL ICONS ─────────────────── */
+.sps-footer__socials {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sps-footer__social-link {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #1a2e5e;
+    border: 1px solid #243760;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.sps-footer__social-link:hover {
+    background: #e5b800;
+    border-color: #e5b800;
+    transform: translateY(-3px);
+}
+
+.sps-footer__social-link svg {
+    width: 16px;
+    height: 16px;
+    fill: #8fa3c8;
+    transition: fill 0.2s;
+}
+
+.sps-footer__social-link:hover svg {
+    fill: #0f1b3c;
+}
+
+/* ── COLUMN HEADINGS ─────────────── */
+.sps-footer__col-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 6px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.sps-footer__col-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 32px;
+    height: 2px;
+    background: #e5b800;
+    border-radius: 2px;
+}
+
+/* ── QUICK LINKS ─────────────────── */
+.sps-footer__links {
+    list-style: none;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sps-footer__links li a {
+    font-size: 13.5px;
+    color: #8fa3c8;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s, gap 0.2s;
+}
+
+.sps-footer__links li a::before {
+    content: '';
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #e5b800;
+    border-radius: 50%;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.sps-footer__links li a:hover {
+    color: #f5c518;
+    gap: 12px;
+}
+
+.sps-footer__links li a:hover::before {
+    transform: scale(1.5);
+}
+
+/* On mobile, show quick links in 2 columns */
+@media (max-width: 600px) {
+    .sps-footer__links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 16px;
+    }
+}
+
+/* ── CONTACT INFO ────────────────── */
+.sps-footer__contact-list {
+    list-style: none;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.sps-footer__contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.sps-footer__contact-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    background: #1a2e5e;
+    border: 1px solid #243760;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.sps-footer__contact-icon svg {
+    width: 14px;
+    height: 14px;
+    fill: #e5b800;
+}
+
+.sps-footer__contact-text {
+    font-size: 13px;
+    color: #8fa3c8;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+.sps-footer__contact-text strong {
+    display: block;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 1px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ── TIMING ─────────────────────── */
+.sps-footer__timing {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sps-footer__timing-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 14px;
+    background: #1a2e5e;
+    border-radius: 8px;
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s;
+    gap: 8px;
+}
+
+.sps-footer__timing-row:hover {
+    border-left-color: #e5b800;
+}
+
+.sps-footer__timing-day {
+    font-size: 12.5px;
+    color: #c8d2e8;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.sps-footer__timing-hours {
+    font-size: 12px;
+    color: #8fa3c8;
+}
+
+.sps-footer__timing-badge {
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.sps-footer__timing-badge--open {
+    background: rgba(34, 197, 94, 0.15);
+    color: #4ade80;
+}
+
+.sps-footer__timing-badge--closed {
+    background: rgba(239, 68, 68, 0.13);
+    color: #f87171;
+}
+
+/* On tablet 2-col layout, timing col spans full width on odd position */
+@media (max-width: 1024px) and (min-width: 601px) {
+    .sps-footer__grid > *:nth-child(3),
+    .sps-footer__grid > *:nth-child(4) {
+        /* Contact and Timing stay side by side naturally in 2-col grid */
+    }
+}
+
+/* ── DIVIDER ─────────────────────── */
+.sps-footer__divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #243760, transparent);
+    margin: 40px 0 24px;
+}
+
+@media (max-width: 600px) {
+    .sps-footer__divider {
+        margin: 28px 0 20px;
+    }
+}
+
+/* ── BOTTOM BAR ──────────────────── */
+.sps-footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.sps-footer__copyright {
+    font-size: 12.5px;
+    color: #96b7ed;
+}
+
+.sps-footer__copyright span {
+    color: #e5b800;
+    font-weight: 600;
+}
+
+.sps-footer__bottom-links {
+    display: flex;
+    gap: 20px;
+}
+
+.sps-footer__bottom-links a {
+    font-size: 12px;
+    color: #96b7ed;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sps-footer__bottom-links a:hover {
+    color: #e5b800;
+}
+
+@media (max-width: 768px) {
+    .sps-footer__bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .sps-footer__bottom-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .sps-footer__copyright {
+        font-size: 12px;
+    }
+}

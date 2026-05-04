@@ -1,0 +1,5 @@
+ <svg viewBox="0 0 24 24" fill="none" stroke="#eda405" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M8 21h8M12 17v4M7 4H4a1 1 0 00-1 1v2a4 4 0 004 4h1M17 4h3a1 1 0 011 1v2a4 4 0 01-4 4h-1" />
+                <path d="M7 4h10v6a5 5 0 01-10 0V4z" />
+                <path d="M11 9l1 1 2-2" />
+              </svg>

@@ -1,0 +1,179 @@
+.stu-tes {
+  width: 100%;
+  padding: 30px 0;
+
+  &__container {
+    width: 92%;
+    margin: auto;
+
+    @media screen and (max-width:768px) {
+      width: 97%;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 16px;
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__subtitle {
+    font-size: 26px;
+    margin-top: 6px;
+    color: var(--primary-color);
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+
+    &::after {
+      content: "";
+      width: 36px;
+      height: 3px;
+      background: var(--secondary-color);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -8px;
+      border-radius: 10px;
+    }
+  }
+
+  &__swiper {
+    margin-top: 35px;
+    padding-bottom: 55px;
+  }
+
+  &__card {
+    position: relative;
+    background: #fff;
+    border-radius: 16px;
+    padding: 20px;
+    min-height: 180px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  &__quote-icon {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    width: 28px;
+
+    svg {
+      fill: #f5c518;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__left {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__avatar {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+  }
+
+  &__name-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__dropdown {
+    font-size: 12px;
+    color: #777;
+  }
+
+  &__role {
+    font-size: 13px;
+    color: #777;
+    margin-top: 2px;
+  }
+
+  &__divider {
+    width: 24px;
+    height: 2px;
+    background: #f5c518;
+    display: block;
+    margin-top: 7px;
+  }
+
+  &__stars {
+    display: flex;
+    gap: 2px;
+    margin-top: 4px;
+  }
+
+  &__star {
+    width: 15px;
+    fill: #ddd;
+
+    &.filled {
+      fill: #f5c518;
+    }
+  }
+
+  &__text {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #555;
+  }
+
+  /* Yellow bullets */
+  .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #ffd54a;
+    opacity: 1;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 28px;
+    border-radius: 20px;
+    background: #f5c518;
+  }
+
+  @media (min-width: 1100px) {
+    .swiper-pagination {
+      display: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__subtitle {
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    &__card {
+      min-height: auto;
+      padding: 18px;
+    }
+
+    &__swiper {
+      padding-bottom: 50px;
+    }
+  }
+}
