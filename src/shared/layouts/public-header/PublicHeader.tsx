@@ -34,6 +34,15 @@ const PublicHeader = () => {
                             <li className='p-header__menus-item'>Achievements</li>
                             <li className='p-header__menus-item'>Contact Us</li>
                         </ul>
+                        <div className="p-header__sidebar-actions">
+                            <button className="p-header__sidebar-action-btn">
+                                <UserRound className="icon" />
+                                <span className="text">
+                                    Student
+                                    <small>Login</small>
+                                </span>
+                            </button>
+                        </div>
                     </div>
 
                     <div className="p-header__actions">
