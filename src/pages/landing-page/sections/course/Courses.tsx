@@ -120,11 +120,11 @@ const Courses = () => {
         ))}
       </Swiper>
 
-      <div className="courses__row">
+      {/* <div className="courses__row">
         <button className="courses__view-all-btn">
           View All Course <MoveRight />
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };

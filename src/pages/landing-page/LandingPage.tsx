@@ -30,8 +30,8 @@ const LandingPage = () => {
               <div className="landing-p__carousel-subheading">Nurturing Minds. Shaping Futures.</div>
               <div className="landing-p__carousel-desc">We provide a safe, inclusive and inspiring environment where every child is encouraged to learn, grow and achieve their full potential.</div>
               <button className="landing-p__know-more-btn">
-                Know More About Us
-                <span className="arrow"><MoveRight className='icon' /></span>
+                Apply Now
+                <MoveRight className='icon' />
               </button>
             </div>
           </div>
@@ -151,7 +151,7 @@ const LandingPage = () => {
 
             <div className="landing-p__stat-divider" />
 
-            <div className="landing-p__stat-item">
+            {/* <div className="landing-p__stat-item">
               <div className="landing-p__stat-icon">
                 <AwardIcon />
               </div>
@@ -159,11 +159,10 @@ const LandingPage = () => {
                 <div className="landing-p__stat-number">50+</div>
                 <div className="landing-p__stat-label">Awards Won</div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
-        <StudentTestimonial />
 
         <div className="admission-banner">
           <div className="admission-banner__content">
@@ -189,6 +188,7 @@ const LandingPage = () => {
             <div className="admission-banner__image-overlay" />
           </div>
         </div>
+         <StudentTestimonial />
         <PublicFooter />
 
       </main>

@@ -58,11 +58,21 @@
 
   .school-facilities__swiper {
       margin-top: 20px;
-      padding-bottom: 20px;
+
+      .swiper {
+          padding-bottom: 44px !important;
+      }
   }
 
+
+
   .swiper-pagination {
-      bottom: 10px !important;
+      bottom: 0 !important;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
   }
 
   .swiper-pagination-bullet {
@@ -70,6 +80,7 @@
       height: 10px;
       background: #ffd54a;
       opacity: 1;
+      margin: 0 !important;
       transition: all 0.3s ease;
   }
 
@@ -78,8 +89,6 @@
       border-radius: 20px;
       background: #f2b100;
   }
-
-
 
   /* Card */
   .school-facilities__card {
