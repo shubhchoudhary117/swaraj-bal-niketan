@@ -1,0 +1,152 @@
+  .school-facilities {
+      width: 92%;
+      padding: 20px 0px;
+      margin: 0 auto;
+  }
+
+  .school-facilities__header {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      margin-bottom: 32px;
+  }
+
+  .school-facilities__title {
+      font-size: 16px;
+      color: var(--secondary-color);
+      font-weight: 500;
+      text-transform: uppercase;
+
+      @media (max-width: 480px) {
+          font-size: 13px;
+      }
+  }
+
+  .school-facilities__subtitle {
+      font-size: 25px;
+      margin-top: 5px;
+      color: var(--primary-color);
+      font-weight: 700;
+      position: relative;
+      text-align: center;
+
+      &::after {
+          content: "";
+          width: 35px;
+          height: 2px;
+          background: var(--secondary-color);
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: -4px;
+      }
+
+      @media (max-width: 768px) {
+          font-size: 21px;
+      }
+
+      @media (max-width: 480px) {
+          font-size: 18px;
+      }
+  }
+
+
+  .school-facilities__view-all:hover {
+      color: #1d4ed8;
+      text-decoration: underline;
+  }
+
+  .school-facilities__swiper {
+      margin-top: 20px;
+      padding-bottom: 20px;
+  }
+
+  .swiper-pagination {
+      bottom: 10px !important;
+  }
+
+  .swiper-pagination-bullet {
+      width: 10px;
+      height: 10px;
+      background: #ffd54a;
+      opacity: 1;
+      transition: all 0.3s ease;
+  }
+
+  .swiper-pagination-bullet-active {
+      width: 26px;
+      border-radius: 20px;
+      background: #f2b100;
+  }
+
+
+
+  /* Card */
+  .school-facilities__card {
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+      transition: box-shadow 0.22s ease, transform 0.22s ease;
+      cursor: pointer;
+  }
+
+  .school-facilities__card:hover {
+      box-shadow: 0 8px 28px rgba(59, 130, 246, 0.13);
+      transform: translateY(-3px);
+  }
+
+  /* Image wrapper */
+  .school-facilities__card-image-wrap {
+      position: relative;
+      width: 100%;
+      height: 130px;
+      overflow: hidden;
+  }
+
+  .school-facilities__card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+  }
+
+  .school-facilities__card:hover .school-facilities__card-image {
+      transform: scale(1.06);
+  }
+
+  /* Icon badge on image */
+  .school-facilities__card-icon {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Card body */
+  .school-facilities__card-body {
+      padding: 12px 12px 14px;
+  }
+
+  .school-facilities__card-name {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 4px;
+      line-height: 1.3;
+  }
+
+  .school-facilities__card-description {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.5;
+      font-weight: 400;
+  }

@@ -12,6 +12,7 @@ import StudentsIcon from "./images/states/students.svg?react"
 import StudentTestimonial from './sections/student-testimonials/StudentTestimonial'
 import schoolBanner from "./images/carousel1-bg.png"
 import PublicFooter from '../../shared/layouts/public-footer/PublicFooter'
+import SchoolFacilities from './sections/school-facilities/SchoolFacilities'
 
 const LandingPage = () => {
 
@@ -98,6 +99,7 @@ const LandingPage = () => {
 
 
         <Courses />
+        <SchoolFacilities/>
 
         <div className="landing-p__stats-section">
           <div className="landing-p__stats">
