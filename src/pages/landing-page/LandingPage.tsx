@@ -14,6 +14,7 @@ import schoolBanner from "./images/carousel1-bg.png"
 import PublicFooter from '../../shared/layouts/public-footer/PublicFooter'
 import SchoolFacilities from './sections/school-facilities/SchoolFacilities'
 import WhyChooseUs from './sections/why-choose-us/WhyChooseUs'
+import SchoolDirectors from './sections/school-directors/SchoolDirectors'
 
 const LandingPage = () => {
 
@@ -102,6 +103,8 @@ const LandingPage = () => {
         <Courses />
         <SchoolFacilities/>
         <WhyChooseUs/>
+        <StudentTestimonial />
+         <SchoolDirectors/>
 
         <div className="landing-p__stats-section">
           <div className="landing-p__stats">
@@ -190,7 +193,7 @@ const LandingPage = () => {
             <div className="admission-banner__image-overlay" />
           </div>
         </div>
-         <StudentTestimonial />
+         
         <PublicFooter />
 
       </main>
