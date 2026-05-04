@@ -13,6 +13,7 @@ import StudentTestimonial from './sections/student-testimonials/StudentTestimoni
 import schoolBanner from "./images/carousel1-bg.png"
 import PublicFooter from '../../shared/layouts/public-footer/PublicFooter'
 import SchoolFacilities from './sections/school-facilities/SchoolFacilities'
+import WhyChooseUs from './sections/why-choose-us/WhyChooseUs'
 
 const LandingPage = () => {
 
@@ -100,6 +101,7 @@ const LandingPage = () => {
 
         <Courses />
         <SchoolFacilities/>
+        <WhyChooseUs/>
 
         <div className="landing-p__stats-section">
           <div className="landing-p__stats">

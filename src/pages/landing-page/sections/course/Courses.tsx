@@ -76,7 +76,8 @@ const Courses = () => {
           disableOnInteraction: false
         }}
         pagination={{
-          clickable: true
+          clickable: true,
+          el: ".custom-pagination"
         }}
         breakpoints={{
           0: {
@@ -89,6 +90,7 @@ const Courses = () => {
             slidesPerView: 4
           }
         }}
+       
         className="courses__swiper"
       >
         {coursesData.map((item) => (

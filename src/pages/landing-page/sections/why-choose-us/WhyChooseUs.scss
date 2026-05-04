@@ -1,0 +1,233 @@
+.why-choose-us {
+    width: 92%;
+    margin: auto;
+    padding: 20px 0px;
+
+
+
+    &__container {
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 48px;
+    }
+
+    &__image-col {
+        max-width: 42%;
+        height: 350px;
+        position: relative;
+    }
+
+    // ── Element: __image-wrap ──────────────────────────────
+    &__image-wrap {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        border-radius: 24px;
+        object-fit: cover;
+        vertical-align: center;
+    }
+
+    // ── Element: __content ─────────────────────────────────
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 11px;
+    }
+
+    // ── Element: __badge ───────────────────────────────────
+    &__badge {
+        font-size: 16px;
+        color: var(--secondary-color);
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+
+    // ── Element: __heading ─────────────────────────────────
+    &__heading {
+        font-size: 34px;
+        font-weight: 800;
+        color: #1e293b;
+        line-height: 1.2;
+        margin: 0;
+
+        // ── Modifier: --highlight ────────────────────────────
+        &--highlight {
+            color: var(--primary-color);
+        }
+    }
+
+    // ── Element: __list ────────────────────────────────────
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    // ── Element: __list-item ───────────────────────────────
+    &__list-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    // ── Element: __list-icon ───────────────────────────────
+    &__list-icon {
+        flex-shrink: 0;
+        width: 22px;
+        height: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    // ── Element: __list-text ───────────────────────────────
+    &__list-text {
+        font-size: 14.5px;
+        font-weight: 500;
+        color: #1e293b;
+        line-height: 1.4;
+
+
+    }
+
+    // ── Element: __cta ─────────────────────────────────────
+    &__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 6px;
+        padding: 13px 26px;
+        background: var(--secondary-color);
+        color: var(--primary-color);
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 30px;
+        text-decoration: none;
+        transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+        box-shadow: 0 4px 16px rgba(var(--primary-color), 0.2);
+    }
+
+    &__cta-arrow {
+        font-size: 16px;
+        transition: transform 0.2s ease;
+
+        .why-choose-us__cta:hover & {
+            transform: translateX(4px);
+        }
+    }
+}
+
+
+
+@media screen and (max-width:768px) {
+
+
+    .why-choose-us {
+        width: 95%;
+        margin: auto;
+        padding: 20px 0px;
+
+
+        &__container {
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        &__image-col {
+            max-width: 95%;
+            height: 270px;
+            position: relative;
+        }
+
+        // ── Element: __image-wrap ──────────────────────────────
+        &__image-wrap {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        &__image {
+            width: 100%;
+            height: 100%;
+            border-radius: 24px;
+            object-fit: cover;
+            vertical-align: center;
+        }
+
+
+        &__content {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        // ── Element: __badge ───────────────────────────────────
+        &__badge {
+            font-size: 16px;
+        }
+
+        // ── Element: __heading ─────────────────────────────────
+        &__heading {
+            font-size: 24px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        // ── Element: __list ────────────────────────────────────
+        &__list {
+            gap: 12px;
+            width: 100%;
+            padding-left: 10px;
+        }
+
+        // ── Element: __list-item ───────────────────────────────
+        &__list-item {
+            display: flex;
+        }
+
+        // ── Element: __list-icon ───────────────────────────────
+        &__list-icon {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+        }
+
+        // ── Element: __list-text ───────────────────────────────
+        &__list-text {
+            font-size: 14.5px;
+        }
+
+        // ── Element: __cta ─────────────────────────────────────
+        &__cta {
+            display: inline-flex;
+            align-items: center;
+        }
+
+    }
+}
