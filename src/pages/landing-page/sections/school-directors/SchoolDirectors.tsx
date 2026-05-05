@@ -1,8 +1,7 @@
 import React from "react";
 import "./SchoolDirectors.scss";
 
-import lakshmanSir from "./images/lakshman_sir.png"
-import dineshSir from "./images/dinesh_sir.png"
+import lakshman from "./images/lakshmansir.png";
 
 const directorsData = {
   badge: "OUR LEADERSHIP",
@@ -19,7 +18,7 @@ const directorsData = {
       experience: "25+ Years Experience",
       message:
         "Our mission is to create an environment where curiosity is celebrated and every child discovers their unique potential.",
-      image: lakshmanSir,
+      image: "",
       social: {
         email: "director@swarajbalniketan.in",
       },
@@ -32,7 +31,7 @@ const directorsData = {
       experience: "18+ Years Experience",
       message:
         "We believe that holistic education goes beyond textbooks — it's about building character, confidence and compassion.",
-      image: dineshSir,
+      image: "",
       social: {
         email: "subdirector@swarajbalniketan.in",
       },
