@@ -2,6 +2,7 @@ import React from "react";
 import "./SchoolDirectors.scss";
 
 import lakshman from "./images/lakshmansir.png";
+import dinesh from "./images/dineshsir.png"
 
 const directorsData = {
   badge: "OUR LEADERSHIP",
@@ -18,7 +19,7 @@ const directorsData = {
       experience: "25+ Years Experience",
       message:
         "Our mission is to create an environment where curiosity is celebrated and every child discovers their unique potential.",
-      image: "",
+      image: lakshman,
       social: {
         email: "director@swarajbalniketan.in",
       },
@@ -31,7 +32,7 @@ const directorsData = {
       experience: "18+ Years Experience",
       message:
         "We believe that holistic education goes beyond textbooks — it's about building character, confidence and compassion.",
-      image: "",
+      image: dinesh,
       social: {
         email: "subdirector@swarajbalniketan.in",
       },
