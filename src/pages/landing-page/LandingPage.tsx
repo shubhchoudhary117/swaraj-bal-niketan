@@ -104,7 +104,7 @@ const LandingPage = () => {
         <SchoolFacilities/>
         <WhyChooseUs/>
         <StudentTestimonial />
-         <SchoolDirectors/>
+          <SchoolDirectors/>
 
         <div className="landing-p__stats-section">
           <div className="landing-p__stats">
