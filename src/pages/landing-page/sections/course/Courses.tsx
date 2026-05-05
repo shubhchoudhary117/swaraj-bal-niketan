@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import "./Courses.scss";
 import React from "react";
+import { motion, type Variants  } from "framer-motion";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
@@ -20,6 +21,21 @@ import middleClassBanner from "./images/middle-class1.png";
 import secondaryClassBanner from "./images/secondary-class.webp";
 import highSecondaryClassBanner from "./images/high-secondary-class.avif";
 
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 60
+  },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.6,
+      ease: "easeOut"
+    }
+  })
+};
 const Courses = () => {
   const coursesData = [
     {
@@ -90,12 +106,19 @@ const Courses = () => {
             slidesPerView: 4
           }
         }}
-       
+
         className="courses__swiper"
       >
         {coursesData.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="courses__card">
+            <motion.div
+              className="courses__card"
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.4 }}
+              custom={item.id}
+            >
               <div className="courses__card-image-wrap">
                 <img
                   src={item.image}
@@ -117,7 +140,7 @@ const Courses = () => {
                   <ArrowRight className="courses__card-arrow-icon" />
                 </div>
               </div>
-            </div>
+           </motion.div>
           </SwiperSlide>
         ))}
       </Swiper>

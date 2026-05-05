@@ -15,6 +15,44 @@ import PublicFooter from '../../shared/layouts/public-footer/PublicFooter'
 import SchoolFacilities from './sections/school-facilities/SchoolFacilities'
 import WhyChooseUs from './sections/why-choose-us/WhyChooseUs'
 import SchoolDirectors from './sections/school-directors/SchoolDirectors'
+import { type Variants, motion } from 'framer-motion'
+
+
+const containerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15
+    }
+  }
+};
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 }
+  }
+};
+
+const slideLeft: Variants = {
+  hidden: { opacity: 0, x: -80 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6 }
+  }
+};
+
+const slideRight: Variants = {
+  hidden: { opacity: 0, x: 80 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: { duration: 0.6 }
+  }
+};
 
 const LandingPage = () => {
 
@@ -39,19 +77,21 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div className="landing-p__about">
-          <div className="landing-p__about-banner" />
+        <motion.div className="landing-p__about" initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}>
+          <motion.div variants={slideLeft} className="landing-p__about-banner" ></motion.div>
 
-          <div className="landing-p__about-content">
-            <div className="landing-p__about-school">
+          <motion.div className="landing-p__about-content" variants={slideRight}>
+            <motion.div className="landing-p__about-school " variants={containerVariants}>
               <div className="landing-p__about-title">About our school</div>
-              <div className="landing-p__about-heading">Excellence in Education Since Day One</div>
-              <div className="landing-p__about-desc">
+              <motion.div className="landing-p__about-heading" variants={fadeUp}>Excellence in Education Since Day One</motion.div>
+              <motion.div className="landing-p__about-desc" variants={fadeUp} >
                 At Swaraj Bal Niketan school, we believe in holistic development of every child. Our
                 mission is to provide quality education with strong values and innovative teaching
                 methodologies.
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
 
             <div className="landing-p__we-provides">
               <div className="landing-p__provide-block">
@@ -96,14 +136,14 @@ const LandingPage = () => {
 
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
 
         <Courses />
-        <SchoolFacilities/>
-        <WhyChooseUs/>
-        <SchoolDirectors/>
+        <SchoolFacilities />
+        <WhyChooseUs />
+        <SchoolDirectors />
         <StudentTestimonial />
 
 
@@ -194,7 +234,7 @@ const LandingPage = () => {
             <div className="admission-banner__image-overlay" />
           </div>
         </div>
-         
+
         <PublicFooter />
 
       </main>

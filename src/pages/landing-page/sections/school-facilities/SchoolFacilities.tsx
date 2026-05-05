@@ -9,6 +9,25 @@ import "swiper/css/pagination";
 import sportsImage from "./images/sports.png"
 import busImage from "./images/bus.avif"
 import laboratoryImage from "./images/laboritory.webp"
+import { type Variants, motion } from "framer-motion";
+
+
+
+const cardVariants: Variants = {
+    hidden: {
+        opacity: 0,
+        y: 60
+    },
+    visible: (i: number) => ({
+        opacity: 1,
+        y: 0,
+        transition: {
+            delay: i * 0.2,
+            duration: 0.6,
+            ease: "easeOut"
+        }
+    })
+};
 
 // ─── JSON Data ───────────────────────────────────────────────────────────────
 const facilitiesData = {
@@ -112,12 +131,17 @@ export default function SchoolFacilities({ data = facilitiesData }) {
                     >
                         {data.items.map((facility) => (
                             <SwiperSlide key={facility.id}>
-                                <div
+                                <motion.div
                                     className="school-facilities__card"
                                     onMouseEnter={() => setHovered(facility.id)}
                                     onMouseLeave={() => setHovered(null)}
+
+                                    variants={cardVariants}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: false, amount: 0.4 }}
+                                    custom={facility.id}
                                 >
-                                    {/* Image */}
                                     <div className="school-facilities__card-image-wrap">
                                         <img
                                             className="school-facilities__card-image"
@@ -143,7 +167,7 @@ export default function SchoolFacilities({ data = facilitiesData }) {
                                             {facility.description}
                                         </p>
                                     </div>
-                                </div>
+                                </motion.div>
                             </SwiperSlide>
                         ))}
                     </Swiper>

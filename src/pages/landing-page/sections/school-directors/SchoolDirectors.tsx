@@ -1,8 +1,9 @@
 import React from "react";
 import "./SchoolDirectors.scss";
+import { motion, type Variants } from "framer-motion";
 
 import lakshman from "./images/lakshmansir.png";
-import dinesh from "./images/dineshsir.png"
+import dinesh from "./images/dineshsir.png";
 
 const directorsData = {
   badge: "OUR LEADERSHIP",
@@ -20,9 +21,7 @@ const directorsData = {
       message:
         "Our mission is to create an environment where curiosity is celebrated and every child discovers their unique potential.",
       image: lakshman,
-      social: {
-        email: "director@swarajbalniketan.in",
-      },
+      social: { email: "director@swarajbalniketan.in" },
     },
     {
       id: 2,
@@ -33,59 +32,115 @@ const directorsData = {
       message:
         "We believe that holistic education goes beyond textbooks — it's about building character, confidence and compassion.",
       image: dinesh,
-      social: {
-        email: "subdirector@swarajbalniketan.in",
-      },
+      social: { email: "subdirector@swarajbalniketan.in" },
     },
   ],
 };
 
-const SchoolDirectors=()=> {
+// 🎯 Variants
+const container: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5 },
+  },
+};
+
+const zoomIn: Variants = {
+  hidden: { opacity: 0, scale: 0.9 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5 },
+  },
+};
+
+const SchoolDirectors = () => {
   return (
-    <section className="school-directors">
+    <motion.section
+      className="school-directors"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.3 }}
+    >
       {/* Background decoration */}
       <div className="school-directors__bg-circle school-directors__bg-circle--1" />
       <div className="school-directors__bg-circle school-directors__bg-circle--2" />
 
       <div className="school-directors__container">
+
         {/* Header */}
-        <div className="school-directors__header">
-          <span className="school-directors__title">{directorsData.badge}</span>
-          <h2 className="school-directors__heading">
+        <motion.div
+          className="school-directors__header"
+          variants={container}
+        >
+          <motion.span className="school-directors__title" variants={fadeUp}>
+            {directorsData.badge}
+          </motion.span>
+
+          <motion.h2 className="school-directors__heading" variants={fadeUp}>
             {directorsData.heading}{" "}
             <span className="school-directors__heading--highlight">
               {directorsData.headingHighlight}
             </span>
-          </h2>
-          <p className="school-directors__subtitle">{directorsData.subtitle}</p>
-        </div>
+          </motion.h2>
+
+          <motion.p className="school-directors__subtitle" variants={fadeUp}>
+            {directorsData.subtitle}
+          </motion.p>
+        </motion.div>
 
         {/* Cards */}
-        <div className="school-directors__grid">
+        <motion.div
+          className="school-directors__grid"
+          variants={container}
+        >
           {directorsData.directors.map((director, index) => (
-            <div
+            <motion.div
               key={director.id}
-              className={`school-directors__card school-directors__card--${index === 0 ? "primary" : "secondary"}`}
+              className={`school-directors__card school-directors__card--${
+                index === 0 ? "primary" : "secondary"
+              }`}
+              variants={zoomIn}
+              whileHover={{
+                y: -10,
+                scale: 1.02,
+                boxShadow: "0px 20px 40px rgba(0,0,0,0.1)",
+              }}
             >
-              {/* Top accent bar */}
+              {/* Top accent */}
               <div className="school-directors__card-accent" />
 
               {/* Avatar */}
               <div className="school-directors__avatar-wrap">
-                <div className="school-directors__avatar-ring">
+                <motion.div
+                  className="school-directors__avatar-ring"
+                  whileHover={{ rotate: 3 }}
+                >
                   <img
                     className="school-directors__avatar"
                     src={director.image}
                     alt={director.name}
                     loading="lazy"
                   />
-                </div>
+                </motion.div>
+
                 <span className="school-directors__position-badge">
                   {director.position}
                 </span>
               </div>
 
-              {/* Info */}
+              {/* Body */}
               <div className="school-directors__card-body">
                 <h3 className="school-directors__name">{director.name}</h3>
                 <p className="school-directors__qualification">
@@ -97,36 +152,38 @@ const SchoolDirectors=()=> {
                   {director.experience}
                 </div>
 
-                {/* Divider */}
                 <div className="school-directors__divider" />
 
-                {/* Quote */}
                 <blockquote className="school-directors__quote">
                   <span className="school-directors__quote-mark">"</span>
                   {director.message}
                 </blockquote>
 
-                {/* Email */}
                 <a
                   className="school-directors__email"
                   href={`mailto:${director.social.email}`}
                 >
-                  <svg viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg viewBox="0 0 20 20" fill="none">
                     <path
                       d="M3 5h14a1 1 0 011 1v8a1 1 0 01-1 1H3a1 1 0 01-1-1V6a1 1 0 011-1z"
-                      stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
                     />
-                    <path d="M2 6l8 6 8-6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                    <path
+                      d="M2 6l8 6 8-6"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                    />
                   </svg>
                   {director.social.email}
                 </a>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
-}
+};
 
 export default SchoolDirectors;
