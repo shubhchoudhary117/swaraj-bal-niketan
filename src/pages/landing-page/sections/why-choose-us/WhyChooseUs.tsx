@@ -21,7 +21,6 @@ const whyChooseData = {
 };
 
 
-// 🎯 Variants
 const containerVariants: Variants = {
   hidden: {},
   visible: {
@@ -64,7 +63,8 @@ export default function WhyChooseUs({ data = whyChooseData }) {
       className="why-choose-us"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.3 }}
+      style={{ willChange: "transform" }}
     >
       <div className="why-choose-us__container">
 

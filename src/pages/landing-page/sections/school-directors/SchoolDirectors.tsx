@@ -71,7 +71,7 @@ const SchoolDirectors = () => {
       className="school-directors"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once:true, amount: 0.3 }}
     >
       {/* Background decoration */}
       <div className="school-directors__bg-circle school-directors__bg-circle--1" />

@@ -76,7 +76,7 @@ const StudentTestimonial = () => {
       className="stu-tes"
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.3 }}
+      viewport={{ once:true, amount: 0.3 }}
     >
       <main className="stu-tes__container">
 
@@ -115,7 +115,7 @@ const StudentTestimonial = () => {
                 custom={index}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.2 }}
+                viewport={{ once:true, amount: 0.2 }}
                 whileHover={{
                   y: -10,
                   scale: 1.02,

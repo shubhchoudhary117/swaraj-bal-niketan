@@ -79,7 +79,7 @@ const LandingPage = () => {
 
         <motion.div className="landing-p__about" initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.3 }}>
+          viewport={{ once:true, amount: 0.3 }}>
           <motion.div variants={slideLeft} className="landing-p__about-banner" ></motion.div>
 
           <motion.div className="landing-p__about-content" variants={slideRight}>

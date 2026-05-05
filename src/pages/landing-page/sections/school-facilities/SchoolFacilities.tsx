@@ -139,7 +139,7 @@ export default function SchoolFacilities({ data = facilitiesData }) {
                                     variants={cardVariants}
                                     initial="hidden"
                                     whileInView="visible"
-                                    viewport={{ once: false, amount: 0.4 }}
+                                    viewport={{ once:true, amount: 0.4 }}
                                     custom={facility.id}
                                 >
                                     <div className="school-facilities__card-image-wrap">

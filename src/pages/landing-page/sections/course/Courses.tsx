@@ -116,7 +116,7 @@ const Courses = () => {
               variants={cardVariants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: false, amount: 0.4 }}
+              viewport={{ once:true, amount: 0.4 }}
               custom={item.id}
             >
               <div className="courses__card-image-wrap">
