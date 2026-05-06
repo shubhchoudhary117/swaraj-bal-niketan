@@ -107,6 +107,9 @@ const PublicHeader = () => {
                             </span>
                         </button>
                     </div>
+                    <div className="p-header__hamburger" onClick={() => setOpen(!open)}>
+                        {open ? <X className='icon' /> : <Menu className='icon' />}
+                    </div>
                 </div>
             </nav>
         </header>
