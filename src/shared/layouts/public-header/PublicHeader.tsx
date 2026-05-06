@@ -99,7 +99,7 @@ const PublicHeader = () => {
                     </div>
 
                     <div className="p-header__actions">
-                        <button className="p-header__action-btn">
+                        <button className="p-header__action-btn" onClick={()=>navigate("/student-login")}>
                             <UserRound className="icon" />
                             <span className="text">
                                 Student
