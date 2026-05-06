@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "./LandintPage.scss"
 import PublicHeader from '../../shared/layouts/public-header/PublicHeader'
 import { MoveRight, GraduationCap, Users, BookOpen, ShieldCheck, ArrowRight } from 'lucide-react'
@@ -16,7 +16,8 @@ import SchoolFacilities from './sections/school-facilities/SchoolFacilities'
 import WhyChooseUs from './sections/why-choose-us/WhyChooseUs'
 import SchoolDirectors from './sections/school-directors/SchoolDirectors'
 import { type Variants, motion } from 'framer-motion'
-import { useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { scroller } from 'react-scroll'
 
 
 const containerVariants: Variants = {
@@ -57,6 +58,19 @@ const slideRight: Variants = {
 
 const LandingPage = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      setTimeout(() => {
+        scroller.scrollTo(location.state.scrollTo, {
+          smooth: true,
+          duration: 500,
+          offset: -80,
+        });
+      }, 100);
+    }
+  }, [location]);
 
   const handleStudentRegistration = () => {
     navigate('/student-registration')
@@ -83,7 +97,7 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <motion.div className="landing-p__about" initial="hidden"
+        <motion.div id="about" className="landing-p__about" initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}>
           <motion.div variants={slideLeft} className="landing-p__about-banner" ></motion.div>
@@ -146,11 +160,25 @@ const LandingPage = () => {
         </motion.div>
 
 
-        <Courses />
-        <SchoolFacilities />
-        <WhyChooseUs />
-        <SchoolDirectors />
-        <StudentTestimonial />
+        <div id="courses">
+          <Courses />
+        </div>
+
+        <div id="facilities">
+          <SchoolFacilities />
+        </div>
+
+        <div id="why">
+          <WhyChooseUs />
+        </div>
+
+        <div id="directors">
+          <SchoolDirectors />
+        </div>
+
+        <div id="testimonials">
+          <StudentTestimonial />
+        </div>
 
 
         <div className="landing-p__stats-section">

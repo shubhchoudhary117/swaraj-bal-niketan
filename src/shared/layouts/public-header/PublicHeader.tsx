@@ -1,11 +1,55 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./PublicHeader.scss"
-
+import { scroller } from "react-scroll"
 import logo from "./assets/header-logo.png"
 import { UserRound, Menu, X } from 'lucide-react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { styleEffect } from 'framer-motion'
 
 const PublicHeader = () => {
-    const [open, setOpen] = useState(false)
+    const [open, setOpen] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [activeSection, setActiveSection] = useState("");
+
+
+    const menuItems = [
+        { label: "Home", type: "scroll", target: "home" },
+        { label: "About Us", type: "scroll", target: "about" },
+        { label: "Courses", type: "scroll", target: "courses" },
+        { label: "Facilities", type: "scroll", target: "facilities" },
+        { label: "Teachers", type: "route", path: "/teachers" },
+        { label: "Contact Us", type: "scroll", target: "contact" },
+    ];
+
+
+    const handleClick = (item: any) => {
+        if (item.type === "route") {
+            navigate(item.path);
+            return;
+        }
+
+        setActiveSection(item.target);
+
+        if (location.pathname !== "/") {
+            navigate("/", { state: { scrollTo: item.target } });
+        } else {
+            scroller.scrollTo(item.target, {
+                smooth: true,
+                duration: 500,
+                offset: -80,
+            });
+        }
+    };
+
+
+    useEffect(() => {
+        if (location.pathname !== "/") {
+            setActiveSection(""); 
+        } else {
+            setActiveSection("home"); 
+        }
+    }, [location.pathname]);
 
     return (
         <header className="p-header">
@@ -26,16 +70,25 @@ const PublicHeader = () => {
                 <div className="p-header__right">
                     <div className={`p-header__menus ${open ? 'active' : ''}`}>
                         <ul className="p-header__menus-list">
-                            <li className='p-header__menus-item active'>Home</li>
-                            <li className='p-header__menus-item'>About Us</li>
-                            <li className='p-header__menus-item'>Academics</li>
-                            <li className='p-header__menus-item'>Courses</li>
-                            <li className='p-header__menus-item'>Gallery</li>
-                            <li className='p-header__menus-item'>Achievements</li>
-                            <li className='p-header__menus-item'>Contact Us</li>
+                            {menuItems.map((item, i) => (
+                                <li
+                                    key={i}
+                                    className={`p-header__menus-item ${item.type === "route"
+                                        ? location.pathname === item.path
+                                            ? "active"
+                                            : ""
+                                        : location.pathname === "/" && activeSection === item.target
+                                            ? "active"
+                                            : ""
+                                        }`}
+                                    onClick={() => handleClick(item)}
+                                >
+                                    {item.label}
+                                </li>
+                            ))}
                         </ul>
                         <div className="p-header__sidebar-actions">
-                            <button className="p-header__sidebar-action-btn">
+                            <button className="p-header__sidebar-action-btn" onClick={() => navigate('/student-login')}>
                                 <UserRound className="icon" />
                                 <span className="text">
                                     Student
@@ -53,10 +106,6 @@ const PublicHeader = () => {
                                 <small>Login</small>
                             </span>
                         </button>
-                    </div>
-
-                    <div className="p-header__hamburger" onClick={() => setOpen(!open)}>
-                        {open ? <X className='icon' /> : <Menu className='icon' />}
                     </div>
                 </div>
             </nav>

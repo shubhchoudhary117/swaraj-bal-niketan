@@ -1,0 +1,525 @@
+// ==========================================
+// VARIABLES — Sunrise Public School Theme
+// ==========================================
+$primary:        #1a2a5e;
+$primary-light:  #243474;
+$accent:         #f0a500;
+$accent-hover:   #e09400;
+$white:          #ffffff;
+$bg-page:        #f5f7fc;
+$bg-card:        #ffffff;
+$text-dark:      #12204a;
+$text-medium:    #4a5a7a;
+$text-light:     #8a97b5;
+$border:         #e4e9f2;
+$shadow-sm:      0 2px 8px rgba(26,42,94,0.07);
+$shadow-md:      0 8px 28px rgba(26,42,94,0.12);
+$shadow-hover:   0 18px 48px rgba(26,42,94,0.18);
+$radius-card:    20px;
+$radius-img:     16px;
+
+.teachers-section {
+  padding: 20px 0 80px;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -120px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(240,165,0,0.07) 0%, transparent 70%);
+    pointer-events: none;
+
+    @media (max-width: 768px) { display: none; }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -80px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26,42,94,0.06) 0%, transparent 70%);
+    pointer-events: none;
+
+    @media (max-width: 768px) { display: none; }
+  }
+
+  // ---- CONTAINER ----
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    position: relative;
+    z-index: 1;
+
+    // Mobile: 95% width
+    @media (max-width: 768px) {
+      width: 95%;
+      padding: 0;
+    }
+  }
+
+  // ---- HEADER ----
+  &__header {
+    text-align: center;
+    margin-bottom: 48px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 32px;
+      padding: 0 4px;
+    }
+  }
+
+  &__eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+    color: $accent;
+    margin-bottom: 12px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 28px;
+      height: 2px;
+      background: $accent;
+      border-radius: 2px;
+
+      @media (max-width: 480px) { display: none; }
+    }
+
+    &::before { right: calc(100% + 10px); }
+    &::after  { left:  calc(100% + 10px); }
+  }
+
+  &__title {
+    
+    font-size: clamp(26px, 4vw, 48px);
+    font-weight: 700;
+    color: $text-dark;
+    line-height: 1.2;
+    margin-bottom: 14px;
+
+    span {
+      color: $primary;
+      position: relative;
+    }
+  }
+
+  &__subtitle {
+    font-size: 15px;
+    color: $text-medium;
+    max-width: 540px;
+    margin: 0 auto;
+    line-height: 1.75;
+
+    @media (max-width: 480px) {
+      font-size: 13.5px;
+      line-height: 1.65;
+    }
+  }
+
+  &__divider {
+    width: 50px;
+    height: 4px;
+    background: linear-gradient(90deg, $accent, $accent-hover);
+    border-radius: 4px;
+    margin: 16px auto 0;
+  }
+
+  // ---- FILTER BUTTONS ----
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 36px;
+
+    @media (max-width: 480px) {
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+  }
+
+  // ---- GRID ----
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    @media (max-width: 1100px) { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 780px)  { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    @media (max-width: 420px)  { grid-template-columns: 1fr;            gap: 14px; }
+  }
+
+  // ---- STATS BAR ----
+  &__stats {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    background: $primary;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: $shadow-md;
+    width: 100%;
+
+    // Mobile: wrap into 2x2 grid
+    @media (max-width: 600px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-radius: 16px;
+      margin-top: 40px;
+    }
+  }
+
+  &__stat {
+    flex: 1;
+    text-align: center;
+    padding: 32px 16px;
+    border-right: 1px solid rgba(255,255,255,0.12);
+    position: relative;
+    transition: background 0.25s;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &:hover {
+      background: rgba(255,255,255,0.05);
+    }
+
+    // Mobile 2x2 grid borders
+    @media (max-width: 600px) {
+      padding: 24px 12px;
+
+      // Remove right border from every 2nd item
+      &:nth-child(2n) { border-right: none; }
+
+      // Add bottom border to top row (first 2 items)
+      &:nth-child(1),
+      &:nth-child(2) {
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+      }
+
+      // Bottom row — no right border on last
+      &:nth-child(3) { border-right: 1px solid rgba(255,255,255,0.12); }
+      &:nth-child(4) { border-right: none; border-bottom: none; }
+    }
+  }
+
+  &__stat-icon {
+    font-size: 26px;
+    margin-bottom: 8px;
+    display: block;
+    line-height: 1;
+
+    @media (max-width: 600px) { font-size: 20px; }
+  }
+
+  &__stat-number {
+    
+    font-size: 34px;
+    font-weight: 700;
+    color: $accent;
+    line-height: 1;
+    margin-bottom: 6px;
+
+    @media (max-width: 600px) { font-size: 26px; }
+    @media (max-width: 380px) { font-size: 22px; }
+  }
+
+  &__stat-label {
+    font-size: 11.5px;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1.4;
+
+    @media (max-width: 600px) { font-size: 10px; }
+  }
+}
+
+// ==========================================
+// FILTER BUTTON
+// ==========================================
+.filter-btn {
+  padding: 8px 18px;
+  
+  font-size: 12.5px;
+  font-weight: 600;
+  border: 1.5px solid $border;
+  border-radius: 30px;
+  background: $white;
+  color: $text-medium;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+
+  @media (max-width: 480px) {
+    padding: 7px 13px;
+    font-size: 11.5px;
+  }
+
+  &:hover {
+    border-color: $primary;
+    color: $primary;
+    background: rgba(26,42,94,0.04);
+  }
+
+  &--active {
+    background: $primary;
+    color: $white;
+    border-color: $primary;
+    box-shadow: 0 4px 14px rgba(26,42,94,0.25);
+
+    &:hover {
+      background: $primary-light;
+      color: $white;
+    }
+  }
+}
+
+// ==========================================
+// TEACHER CARD — BEM
+// ==========================================
+.teacher-card {
+  background: $bg-card;
+  border-radius: $radius-card;
+  overflow: hidden;
+  box-shadow: $shadow-sm;
+  border: 1px solid $border;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: fadeUp 0.5s ease both;
+
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) { animation-delay: #{($i - 1) * 0.07}s; }
+  }
+
+  &:hover {
+    transform: translateY(-7px);
+    box-shadow: $shadow-hover;
+
+    .teacher-card__img    { transform: scale(1.06); }
+    .teacher-card__overlay { opacity: 1; }
+
+    .teacher-card__contact-btn {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  // ---- IMAGE BLOCK ----
+  &__img-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 210px;
+    background: linear-gradient(135deg, #dde4f5 0%, #c8d3f0 100%);
+
+    @media (max-width: 480px) { height: 180px; }
+    @media (max-width: 380px) { height: 160px; }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(26,42,94,0.82) 0%,
+      rgba(26,42,94,0.10) 55%,
+      transparent 100%
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+    padding: 16px;
+  }
+
+  &__contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: $accent;
+    color: $white;
+    font-size: 12px;
+    font-weight: 600;
+    
+    padding: 7px 15px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    transform: translateY(12px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease, background 0.2s;
+    text-decoration: none;
+    letter-spacing: 0.3px;
+
+    &:hover { background: $accent-hover; }
+    svg { width: 13px; height: 13px; }
+  }
+
+  // ---- EXPERIENCE BADGE ----
+  &__exp-badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: $primary;
+    color: $white;
+    font-size: 10.5px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 30px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 8px rgba(26,42,94,0.35);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+
+    &::before {
+      content: '⭐';
+      font-size: 9px;
+    }
+  }
+
+  // ---- BODY ----
+  &__body {
+    padding: 16px 16px 18px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    @media (max-width: 480px) { padding: 14px 14px 16px; }
+  }
+
+  &__name {
+    
+    font-size: 17px;
+    font-weight: 700;
+    color: $text-dark;
+    margin-bottom: 3px;
+    line-height: 1.25;
+
+    @media (max-width: 480px) { font-size: 15px; }
+  }
+
+  &__role {
+    font-size: 11px;
+    font-weight: 600;
+    color: $text-light;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  // ---- SUBJECT BADGE ----
+  &__subject {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 30px;
+    margin-bottom: 14px;
+    width: fit-content;
+  }
+
+  // ---- META ----
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid $border;
+  }
+
+  &__meta-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12px;
+    color: $text-medium;
+
+    svg {
+      width: 14px;
+      height: 14px;
+      color: $accent;
+      flex-shrink: 0;
+    }
+  }
+
+  &__meta-label { font-weight: 500; }
+
+  // ---- RATING ----
+  &__rating {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-top: 10px;
+  }
+
+  &__star {
+    font-size: 12px;
+    color: #ddd;
+
+    &--filled { color: $accent; }
+    &--half   { color: $accent; opacity: 0.5; }
+  }
+
+  &__rating-text {
+    font-size: 11px;
+    font-weight: 600;
+    color: $text-medium;
+    margin-left: 5px;
+  }
+}
+
+// ==========================================
+// SUBJECT COLOR MODIFIERS
+// ==========================================
+.teacher-card__subject--math     { background: #eef0fd; color: #4361ee; }
+.teacher-card__subject--science  { background: #e6faf4; color: #0cb87e; }
+.teacher-card__subject--english  { background: #fde9f3; color: #e84393; }
+.teacher-card__subject--hindi    { background: #fff0e6; color: #f76b1c; }
+.teacher-card__subject--social   { background: #f0ebfe; color: #8b5cf6; }
+.teacher-card__subject--art      { background: #fef2f2; color: #ef4444; }
+.teacher-card__subject--sports   { background: #ecfdf5; color: #10b981; }
+.teacher-card__subject--computer { background: #eff6ff; color: #3b82f6; }
+.teacher-card__subject--music    { background: #fffbeb; color: #f59e0b; }
+.teacher-card__subject--commerce { background: #f1f5f9; color: #64748b; }
+
+// ==========================================
+// ANIMATION
+// ==========================================
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
