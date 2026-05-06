@@ -1,0 +1,518 @@
+.stu-reg {
+    width: 100%;
+    padding: 20px 0px;
+
+    &__container {
+        width: 75%;
+        margin: auto;
+        border-radius: 30px;
+        background: #fff;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+        min-height: 100vh;
+    }
+
+    &__reg-banner {
+        width: 100%;
+        height: 140px;
+        position: relative;
+        background-image: url("/assets/comman/school-image.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        overflow: hidden;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+        display: flex;
+        align-items: center;
+
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(to right,
+                    #0d1b3e 0%,
+                    /* dark navy — full solid */
+                    rgba(13, 27, 62, 0.92) 20%,
+                    rgba(13, 27, 62, 0.75) 38%,
+                    rgba(13, 27, 62, 0.35) 55%,
+                    rgba(13, 27, 62, 0.10) 70%,
+                    transparent 85%);
+        }
+    }
+
+    &__banner-content {
+        padding: 0px 20px;
+        z-index: 99;
+    }
+
+    &__school-name {
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+        max-width: 400px;
+    }
+
+    &__school-tagline {
+        margin-top: 5px;
+        font-size: 14px;
+        color: #ffffffa6;
+    }
+
+    &__header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0px;
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: 700;
+        color: var(--primary-color);
+        line-height: 40px;
+        margin-top: 12px;
+        max-width: 520px;
+
+        @media screen and (max-width: 1024px) {
+            font-size: 27px;
+            line-height: 36px;
+        }
+
+        @media screen and (max-width: 768px) {
+            font-size: 24px;
+            line-height: 32px;
+            max-width: 100%;
+        }
+
+        @media screen and (max-width: 480px) {
+            font-size: 21px;
+            line-height: 28px;
+
+        }
+    }
+
+    &__sub-title {
+        font-size: 14px;
+        color: var(--primary-color);
+        position: relative;
+        display: inline-block;
+        margin-top: 10px;
+
+        &::after {
+            content: "";
+            width: 35px;
+            height: 2px;
+            background: var(--secondary-color);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -4px;
+        }
+
+        @media screen and (max-width: 480px) {
+            font-size: 12px;
+        }
+    }
+
+    &__form {
+        width: 100%;
+        padding: 0px 20px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    &__form-box {
+        width: 100%;
+        background: #fff;
+        // box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
+        padding: 14px 14px 20px 14px;
+        border-radius: 10px;
+        border: 1px solid rgba(240, 240, 240, 1);
+    }
+
+    &__groups-category {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &__category-block {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+
+        &.personal {
+            background: rgba(254, 247, 226, 1);
+        }
+
+        &.contact {
+            background: rgba(229, 229, 253, 1);
+        }
+
+        &.academic {
+            background: rgba(231, 252, 231, 1);
+        }
+
+        &.gradian {
+            background: rgba(242, 235, 252, 1);
+        }
+
+        .icon {
+            width: 19px;
+            height: 19px;
+
+
+            &.personal {
+                color: #f8b84b;
+            }
+
+            &.contact {
+                color: #0f5ee2;
+            }
+
+            &.academic {
+                color: #3ea05a;
+            }
+
+            &.gradian {
+                color: #503b97;
+            }
+
+            &.documents {
+                color: #f9a345;
+            }
+        }
+    }
+
+    &__category-name {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+
+    &__input-groups {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 12px;
+        padding-left: 4px;
+        gap: 10px;
+    }
+
+    &__input-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin-bottom: 10px;
+    }
+
+    &__input-group--full {
+        grid-column: span 3;
+    }
+
+    &__input-label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #2d3748;
+
+        span {
+            color: #e91100;
+        }
+    }
+
+    &__input-wrapper {
+        width: 100%;
+        height: 40px;
+        margin-top: 5px;
+        border-radius: 6px;
+        border: 1px solid #e5e7eb;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__input-icon {
+        width: 35px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon {
+            width: 21px;
+            height: 21px;
+            color: #9ca3af;
+        }
+    }
+
+    &__input {
+        flex: 1;
+        height: 100%;
+        border: none;
+        background: transparent;
+        outline: none;
+        padding-left: 5px;
+        font-size: 14px;
+        color: #111827;
+
+        &::placeholder {
+            color: #9ca3af;
+        }
+    }
+
+    &__footer {
+        width: 100%;
+        padding: 20px 0px;
+    }
+
+    &__hereby-group {
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    &__heereby-checkbox {
+        width: 18px;
+        height: 18px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--primary-color);
+    }
+
+    &__hereby-message {
+        margin-left: 10px;
+        font-size: 13px;
+        color: var(--primary-color);
+        font-weight: 400;
+    }
+
+    &__form-actions {
+        width: 100%;
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__submit-registration {
+        width: 80%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--primary-color);
+        color: #fff;
+        border-radius: 6px;
+        outline: none;
+        border: none;
+
+        .icon {
+            width: 18px;
+            height: 18px;
+            color: #fff;
+            margin-right: 10px;
+        }
+    }
+
+    &__already-account {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        color: #5e6372;
+        font-size: 14px;
+
+        span {
+            color: #317ddd;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+@media screen and (max-width:768px) {
+
+    .stu-reg {
+        width: 100%;
+        padding: 10px 0px;
+
+        &__container {
+            width: 97%;
+        }
+
+        &__reg-banner {
+            width: 100%;
+            height: 140px;
+            
+        }
+
+        &__banner-content {
+            padding: 0px 10px;
+            z-index: 99;
+        }
+
+        &__school-name {
+            font-size: 17px;
+        }
+
+        &__school-tagline {
+            margin-top: 4px;
+            font-size: 12px;
+        }
+
+        &__header {
+            width: 100%;
+            padding: 8px 0px;
+        }
+
+        &__title {
+            font-size: 22px;
+            line-height: 22px;
+            margin-top: 8px;
+        }
+
+        &__sub-title {
+            font-size: 14px;
+            margin-top: 8px;
+        }
+
+        &__form {
+            width: 100%;
+            padding: 0px 7px;
+            margin-top: 10px;
+        }
+
+        &__form-box {
+            width: 100%;
+            padding: 14px 10px 20px 10px;
+        }
+
+        &__groups-category {
+            gap: 10px;
+        }
+
+        &__category-block {
+            height: 35px;
+            width: 35px;
+
+
+
+            .icon {
+                width: 17px;
+                height: 17px;
+            }
+        }
+
+        &__category-name {
+            font-size: 15px;
+        }
+
+        &__input-groups {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            margin-top: 12px;
+            padding-left: 4px;
+            gap: 10px;
+        }
+
+        &__input-group {
+            width: 100%;
+            margin-bottom: 6px;
+        }
+
+        &__input-group--full {
+            grid-column: span 1;
+        }
+
+        &__input-label {
+            font-size: 14px;
+        }
+
+        &__input-wrapper {
+            width: 100%;
+            height: 40px;
+            margin-top: 4px;
+        }
+
+        &__input-icon {
+            width: 35px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
+        &__input {
+            flex: 1;
+            height: 100%;
+            font-size: 14px;
+        }
+
+        &__footer {
+            width: 100%;
+            padding: 10px 0px;
+        }
+
+        &__hereby-group {
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        &__heereby-checkbox {
+            min-width: 18px;
+            min-height: 18px;
+        }
+
+        &__hereby-message {
+            margin-left: 10px;
+            font-size: 12px;
+        }
+
+        &__form-actions {
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        &__submit-registration {
+            width: 100%;
+            height: 50px;
+
+            .icon {
+                width: 18px;
+                height: 18px;
+                color: #fff;
+                margin-right: 10px;
+            }
+        }
+
+        &__already-account {
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            color: #5e6372;
+            font-size: 14px;
+
+            span {
+                color: #317ddd;
+                cursor: pointer;
+            }
+        }
+    }
+}

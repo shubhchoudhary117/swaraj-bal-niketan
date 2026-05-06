@@ -1,0 +1,256 @@
+.student-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f7fb;
+
+  &__container {
+    width: 100%;
+    max-width: 450px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.08);
+  }
+
+  &__banner {
+    position: relative;
+    height: 180px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.3));
+  }
+
+  &__banner-content {
+    position: absolute;
+    bottom: 15px;
+    left: 16px;
+    color: #fff;
+  }
+
+  &__school-name {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  &__tagline {
+    font-size: 12px;
+    opacity: 0.85;
+  }
+
+  /* 🔥 Form */
+  &__form {
+    padding: 24px;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #1d2b64;
+  }
+
+  &__input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+
+    label {
+      font-size: 13px;
+      margin-bottom: 6px;
+      color: #555;
+    }
+
+    input {
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      outline: none;
+      transition: 0.3s;
+
+      &:focus {
+        border-color: #1d2b64;
+        box-shadow: 0 0 0 3px rgba(29, 43, 100, 0.1);
+      }
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: #1d2b64;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      background: #16204a;
+    }
+  }
+
+  &__error {
+    font-size: 12px;
+    color: #e53935;
+    margin-top: 4px;
+  }
+
+  input.error {
+    border-color: #e53935 !important;
+  }
+
+
+  &__password-wrap {
+    position: relative;
+
+    input {
+      width: 100%;
+      padding-right: 40px;
+    }
+  }
+
+  &__eye {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #666;
+
+    &:hover {
+      color: #1d2b64;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #1d2b64;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+@media screen and (max-width:768px) {
+
+  .student-login {
+    min-height: 100vh;
+
+    &__container {
+      width: 100%;
+      max-width: 95%;
+      margin: auto;
+    }
+
+    &__banner {
+      position: relative;
+      height: 180px;
+
+      
+    }
+
+    
+    &__banner-content {
+      position: absolute;
+      bottom: 15px;
+      left: 16px;
+    }
+
+    &__school-name {
+      font-size: 18px;
+    }
+
+    &__tagline {
+      font-size: 12px;
+      opacity: 0.85;
+    }
+
+    &__form {
+      padding: 24px;
+    }
+
+    &__title {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    &__input-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 16px;
+
+      label {
+        font-size: 13px;
+        margin-bottom: 6px;
+      }
+
+      input {
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        outline: none;
+        transition: 0.3s;
+
+        &:focus {
+          border-color: #1d2b64;
+          box-shadow: 0 0 0 3px rgba(29, 43, 100, 0.1);
+        }
+      }
+    }
+
+    &__btn {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      background: #1d2b64;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+
+      &:hover {
+        background: #16204a;
+      }
+    }
+
+    &__error {
+      font-size: 12px;
+    }
+
+
+
+   
+
+    &__eye {
+      position: absolute;
+      right: 10px;
+    }
+
+    &__footer {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 13px;
+    }
+  }
+}
