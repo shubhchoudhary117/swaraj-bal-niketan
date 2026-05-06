@@ -16,6 +16,7 @@ import SchoolFacilities from './sections/school-facilities/SchoolFacilities'
 import WhyChooseUs from './sections/why-choose-us/WhyChooseUs'
 import SchoolDirectors from './sections/school-directors/SchoolDirectors'
 import { type Variants, motion } from 'framer-motion'
+import { useNavigate } from 'react-router-dom'
 
 
 const containerVariants: Variants = {
@@ -55,6 +56,11 @@ const slideRight: Variants = {
 };
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+
+  const handleStudentRegistration = () => {
+    navigate('/student-registration')
+  }
 
 
   return <>
@@ -69,7 +75,7 @@ const LandingPage = () => {
               <div className="landing-p__carousel-title">Swaraj Bal Niketan High School</div>
               <div className="landing-p__carousel-subheading">Nurturing Minds. Shaping Futures.</div>
               <div className="landing-p__carousel-desc">We provide a safe, inclusive and inspiring environment where every child is encouraged to learn, grow and achieve their full potential.</div>
-              <button className="landing-p__know-more-btn">
+              <button className="landing-p__know-more-btn" onClick={handleStudentRegistration}>
                 Apply Now
                 <MoveRight className='icon' />
               </button>
@@ -79,7 +85,7 @@ const LandingPage = () => {
 
         <motion.div className="landing-p__about" initial="hidden"
           whileInView="visible"
-          viewport={{ once:true, amount: 0.3 }}>
+          viewport={{ once: true, amount: 0.3 }}>
           <motion.div variants={slideLeft} className="landing-p__about-banner" ></motion.div>
 
           <motion.div className="landing-p__about-content" variants={slideRight}>
