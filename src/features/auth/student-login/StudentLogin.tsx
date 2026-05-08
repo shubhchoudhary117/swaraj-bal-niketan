@@ -3,6 +3,7 @@ import "./StudentLogin.scss";
 import bannerImg from "./images/login-banner.png";
 
 import { Eye, EyeOff } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const StudentLogin = () => {
   const [form, setForm] = useState({
@@ -12,6 +13,7 @@ const StudentLogin = () => {
 
   const [errors, setErrors] = useState<any>({});
   const [showPassword, setShowPassword] = useState(false);
+  const navigate=useNavigate();
 
   const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -37,6 +39,7 @@ const StudentLogin = () => {
 
   const handleSubmit = () => {
     if (validate()) {
+      navigate("/study-v1")
       console.log("Login Data:", form);
     }
   };

@@ -1,0 +1,567 @@
+:root {
+  --primary: #3b5bdb;
+  --primary-light: #eef2ff;
+  --bg: #f4f6fb;
+  --white: #ffffff;
+  --text-dark: #1e2a3a;
+  --text-mid: #6b7a99;
+  --text-light: #a0aec0;
+  --border: #e8ecf4;
+
+  --green: #22c55e;
+  --green-bg: #f0fdf4;
+
+  --red: #ef4444;
+  --red-bg: #fef2f2;
+
+  --orange: #f59e0b;
+  --orange-bg: #fffbeb;
+
+  --gray: #cbd5e1;
+
+  --shadow: 0 2px 12px rgba(59, 91, 219, 0.07);
+  --shadow-card: 0 1px 4px rgba(30, 42, 58, 0.08);
+
+  --radius: 14px;
+  --radius-sm: 8px;
+
+  --font: 'Plus Jakarta Sans', sans-serif;
+}
+
+.student-attendance {
+  width: 100%;
+  min-height: 100vh;
+  font-family: var(--font);
+  color: var(--text-dark);
+
+  /* =========================================
+      HEADER
+  ========================================= */
+
+  &__header {
+    margin-bottom: 22px;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  &__breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12.5px;
+    color: var(--text-mid);
+
+    a {
+      text-decoration: none;
+      color: var(--text-mid);
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+  }
+
+  &__breadcrumb-separator {
+    color: var(--text-light);
+  }
+
+  &__breadcrumb-active {
+    color: var(--text-dark);
+    font-weight: 500;
+  }
+
+  /* =========================================
+      STATS
+  ========================================= */
+
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 22px;
+  }
+
+  &__stat-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+    transition: 0.18s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow);
+    }
+  }
+
+  &__stat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+    &--blue {
+      background: #eef2ff;
+      color: var(--primary);
+    }
+
+    &--green {
+      background: var(--green-bg);
+      color: var(--green);
+    }
+
+    &--red {
+      background: var(--red-bg);
+      color: var(--red);
+    }
+
+    &--orange {
+      background: var(--orange-bg);
+      color: var(--orange);
+    }
+  }
+
+  &__stat-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__stat-label {
+    font-size: 12px;
+    color: var(--text-mid);
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  &__stat-value {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.1;
+  }
+
+  &__stat-subtitle {
+    font-size: 11.5px;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+
+  /* =========================================
+      CARD
+  ========================================= */
+
+  &__card {
+    width: 100%;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-card);
+    margin-bottom: 22px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  &__section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  /* =========================================
+      CALENDAR CONTROLS
+  ========================================= */
+
+  &__calendar-controls {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__calendar-month-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    background: var(--white);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-family: var(--font);
+    transition: 0.15s ease;
+
+    &:hover {
+      border-color: var(--primary);
+    }
+  }
+
+  &__calendar-nav-btn {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--text-mid);
+    transition: 0.15s ease;
+
+    &:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+  }
+
+  /* =========================================
+      CALENDAR
+  ========================================= */
+
+  &__calendar {
+    width: 100%;
+  }
+
+  &__calendar-head {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-bottom: 4px;
+  }
+
+  &__calendar-head-cell {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-mid);
+    padding: 6px 0;
+  }
+
+  &__calendar-body {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+
+  &__calendar-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 4px 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.15s ease;
+
+    &:hover {
+      background: var(--bg);
+    }
+
+    &--other-month {
+      .student-attendance__calendar-date {
+        color: var(--text-light);
+      }
+    }
+
+    &--today {
+      .student-attendance__calendar-date {
+        background: var(--primary);
+        color: #fff;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__calendar-date {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4px;
+
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-dark);
+  }
+
+  &__calendar-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+
+    &--present {
+      background: var(--green);
+    }
+
+    &--absent {
+      background: var(--red);
+    }
+
+    &--late {
+      background: var(--orange);
+    }
+
+    &--holiday {
+      background: var(--gray);
+    }
+  }
+
+  /* =========================================
+      LEGEND
+  ========================================= */
+
+  &__legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  &__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12.5px;
+    color: var(--text-mid);
+    font-weight: 500;
+  }
+
+  &__legend-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+  }
+
+  /* =========================================
+      FILTERS
+  ========================================= */
+
+  &__filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    background: var(--white);
+
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--text-dark);
+    font-family: var(--font);
+
+    transition: 0.15s ease;
+
+    &:hover {
+      border-color: var(--primary);
+    }
+  }
+
+  /* =========================================
+      TABLE
+  ========================================= */
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+
+    th {
+      text-align: left;
+      padding: 10px 14px;
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--text-mid);
+      border-bottom: 1.5px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    td {
+      padding: 13px 14px;
+      font-size: 13px;
+      color: var(--text-dark);
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    tbody tr {
+      &:hover td {
+        background: var(--bg);
+      }
+
+      &:last-child td {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__remark {
+    color: var(--text-mid);
+  }
+
+  /* =========================================
+      BADGES
+  ========================================= */
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+
+    &--present {
+      background: var(--green-bg);
+      color: #16a34a;
+    }
+
+    &--absent {
+      background: var(--red-bg);
+      color: #dc2626;
+    }
+
+    &--late {
+      background: var(--orange-bg);
+      color: #d97706;
+    }
+
+    &--holiday {
+      background: #f1f5f9;
+      color: #64748b;
+    }
+  }
+
+  /* =========================================
+      FOOTER
+  ========================================= */
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  &__footer-info {
+    font-size: 12.5px;
+    color: var(--text-mid);
+  }
+
+  /* =========================================
+      PAGINATION
+  ========================================= */
+
+  &__pagination {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  &__page-btn {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-mid);
+
+    transition: 0.15s ease;
+
+    &:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    &--active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #fff;
+    }
+  }
+
+  /* =========================================
+      RESPONSIVE
+  ========================================= */
+
+  @media (max-width: 1200px) {
+    &__stats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__stats {
+      grid-template-columns: 1fr;
+    }
+
+    &__section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    &__footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    &__legend {
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    &__table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
+}

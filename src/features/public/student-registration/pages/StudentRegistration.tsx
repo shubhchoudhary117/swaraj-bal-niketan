@@ -1,12 +1,13 @@
 import React from 'react'
 import "./StudentRegistration.scss"
 import { BriefcaseBusiness, Contact, GraduationCap, List, Mail, MapPin, PersonStanding, Phone, School, Send, User, UserRound, Users } from 'lucide-react'
-import FormSelectInput from '../../../shared/ui/forms/FormSelectInput/FormSelectInput'
 import { useForm } from 'react-hook-form'
 import { studentSchema, type StudentRegistrationFormType } from '../schemas/student-registration.schema'
 import { zodResolver } from '@hookform/resolvers/zod'
-import FormDateInput from '../../../shared/ui/forms/FormSelectInput/FormDateInput'
-import PublicHeader from '../../../shared/layouts/public-header/PublicHeader'
+import PublicHeader from '../../../../shared/layouts/public-header/PublicHeader'
+import FormSelectInput from '../../../../shared/ui/forms/FormSelectInput/FormSelectInput'
+import FormDateInput from '../../../../shared/ui/forms/FormSelectInput/FormDateInput'
+
 
 const StudentRegistration = () => {
     const {

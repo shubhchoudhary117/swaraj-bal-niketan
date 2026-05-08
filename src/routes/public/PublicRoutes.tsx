@@ -1,10 +1,9 @@
 import { Suspense, lazy } from 'react'
 import { useRoutes } from 'react-router-dom'
-import StudentLogin from '../../pages/student-login/StudentLogin'
-import StudentRegistration from '../../features/student-registration/forms/StudentRegistration'
-import SchoolTeachers from '../../pages/landing-page/sections/school-teachers/SchoolTeachers'
-
-const LandingPage = lazy(() => import('../../pages/landing-page/LandingPage'))
+import StudentLogin from '../../features/auth/student-login/StudentLogin'
+import LandingPage from '../../features/public/landing-page/LandingPage'
+import SchoolTeachers from '../../features/public/landing-page/sections/school-teachers/SchoolTeachers'
+import StudentRegistration from '../../features/public/student-registration/pages/StudentRegistration'
 
 const PublicRoutes = () => {
   const routes = useRoutes([

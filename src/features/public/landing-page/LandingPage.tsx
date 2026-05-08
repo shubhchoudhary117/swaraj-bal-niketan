@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import "./LandintPage.scss"
-import PublicHeader from '../../shared/layouts/public-header/PublicHeader'
 import { MoveRight, GraduationCap, Users, BookOpen, ShieldCheck, ArrowRight } from 'lucide-react'
 import Courses from './sections/course/Courses'
 
@@ -11,13 +10,14 @@ import TeachersIcon from "./images/states/teachers.svg?react"
 import StudentsIcon from "./images/states/students.svg?react"
 import StudentTestimonial from './sections/student-testimonials/StudentTestimonial'
 import schoolBanner from "./images/carousel1-bg.png"
-import PublicFooter from '../../shared/layouts/public-footer/PublicFooter'
 import SchoolFacilities from './sections/school-facilities/SchoolFacilities'
 import WhyChooseUs from './sections/why-choose-us/WhyChooseUs'
 import SchoolDirectors from './sections/school-directors/SchoolDirectors'
 import { type Variants, motion } from 'framer-motion'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { scroller } from 'react-scroll'
+import PublicHeader from '../../../shared/layouts/public-header/PublicHeader';
+import PublicFooter from '../../../shared/layouts/public-footer/PublicFooter';
 
 
 const containerVariants: Variants = {

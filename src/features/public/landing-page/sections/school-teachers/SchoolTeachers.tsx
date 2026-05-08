@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./SchoolTeachers.scss";
-import PublicHeader from "../../../../shared/layouts/public-header/PublicHeader";
 import {
     Phone,
     Clock,
@@ -11,6 +10,7 @@ import {
     Star,
     UserCheck,
 } from "lucide-react";
+import PublicHeader from "../../../../../shared/layouts/public-header/PublicHeader";
 
 
 const TEACHERS = [

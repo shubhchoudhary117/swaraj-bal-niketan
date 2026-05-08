@@ -1,0 +1,413 @@
+$sidebar-bg: #0f1340;
+$sidebar-bg-deep: #0b0f33;
+$active-bg: #4f46e5;
+$active-bg-hover: #4338ca;
+$item-hover: rgba(255, 255, 255, 0.06);
+$text-white: #ffffff;
+$text-muted: rgba(255, 255, 255, 0.55);
+$border-color: rgba(255, 255, 255, 0.08);
+$card-bg: #2d2f8f;
+$card-bg-light: #3d3fa8;
+$icon-color: rgba(255, 255, 255, 0.75);
+$radius-sm: 8px;
+$radius-md: 12px;
+$radius-lg: 16px;
+$font-main: 'Poppins', sans-serif;
+$sidebar-width: 260px;
+$sidebar-width-collapsed: 72px;
+$transition: 0.22s ease;
+
+$active-bg: #e8a020;
+$active-bg-hover: #d4921a;
+$nav-badge-bg: #e8a020;
+
+.student-sidebar {
+  width: $sidebar-width;
+  min-height: 100vh;
+  background: $sidebar-bg;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  position: relative;
+  font-family: $font-main;
+  flex-shrink: 0;
+
+  // subtle left border glow
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: $border-color;
+  }
+
+
+  .student-sidebar__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 998;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.25s ease;
+
+    &--show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__mobile-top {
+    display: none;
+  }
+
+  &__close-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+
+  }
+
+  &__brand-school {
+    font-size: 11px;
+    font-weight: 600;
+    color: $text-white;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+  }
+
+  // Add chevron style:
+  &__nav-chevron {
+    margin-left: auto;
+    color: rgba(255, 255, 255, 0.45);
+    display: flex;
+    align-items: center;
+  }
+
+  &__brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 24px 20px 10px;
+    text-decoration: none;
+  }
+
+  &__brand-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+  }
+
+  &__brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  &__brand-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: $text-white;
+    line-height: 1.2;
+    letter-spacing: 0.2px;
+  }
+
+  &__brand-sub {
+    font-size: 11px;
+    color: $text-muted;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+  }
+
+  // ---- NAV ----
+  &__nav {
+    flex: 1;
+    padding: 4px 12px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    // custom scrollbar
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 4px;
+    }
+  }
+
+  // ---- NAV ITEM ----
+  &__nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border-radius: $radius-md;
+    cursor: pointer;
+    transition: background $transition, color $transition;
+    text-decoration: none;
+    position: relative;
+    user-select: none;
+
+    &:hover {
+      background: $item-hover;
+
+      .student-sidebar__nav-label {
+        color: $text-white;
+      }
+
+      .student-sidebar__nav-icon {
+        color: $text-white;
+      }
+    }
+
+    &--active {
+      background: $active-bg;
+      box-shadow: 0 4px 18px rgba(79, 70, 229, 0.38);
+
+      .student-sidebar__nav-label {
+        color: $text-white;
+        font-weight: 600;
+      }
+
+      .student-sidebar__nav-icon {
+        color: $text-white;
+      }
+
+      &:hover {
+        background: $active-bg-hover;
+      }
+    }
+  }
+
+  &__nav-icon {
+    width: 20px;
+    height: 20px;
+    color: $icon-color;
+    flex-shrink: 0;
+    transition: color $transition;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__nav-label {
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color $transition;
+    white-space: nowrap;
+  }
+
+  &__nav-badge {
+    margin-left: auto;
+    background: $active-bg;
+    color: $text-white;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 30px;
+    min-width: 20px;
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  // ---- DIVIDER ----
+  &__divider {
+    height: 1px;
+    background: $border-color;
+    margin: 10px 12px;
+  }
+
+  // ---- LOGOUT ----
+  &__logout {
+    padding: 4px 12px 8px;
+  }
+
+  &__logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 14px;
+    border-radius: $radius-md;
+    cursor: pointer;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-family: $font-main;
+    transition: background $transition;
+
+    &:hover {
+      background: rgba(239, 68, 68, 0.12);
+
+      .student-sidebar__logout-icon {
+        color: #ef4444;
+      }
+
+      .student-sidebar__logout-label {
+        color: #ef4444;
+      }
+    }
+  }
+
+  &__logout-icon {
+    width: 20px;
+    height: 20px;
+    color: $icon-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color $transition;
+    flex-shrink: 0;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__logout-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color $transition;
+  }
+
+  // ---- PROMO CARD ----
+  &__promo {
+    margin: 12px 12px 20px;
+    background: linear-gradient(135deg, $card-bg 0%, $card-bg-light 100%);
+    border-radius: $radius-lg;
+    padding: 20px 16px 18px;
+    position: relative;
+    overflow: hidden;
+
+    // decorative blob
+    &::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+      pointer-events: none;
+    }
+  }
+
+  &__promo-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 12px;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+  }
+
+  &__promo-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: $text-white;
+    line-height: 1.35;
+    margin-bottom: 6px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &__promo-text {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.55;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+// ==========================================
+// ANIMATION — staggered nav items
+// ==========================================
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.student-sidebar__nav-item,
+.student-sidebar__logout-btn {
+  animation: slideInLeft 0.35s ease both;
+}
+
+@for $i from 1 through 12 {
+  .student-sidebar__nav-item:nth-child(#{$i}) {
+    animation-delay: #{$i * 0.045}s;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .student-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 280px;
+    height: 100vh;
+
+    transform: translateX(-100%);
+    transition: transform 0.28s ease;
+
+    &--open {
+      transform: translateX(0);
+    }
+
+    &__mobile-top {
+     display: block;
+      position: absolute;
+      z-index: 99999;
+      right: 10px;
+      top: 10px;
+    }
+  }
+}

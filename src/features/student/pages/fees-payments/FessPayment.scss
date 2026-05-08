@@ -1,0 +1,965 @@
+:root {
+  --primary: #16184c;
+  --primary-dark: #16184c;
+  --primary-light: #eef1fd;
+  --accent: #febd2f;
+  --bg: #f0f2fa;
+  --white: #ffffff;
+  --text-dark: #1a1f36;
+  --text-mid: #5a6282;
+  --text-light: #9ba3c0;
+  --border: #e2e6f3;
+  --green: #027c31;
+  --green-bg: #f0fdf4;
+  --red: #ef4444;
+  --red-bg: #fef2f2;
+  --orange: #f59e0b;
+  --orange-bg: #fffbeb;
+  --shadow-sm: 0 1px 3px rgba(61, 94, 225, 0.08);
+  --shadow: 0 4px 16px rgba(61, 94, 225, 0.12);
+  --shadow-lg: 0 8px 32px rgba(61, 94, 225, 0.16);
+  --radius: 14px;
+  --radius-sm: 8px;
+
+}
+
+.fp-page {
+  min-height: 100vh;
+
+  color: var(--text-dark);
+}
+
+/* ── HEADER CARD ─────────────────────────────── */
+.fp-header {
+  background: linear-gradient(135deg, #16184c 0%, #16184c 60%, #1e35a8 100%);
+  border-radius: var(--radius);
+  padding: 0;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.fp-header::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.fp-header::after {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  right: 80px;
+  width: 160px;
+  height: 160px;
+  background: rgba(254, 189, 47, 0.08);
+  border-radius: 50%;
+}
+
+.fp-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 28px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.fp-school-info {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.fp-school-logo {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.fp-school-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-transform: capitalize;
+  line-height: 1.3;
+}
+
+.fp-student-name-header {
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.fp-header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.fp-year-badge {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.fp-page-title {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+}
+
+/* STUDENT INFO ROW */
+.fp-header-bottom {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 12px 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.fp-info-chip {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 14px 4px 0;
+  margin-right: 14px;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.fp-info-chip:last-child {
+  border-right: none;
+}
+
+.fp-info-chip .fp-chip-label {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+  margin-right: 3px;
+}
+
+.fp-info-chip svg {
+  color: rgba(255, 255, 255, 0.5);
+  flex-shrink: 0;
+}
+
+/* ── SECTION HEADING ──────────────────────────── */
+.fp-section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.fp-section-heading-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fp-section-heading h2 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.fp-section-heading span {
+  font-size: 12px;
+  color: var(--text-light);
+  font-weight: 400;
+}
+
+/* ── ID DETAILS CARD ─────────────────────────── */
+.fp-id-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.fp-id-card-header {
+  background: var(--primary-light);
+  padding: 10px 18px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fp-id-card-header h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.fp-id-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 14px 18px;
+  gap: 16px;
+}
+
+.fp-id-field {}
+
+.fp-id-field label {
+  font-size: 11px;
+  color: var(--text-light);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 3px;
+}
+
+.fp-id-field .fp-id-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.fp-id-field .fp-current-year {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green);
+}
+
+.fp-id-field .fp-current-year input {
+  accent-color: var(--green);
+}
+
+/* ── FEES TABLE CARD ─────────────────────────── */
+.fp-fees-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.fp-fees-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+}
+
+.fp-fees-card-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fp-fees-card-header h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.fp-current-badge {
+  background: var(--green-bg);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.fp-fees-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fp-fees-table thead tr {
+  background: #f8f9fe;
+  border-bottom: 1.5px solid var(--border);
+}
+
+.fp-fees-table thead th {
+  padding: 11px 16px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-mid);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-align: left;
+}
+
+.fp-fees-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+
+.fp-fees-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.fp-fees-table tbody tr:hover {
+  background: #fafbff;
+}
+
+.fp-fees-table tbody td {
+  padding: 12px 16px;
+  font-size: 13px;
+  color: var(--text-dark);
+}
+
+.fp-fees-table .fp-sr {
+  width: 50px;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.fp-fees-table .fp-head-name {
+  font-weight: 600;
+}
+
+.fp-fees-table .fp-amount {
+  font-weight: 600;
+  color: var(--text-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+.fp-fees-table .fp-amount.paid {
+  color: var(--green);
+}
+
+.fp-fees-table .fp-date {
+  font-size: 12px;
+  color: var(--text-mid);
+}
+
+/* FOOTER ROW */
+.fp-fees-table tfoot tr {
+  background: var(--primary-light);
+  border-top: 2px solid var(--primary);
+}
+
+.fp-fees-table tfoot td {
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* ── BOTTOM SECTION ──────────────────────────── */
+.fp-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* PAYMENT FORM CARD */
+.fp-payment-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.fp-payment-card-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fp-payment-card-header h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fp-online-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--primary-light);
+  color: var(--primary);
+  border: none;
+  cursor: pointer;
+
+}
+
+.fp-payment-body {
+  padding: 18px 20px;
+}
+
+.fp-payment-mode-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.fp-mode-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-mid);
+  min-width: 80px;
+}
+
+.fp-mode-input-wrap {
+  flex: 1;
+  position: relative;
+}
+
+.fp-mode-input-wrap .fp-rupee {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-mid);
+}
+
+.fp-mode-input-wrap input {
+  width: 100%;
+  height: 40px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0 12px 0 28px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.fp-mode-input-wrap input:focus {
+  border-color: var(--primary);
+}
+
+.fp-payment-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.fp-pay-btn {
+  flex: 1;
+  height: 42px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: background 0.15s, transform 0.12s;
+}
+
+.fp-pay-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.fp-exit-btn {
+  height: 42px;
+  padding: 0 20px;
+  background: var(--white);
+  color: var(--text-mid);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+
+.fp-exit-btn:hover {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+/* NOTES */
+.fp-notes {
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: #fff8f0;
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--orange);
+}
+
+.fp-notes-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+
+.fp-notes ol {
+  padding-left: 16px;
+}
+
+.fp-notes ol li {
+  font-size: 11.5px;
+  color: #92400e;
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+/* SUMMARY CARD */
+.fp-summary-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.fp-summary-card-header {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.fp-summary-card-header h3 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fp-summary-body {
+  padding: 18px 20px;
+}
+
+.fp-summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.fp-summary-row:last-child {
+  border-bottom: none;
+}
+
+.fp-summary-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fp-summary-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.fp-summary-label {
+  font-size: 12.5px;
+  color: var(--text-mid);
+  font-weight: 500;
+}
+
+.fp-summary-value {
+  font-size: 16px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dark);
+}
+
+.fp-summary-value.green {
+  color: var(--green);
+}
+
+.fp-summary-value.red {
+  color: var(--red);
+}
+
+.fp-summary-value.blue {
+  color: var(--primary);
+}
+
+.fp-progress-bar-wrap {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.fp-progress-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11.5px;
+  color: var(--text-mid);
+  font-weight: 500;
+  margin-bottom: 7px;
+}
+
+.fp-progress-track {
+  width: 100%;
+  height: 8px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.fp-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  border-radius: 99px;
+  transition: width 0.5s ease;
+}
+
+
+
+
+// ============================================================
+// MOBILE FIRST — Media Queries
+// ============================================================
+
+// ── MOBILE (≤ 640px) ─────────────────────────────────────────
+@media (max-width: 640px) {
+
+  // ── HEADER ──
+  .fp-header {
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+
+  .fp-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 16px 12px;
+  }
+
+  .fp-school-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .fp-school-name {
+    font-size: 13px;
+  }
+
+  .fp-student-name-header {
+    font-size: 11px;
+  }
+
+  .fp-header-right {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .fp-year-badge {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .fp-page-title {
+    font-size: 11px;
+  }
+
+  // info chips: wrap into 2-col grid
+  .fp-header-bottom {
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 10px 16px 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 8px;
+    column-gap: 0;
+  }
+
+  .fp-info-chip {
+    border-right: none;
+    padding: 2px 8px 2px 0;
+    margin-right: 0;
+    font-size: 11px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    &:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+  }
+
+  // ── ID DETAILS ──
+  .fp-id-card {
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+
+  .fp-id-card-header {
+    padding: 9px 14px;
+
+    h3 {
+      font-size: 12px;
+    }
+  }
+
+  .fp-id-grid {
+    grid-template-columns: 1fr 1fr;
+    padding: 12px 14px;
+    gap: 14px;
+  }
+
+  .fp-id-field label {
+    font-size: 10px;
+  }
+
+  .fp-id-field .fp-id-value,
+  .fp-id-field .fp-current-year {
+    font-size: 12px;
+  }
+
+  // ── FEES TABLE: horizontally scrollable ──
+  .fp-fees-card {
+    border-radius: 12px;
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+
+  .fp-fees-card-header {
+    padding: 11px 14px;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    h3 {
+      font-size: 13px;
+    }
+  }
+
+  // wrap table in a scrollable div
+  // (add class="fp-fees-table-wrap" around <table> in JSX)
+  .fp-fees-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .fp-fees-table {
+    min-width: 560px; // force scroll rather than squish
+
+    thead th {
+      padding: 9px 11px;
+      font-size: 10.5px;
+    }
+
+    tbody td {
+      padding: 10px 11px;
+      font-size: 12px;
+    }
+
+    .fp-date {
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    tfoot td {
+      padding: 10px 11px;
+      font-size: 12px;
+    }
+  }
+
+  // ── BOTTOM GRID: stack vertically ──
+  .fp-bottom {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .fp-summary-card,
+  .fp-payment-card {
+    border-radius: 12px;
+  }
+
+  .fp-summary-card-header,
+  .fp-payment-card-header {
+    padding: 11px 14px;
+
+    h3 {
+      font-size: 13px;
+    }
+  }
+
+  .fp-summary-body,
+  .fp-payment-body {
+    padding: 14px;
+  }
+
+  .fp-summary-row {
+    padding: 11px 0;
+  }
+
+  .fp-summary-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+  }
+
+  .fp-summary-label {
+    font-size: 12px;
+  }
+
+  .fp-summary-value {
+    font-size: 15px;
+  }
+
+  .fp-progress-bar-label {
+    font-size: 11px;
+  }
+
+  // ── PAYMENT FORM ──
+  .fp-payment-mode-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .fp-mode-label {
+    font-size: 12px;
+    min-width: unset;
+  }
+
+  .fp-mode-input-wrap {
+    width: 100%;
+  }
+
+  .fp-mode-input-wrap input {
+    height: 42px;
+    font-size: 15px;
+  }
+
+  .fp-payment-actions {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 14px;
+  }
+
+  .fp-pay-btn,
+  .fp-exit-btn {
+    width: 100%;
+    height: 44px;
+    font-size: 14px;
+    justify-content: center;
+  }
+
+  .fp-notes {
+    margin-top: 14px;
+    padding: 10px 12px;
+  }
+
+  .fp-notes ol li {
+    font-size: 11px;
+  }
+}
+
+// ── TABLET (641px – 1024px) ───────────────────────────────────
+@media (min-width: 641px) and (max-width: 1024px) {
+
+  .fp-header-top {
+    padding: 18px 22px 14px;
+  }
+
+  .fp-header-bottom {
+    flex-wrap: wrap;
+    gap: 8px 0;
+    padding: 10px 22px 12px;
+  }
+
+  .fp-info-chip {
+    font-size: 11px;
+  }
+
+  .fp-id-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 14px 16px;
+  }
+
+  .fp-fees-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .fp-fees-table {
+    min-width: 600px;
+  }
+
+  .fp-bottom {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  // side-by-side on tablet
+  .fp-payment-card,
+  .fp-summary-card {
+    width: 100%;
+  }
+
+  // make bottom 2-col on wider tablets
+  @media (min-width: 820px) {
+    .fp-bottom {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
