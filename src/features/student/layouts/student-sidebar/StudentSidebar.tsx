@@ -20,7 +20,7 @@ const NAV_ITEMS = [
     { id: 'profile', label: 'My Profile', icon: User, badge: null, chevron: false, route: 'profile' },
     { id: 'attendance', label: 'Attendance', icon: CalendarCheck, badge: null, chevron: false, route: 'attendance' },
     { id: 'exams', label: 'Exams', icon: FileText, badge: null, chevron: false, route: 'exams' },
-    { id: 'timetable', label: 'Timetable', icon: Clock, badge: null, chevron: false, route: 'timetable' },
+    { id: 'timetable', label: 'Timetable', icon: Clock, badge: null, chevron: false, route: 'time-tables' },
     { id: 'results', label: 'Results', icon: Clock, badge: null, chevron: false, route: 'results' },
     { id: 'fees', label: 'Fees & Payments', icon: IndianRupee, badge: null, chevron: false, route: 'fees' },
     { id: 'notices', label: 'Notices', icon: Bell, badge: 3, chevron: false, route: 'notices' },

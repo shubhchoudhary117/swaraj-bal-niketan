@@ -7,7 +7,9 @@ import StudentProfile from '../../features/student/pages/student-profile/Student
 import StudentAttedance from '../../features/student/pages/student-attendance/StudentAttedance'
 import NoticeBoard from '../../features/student/pages/notice-board/NoticeBoard'
 import FeesPayment from '../../features/student/pages/fees-payments/FeesPayment'
-import ResultsSection from '../../features/student/pages/StudentResults'
+import ExamsTests from '../../features/student/pages/exams-tests/ExamsTests'
+import StudentResults from '../../features/student/pages/exam-results/StudentResults'
+import Timetables from '../../features/student/pages/time-tables/TimeTables'
 
 const PrivateRoutes = () => {
   const routes = useRoutes([
@@ -37,7 +39,15 @@ const PrivateRoutes = () => {
         },
          {
           path: 'results',
-          element:<ResultsSection/>
+          element:<StudentResults/>
+        },
+        {
+          path: 'exams',
+          element:<ExamsTests/>
+        },
+        {
+          path: 'time-tables',
+          element:<Timetables/>
         }
       ],
     },
