@@ -1,19 +1,13 @@
 import React from 'react'
 import "./StudentProfile.scss"
 import { BadgeCheck, BookOpen, Calendar, Camera, Edit2, GraduationCap, Phone, ShieldCheck, Users } from 'lucide-react'
+import Breadcrumb from '../../../../shared/common/breadcrumb/Breadcrumb'
 
 const StudentProfile = () => {
   return <>
     <section className="stu-profile">
       <main className="stu-profile__container">
-        <div className="stu-profile__header">
-          <div className="stu-profile__header-left">
-            <div className="stu-profile__header-title">My Profile</div>
-          </div>
-          <div className="stu-profile__header-right">
-            <button className="stu-profile__edit-profile-btn"><Edit2 className='icon' />Edit Profile</button>
-          </div>
-        </div>
+        <Breadcrumb title='My Profile' pageName='My Profile' />
         <div className="stu-profile__row">
           <div className="stu-profile__stu-info-box">
             <div className="stu-profile__stu-avtar-section">

@@ -5,49 +5,10 @@
         width: 100%;
     }
 
-    &__header {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    &__header-left {
-        display: flex;
-        align-items: center;
-    }
-
-    &__header-title {
-        font-size: 24px;
-        font-weight: 700;
-        color: var(--primary-color);
-    }
-
-    &__edit-profile-btn {
-        width: 120px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: var(--primary-color);
-        color: #fff;
-        font-size: 14px;
-        border-radius: 5px;
-        border: none;
-        outline: none;
-        cursor: pointer;
-
-        .icon {
-            width: 13px;
-            height: 13px;
-            margin-right: 5px;
-            color: #fff;
-        }
-    }
-
     &__row {
         width: 100%;
         display: flex;
-        margin-top: 20px;
+        margin-top: 10px;
         gap: 10px;
     }
 
@@ -63,7 +24,7 @@
 
     &__stu-avtar-section {
         width: 200px;
-        background: linear-gradient(180deg, #f4f2ff 0%, #f8f8ff 100%);
+        background: linear-gradient(180deg, #cfc8f5ca 0%, #d4d4f8ab 100%);
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -302,7 +263,7 @@
         color: #111827;
 
         &.guardian {
-            background: #f5f6fe;
+            background: #cdd3faa8;
         }
 
         &.academic {

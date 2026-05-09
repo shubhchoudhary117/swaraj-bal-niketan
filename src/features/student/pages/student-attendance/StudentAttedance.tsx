@@ -10,6 +10,7 @@ import {
   ChevronRight,
   Calendar,
 } from "lucide-react";
+import Breadcrumb from "../../../../shared/common/breadcrumb/Breadcrumb";
 
 const CALENDAR_DAYS = [
   { date: 29, other: true },
@@ -174,22 +175,7 @@ export default function StudentAttendance() {
 
   return (
     <section className="student-attendance">
-      <div className="student-attendance__header">
-        <h1 className="student-attendance__title">Attendance</h1>
-
-        <div className="student-attendance__breadcrumb">
-          <a href="#">Dashboard</a>
-
-          <ChevronRight
-            size={13}
-            className="student-attendance__breadcrumb-separator"
-          />
-
-          <span className="student-attendance__breadcrumb-active">
-            Attendance
-          </span>
-        </div>
-      </div>
+     <Breadcrumb title="Attendance" pageName="Attendance" />
 
       {/* ======================================
             STATS

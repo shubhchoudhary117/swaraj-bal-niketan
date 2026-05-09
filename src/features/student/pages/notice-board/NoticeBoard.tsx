@@ -12,6 +12,7 @@ import {
   Clock,
   Pin,
 } from "lucide-react";
+import Breadcrumb from "../../../../shared/common/breadcrumb/Breadcrumb";
 
 
 const SCHOOL_NOTICES = [
@@ -149,14 +150,7 @@ export default function NoticeBoard() {
   return (
     <>
       <div className="nb-page">
-        <div className="nb__header">
-          <h1 className="nb__title">Notice Board</h1>
-          <div className="nb__breadcrumb">
-            <a href="#">Dashboard</a>
-            <ChevronRight size={13} />
-            <span>Notice Board</span>
-          </div>
-        </div>
+        <Breadcrumb title="Notice Board" pageName="Notice Board" />
 
         <div className="nb__tabs">
           <button

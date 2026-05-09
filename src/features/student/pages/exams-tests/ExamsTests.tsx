@@ -17,6 +17,7 @@ import {
   SlidersHorizontal,
   Home,
 } from "lucide-react";
+import Breadcrumb from "../../../../shared/common/breadcrumb/Breadcrumb";
 
 
 
@@ -90,13 +91,7 @@ export default function ExamsTests() {
   return (
     <>
       <main className="exams-page">
-        <nav className="breadcrumb" aria-label="breadcrumb">
-          <span className="breadcrumb__item"><Home size={13} /> Home</span>
-          <span className="breadcrumb__separator"><ChevronRight size={13} /></span>
-          <span className="breadcrumb__item breadcrumb__item--active">Exams &amp; Tests</span>
-        </nav>
-
-        <h1 className="exams-page__title">Exams &amp; Tests</h1>
+        <Breadcrumb title="Exams & Tests" pageName="exams & tests"/>
 
         <div className="stats">
           <div className="stats__card">

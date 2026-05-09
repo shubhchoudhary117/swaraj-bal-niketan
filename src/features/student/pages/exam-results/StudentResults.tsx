@@ -19,6 +19,7 @@ import {
   Filter,
   RotateCcw,
 } from "lucide-react";
+import Breadcrumb from "../../../../shared/common/breadcrumb/Breadcrumb";
 
 
 const subjects = [
@@ -51,20 +52,8 @@ export default function StudentResults() {
   return (
     <>
       <div className="exam-results">
-
-        {/* Breadcrumb */}
-        <nav className="breadcrumb">
-          <span className="breadcrumb__item">Dashboard</span>
-          <span className="breadcrumb__separator">›</span>
-          <span className="breadcrumb__active">Exam Results</span>
-        </nav>
-
-        <h1 className="exam-results__heading">Exam Results</h1>
-
-        {/* ── FILTER BAR ── */}
+        <Breadcrumb title="Exam Results" pageName="Exam Results"/>
         <div className="exam-results__filters">
-
-          {/* Mobile: header row — Filters title + Reset btn */}
           <div className="filter-bar__header">
             <span className="filter-bar__header-title">
               <Filter size={16} /> Filters

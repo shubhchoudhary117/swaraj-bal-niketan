@@ -19,20 +19,24 @@ const StudentHeader: React.FC<StudentHeaderProps> = ({
   userAvatar = 'https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=80&h=80&fit=crop&q=80',
 }) => {
   const [query, setQuery] = useState('');
+  const isMobile = window.matchMedia("(max-width:768px)").matches;
 
   return (
     <header className="stu-header">
-      <div className="stu-header__left">
-        <button
-          className="stu-header__menu-btn"
-          onClick={onMenuToggle}
-          aria-label="Toggle sidebar">
-          <Menu strokeWidth={1.8} />
-        </button>
-        <div className="stu-header__logo">
-          <img src="/assets/comman/school-logo.png" alt="" className="stu-header__logo-img" />
+      {
+        isMobile &&
+        <div className="stu-header__left">
+          <button
+            className="stu-header__menu-btn"
+            onClick={onMenuToggle}
+            aria-label="Toggle sidebar">
+            <Menu strokeWidth={1.8} />
+          </button>
+          <div className="stu-header__logo">
+            <img src="/assets/comman/school-logo.png" alt="" className="stu-header__logo-img" />
+          </div>
         </div>
-      </div>
+      }
 
       {/* ================= RIGHT ================= */}
       <div className="stu-header__right">
@@ -80,6 +84,6 @@ const StudentHeader: React.FC<StudentHeaderProps> = ({
   );
 };
 
-<StudentSidebar/>
+<StudentSidebar />
 
 export default StudentHeader;

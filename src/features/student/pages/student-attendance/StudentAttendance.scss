@@ -34,62 +34,20 @@
   font-family: var(--font);
   color: var(--text-dark);
 
-  /* =========================================
-      HEADER
-  ========================================= */
 
-  &__header {
-    margin-bottom: 22px;
-  }
-
-  &__title {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--text-dark);
-    margin-bottom: 4px;
-  }
-
-  &__breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 12.5px;
-    color: var(--text-mid);
-
-    a {
-      text-decoration: none;
-      color: var(--text-mid);
-
-      &:hover {
-        color: var(--primary);
-      }
-    }
-  }
-
-  &__breadcrumb-separator {
-    color: var(--text-light);
-  }
-
-  &__breadcrumb-active {
-    color: var(--text-dark);
-    font-weight: 500;
-  }
-
-  /* =========================================
-      STATS
-  ========================================= */
 
   &__stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 16px;
-    margin-bottom: 22px;
+    margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   &__stat-card {
     background: var(--white);
     border-radius: var(--radius);
-    padding: 20px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     gap: 16px;
@@ -104,8 +62,8 @@
   }
 
   &__stat-icon {
-    width: 52px;
-    height: 52px;
+    width: 45px;
+    height: 45px;
     border-radius: 14px;
     display: flex;
     align-items: center;
@@ -146,7 +104,7 @@
   }
 
   &__stat-value {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 700;
     color: var(--text-dark);
     line-height: 1.1;

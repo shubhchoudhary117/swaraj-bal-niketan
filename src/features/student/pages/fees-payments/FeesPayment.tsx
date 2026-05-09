@@ -14,6 +14,7 @@ import {
   X,
   Info,
 } from "lucide-react";
+import Breadcrumb from "../../../../shared/common/breadcrumb/Breadcrumb";
 
 
 /* ─── DUMMY DATA ─────────────────────────────── */
@@ -58,6 +59,7 @@ export default function FeesPayment() {
     <>
 
       <div className="fp-page">
+        <Breadcrumb title="Fees" pageName="Fees"/>
 
         {/* ── HEADER ────────────────────────────── */}
         <div className="fp-header">

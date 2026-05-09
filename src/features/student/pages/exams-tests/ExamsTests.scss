@@ -4,46 +4,7 @@
      background: #f5f6fa;
  }
 
- .breadcrumb {
-     display: flex;
-     align-items: center;
-     gap: 6px;
-     margin-bottom: 6px;
-     font-size: 13px;
- }
 
- .breadcrumb__item {
-     color: #888;
-     cursor: pointer;
-     display: flex;
-     align-items: center;
-     gap: 4px;
-     transition: color 0.2s;
- }
-
- .breadcrumb__item:hover {
-     color: #4f46e5;
- }
-
- .breadcrumb__item--active {
-     color: #4f46e5;
-     font-weight: 500;
-     cursor: default;
- }
-
- .breadcrumb__separator {
-     color: #ccc;
-     display: flex;
-     align-items: center;
- }
-
- /* ─── PAGE TITLE ─────────────────────────────────── */
- .exams-page__title {
-     font-size: 26px;
-     font-weight: 700;
-     color: #1a1a2e;
-     margin-bottom: 10px;
- }
 
  /* ─── STATS ──────────────────────────────────────── */
  .stats {
@@ -51,12 +12,13 @@
      grid-template-columns: repeat(4, 1fr);
      gap: 18px;
      margin-bottom: 15px;
+      margin-top: 10px;
  }
 
  .stats__card {
      background: #fff;
      border-radius: 14px;
-     padding: 10px 22px;
+     padding: 5px 22px;
      display: flex;
      align-items: center;
      gap: 16px;
@@ -106,7 +68,7 @@
  }
 
  .stats__value {
-     font-size: 28px;
+     font-size: 25px;
      font-weight: 700;
      color: #1a1a2e;
      line-height: 1;

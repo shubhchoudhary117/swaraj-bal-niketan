@@ -25,9 +25,9 @@
 
 .fp-page {
   min-height: 100vh;
-
   color: var(--text-dark);
 }
+
 
 /* ── HEADER CARD ─────────────────────────────── */
 .fp-header {
@@ -38,6 +38,7 @@
   box-shadow: var(--shadow-lg);
   overflow: hidden;
   position: relative;
+   margin-top: 10px;
 }
 
 .fp-header::before {
