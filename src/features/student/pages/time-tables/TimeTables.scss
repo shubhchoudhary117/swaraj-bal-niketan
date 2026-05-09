@@ -387,7 +387,9 @@
 }
 
 @media (max-width: 600px) {
-  .timetable-page { padding: 14px 10px; }
+  .timetable-page { 
+    width: 100%;
+  }
 
   .page-header {
     flex-direction: column;
