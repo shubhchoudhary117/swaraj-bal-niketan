@@ -360,11 +360,6 @@
 
 
 
-// ============================================================
-// MOBILE FIRST — Media Queries
-// ============================================================
-
-// ── MOBILE  (≤ 640px) ────────────────────────────────────────
 @media (max-width: 640px) {
   .stu-profile {
     &__header {
@@ -439,7 +434,6 @@
     }
 
     &__detail-item {
-      grid-template-columns: 1fr;
       gap: 2px;
       margin-bottom: 12px;
 
@@ -450,7 +444,7 @@
       }
 
       strong {
-        font-size: 13px;
+        font-size: 12px;
       }
     }
 

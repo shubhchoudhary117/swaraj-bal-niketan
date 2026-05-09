@@ -14,13 +14,11 @@ import {
 } from "lucide-react";
 
 
-/* ─── DATA ─────────────────────────────────── */
-
 const SCHOOL_NOTICES = [
   {
     id: 1,
     title: "Independence Day Celebration – Attendance Mandatory",
-    desc: "School will celebrate Independence Day on 15th August at 8:00 AM in the main ground. All students and staff must attend. Please wear school uniform.",
+    desc: "School will celebrate Independence Day on 14th August at 8:00 AM in the main ground. All students and staff must attend. Please wear school uniform.",
     date: "12 Aug 2024",
     tag: "event",
     icon: Megaphone,
@@ -142,7 +140,6 @@ const CLASS_NOTICES = [
   },
 ];
 
-/* ─── MAIN COMPONENT ─────────────────────────── */
 
 export default function NoticeBoard() {
   const [activeTab, setActiveTab] = useState("school");
@@ -161,13 +158,12 @@ export default function NoticeBoard() {
           </div>
         </div>
 
-        {/* TABS */}
         <div className="nb__tabs">
           <button
             className={`nb__tab${activeTab === "school" ? " active" : ""}`}
             onClick={() => setActiveTab("school")}
           >
-            <School size={15} />
+            <School size={14} />
             School Notices
             <span className="nb__tab-count">5</span>
           </button>
@@ -175,13 +171,12 @@ export default function NoticeBoard() {
             className={`nb__tab${activeTab === "class" ? " active" : ""}`}
             onClick={() => setActiveTab("class")}
           >
-            <BookOpen size={15} />
+            <BookOpen size={14} />
             Class Notices
             <span className="nb__tab-count">5</span>
           </button>
         </div>
 
-        {/* NOTICE LIST */}
         <div className="nb__list">
           {notices.map(notice => {
             const Icon = notice.icon;
