@@ -94,6 +94,10 @@
 
 .filter-select__control-text {
     flex: 1;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .filter-select__control-chevron {
