@@ -1,0 +1,124 @@
+.tech-layout {
+  width: 100%;
+
+  &__container {
+    width: 100%;
+    display: flex;
+  }
+
+  &__left {
+    width: 260px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1200;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 4px;
+    }
+  }
+
+  &__right {
+    width: calc(100% - 260px);
+    margin-left: 260px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__header {
+    width: calc(100% - 260px);
+    height: 70px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background: #fff;
+    z-index: 1000;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+
+  &__outlet {
+    width: 100%;
+    padding: 16px;
+    margin-top: 70px;
+    flex: 1;
+    background: #f5f6fa;
+  }
+
+  &__overlay {
+    display: none;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media screen and (max-width:768px) {
+
+  .tech-layout {
+
+    &__container {
+      width: 100%;
+      display: block;
+    }
+
+    /* SIDEBAR */
+    &__left {
+      width: 280px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100vh;
+
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+
+      z-index: 1400;
+    }
+
+    /* OPEN STATE */
+    &__left--open {
+      transform: translateX(0%);
+    }
+
+    /* OVERLAY */
+    &__overlay {
+      display: block;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1300;
+      backdrop-filter: blur(2px);
+    }
+
+    &__right {
+      width: 100%;
+      margin-left: 0;
+      min-height: 100vh;
+    }
+
+    &__header {
+      width: 100%;
+      height: 70px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1200;
+    }
+
+    &__outlet {
+      width: 100%;
+      padding: 10px;
+      margin-top: 70px;
+    }
+  }
+}

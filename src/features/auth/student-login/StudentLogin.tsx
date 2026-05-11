@@ -13,11 +13,11 @@ const StudentLogin = () => {
 
   const [errors, setErrors] = useState<any>({});
   const [showPassword, setShowPassword] = useState(false);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e: any) => {
     setForm({ ...form, [e.target.name]: e.target.value });
-    setErrors({ ...errors, [e.target.name]: "" }); 
+    setErrors({ ...errors, [e.target.name]: "" });
   };
 
   const validate = () => {
@@ -39,8 +39,12 @@ const StudentLogin = () => {
 
   const handleSubmit = () => {
     if (validate()) {
-      navigate("/study-v1")
-      console.log("Login Data:", form);
+      if (form.studentId == "teacher") {
+        navigate("/teach-v1")
+      } else {
+        navigate("/study-v1")
+        console.log("Login Data:", form);
+      }
     }
   };
 
