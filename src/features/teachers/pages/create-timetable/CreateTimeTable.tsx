@@ -18,7 +18,7 @@ import {
   Check,
   BookOpen,
 } from "lucide-react";
-import "./CreateTimetable.scss";
+import "./CreateTimeTable.scss";
 
 // ─── Types ─────────────────────────────────────────────────
 type TabType = "exam" | "test";
