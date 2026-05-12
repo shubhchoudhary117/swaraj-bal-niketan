@@ -1,0 +1,871 @@
+// ── Design Tokens (matching Sunrise Public School system) ─────────────────
+$primary:        #6c63ff;
+$primary-dark:   #5a52e0;
+$primary-light:  #eef2ff;
+$primary-border: #c7d2fe;
+$green:          #22c55e;
+$green-light:    rgba(34, 197, 94, .1);
+$orange:         #f97316;
+$orange-light:   rgba(249, 115, 22, .1);
+$rose:           #f43f5e;
+$rose-light:     rgba(244, 63, 94, .1);
+$blue:           #3b82f6;
+$blue-light:     rgba(59, 130, 246, .1);
+$amber:          #f59e0b;
+$amber-light:    rgba(245, 158, 11, .1);
+$purple:         #a855f7;
+$purple-light:   rgba(168, 85, 247, .1);
+
+$bg:             #f4f6fb;
+$white:          #ffffff;
+$text-dark:      #1e1e2f;
+$text-mid:       #4b5575;
+$text-light:     #8a94b0;
+$border:         #e4e8f2;
+
+$radius-sm:      6px;
+$radius-md:      10px;
+$radius-lg:      14px;
+$radius-xl:      18px;
+$shadow:         0 2px 12px rgba(108, 99, 255, .08);
+$shadow-md:      0 4px 20px rgba(108, 99, 255, .12);
+$shadow-btn:     0 4px 14px rgba(108, 99, 255, .35);
+$font:           'Poppins', sans-serif;
+$t:              .18s ease;
+
+// ── Animations ─────────────────────────────────────────────────────────────
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%       { transform: scale(1.4); opacity: .6; }
+}
+
+// ── Page ───────────────────────────────────────────────────────────────────
+.cn {
+  width: 100%;
+  max-width: 100%;
+  font-family: $font;
+  padding-bottom: 40px;
+
+  &__header {
+    margin-bottom: 28px;
+    animation: fadeSlideUp .4s ease both;
+  }
+
+  &__header-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  &__title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $text-dark;
+    letter-spacing: -.3px;
+  }
+
+  &__breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: .76rem;
+    color: $text-light;
+    margin-top: 5px;
+    flex-wrap: wrap;
+
+    span { color: $text-mid; }
+    a    { color: $text-mid; text-decoration: none; &:hover { color: $primary; } }
+    svg  { width: 12px; height: 12px; flex-shrink: 0; }
+  }
+
+  // Live preview toggle badge
+  &__preview-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: $white;
+    border: 1px solid $border;
+    border-radius: $radius-md;
+    padding: 8px 16px;
+    font-family: $font;
+    font-size: .82rem;
+    font-weight: 600;
+    color: $text-mid;
+    cursor: pointer;
+    transition: border-color $t, color $t, background $t;
+
+    svg { width: 15px; height: 15px; }
+
+    &:hover, &--active {
+      border-color: $primary;
+      color: $primary;
+      background: $primary-light;
+    }
+  }
+
+  // ── Two-column layout ────────────────────────────────────────────────────
+  &__layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 22px;
+    animation: fadeSlideUp .45s .08s ease both;
+  }
+
+  // ── Card (shared) ────────────────────────────────────────────────────────
+  &__card {
+    background: $white;
+    border: 1px solid $border;
+    border-radius: $radius-xl;
+    box-shadow: $shadow;
+    overflow: hidden;
+  }
+
+  &__card-head {
+    padding: 18px 24px 14px;
+    border-bottom: 1px solid $border;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: $radius-md;
+      background: $primary-light;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      svg { width: 16px; height: 16px; color: $primary; }
+    }
+
+    &-title {
+      font-size: .95rem;
+      font-weight: 700;
+      color: $text-dark;
+    }
+
+    &-sub {
+      font-size: .73rem;
+      color: $text-light;
+      margin-top: 1px;
+    }
+  }
+
+  &__card-body {
+    padding: 22px 24px;
+  }
+
+  // ── Form grid ────────────────────────────────────────────────────────────
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  &__row {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 18px;
+
+    &--1 { grid-template-columns: 1fr; }
+    &--2 { grid-template-columns: 1fr 1fr; }
+    &--3 { grid-template-columns: 1fr 1fr 1fr; }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  &__label {
+    font-size: .72rem;
+    font-weight: 600;
+    color: $text-mid;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    &--required::after { content: ' *'; color: $rose; }
+
+    svg { width: 12px; height: 12px; color: $text-light; }
+  }
+
+  // shared input/select/textarea styles
+  %input-base {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: $font;
+    font-size: .86rem;
+    color: $text-dark;
+    background: $white;
+    border: 1.5px solid $border;
+    border-radius: $radius-md;
+    padding: 11px 14px;
+    transition: border-color $t, box-shadow $t, background $t;
+    outline: none;
+
+    &::placeholder { color: $text-light; }
+
+    &:focus {
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba(108, 99, 255, .12);
+      background: #fdfcff;
+    }
+  }
+
+  &__input    { @extend %input-base; }
+  &__select   { @extend %input-base; appearance: none; cursor: pointer; padding-right: 36px; }
+  &__textarea {
+    @extend %input-base;
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.6;
+  }
+
+  // Select wrapper
+  &__select-wrap {
+    position: relative;
+    svg.cn__chevron {
+      position: absolute;
+      right: 11px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 14px;
+      height: 14px;
+      color: $text-light;
+      pointer-events: none;
+    }
+  }
+
+  // Character counter
+  &__char-count {
+    font-size: .68rem;
+    color: $text-light;
+    text-align: right;
+    margin-top: -2px;
+
+    &--warn  { color: $orange; }
+    &--limit { color: $rose; }
+  }
+
+  // ── Category pills ───────────────────────────────────────────────────────
+  &__category-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 2px;
+  }
+
+  &__cat-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 20px;
+    border: 1.5px solid $border;
+    font-family: $font;
+    font-size: .78rem;
+    font-weight: 600;
+    color: $text-mid;
+    background: $white;
+    cursor: pointer;
+    transition: all $t;
+
+    svg { width: 13px; height: 13px; }
+
+    &:hover { border-color: $primary; color: $primary; background: $primary-light; }
+
+    &--active {
+      color: $white !important;
+      border-color: transparent !important;
+    }
+
+    &[data-cat="event"]   { &.cn__cat-pill--active { background: $primary; } &:hover:not(.cn__cat-pill--active) { border-color: $primary; color: $primary; } }
+    &[data-cat="fee"]     { &.cn__cat-pill--active { background: $orange; } &:hover:not(.cn__cat-pill--active) { border-color: $orange; color: $orange; background: $orange-light; } }
+    &[data-cat="exam"]    { &.cn__cat-pill--active { background: $rose; } &:hover:not(.cn__cat-pill--active) { border-color: $rose; color: $rose; background: $rose-light; } }
+    &[data-cat="general"] { &.cn__cat-pill--active { background: $blue; } &:hover:not(.cn__cat-pill--active) { border-color: $blue; color: $blue; background: $blue-light; } }
+    &[data-cat="holiday"] { &.cn__cat-pill--active { background: $green; } &:hover:not(.cn__cat-pill--active) { border-color: $green; color: $green; background: $green-light; } }
+    &[data-cat="sports"]  { &.cn__cat-pill--active { background: $purple; } &:hover:not(.cn__cat-pill--active) { border-color: $purple; color: $purple; background: $purple-light; } }
+  }
+
+  // ── Target audience chips ────────────────────────────────────────────────
+  &__audience-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  &__audience-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: $radius-md;
+    border: 1.5px solid $border;
+    font-family: $font;
+    font-size: .78rem;
+    font-weight: 600;
+    color: $text-mid;
+    background: $white;
+    cursor: pointer;
+    transition: all $t;
+
+    svg { width: 13px; height: 13px; }
+
+    &:hover { border-color: $primary; color: $primary; background: $primary-light; }
+
+    &--active {
+      background: $primary-light;
+      border-color: $primary;
+      color: $primary;
+    }
+  }
+
+  // ── Priority selector ────────────────────────────────────────────────────
+  &__priority-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  &__priority-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    padding: 12px 8px;
+    border-radius: $radius-md;
+    border: 1.5px solid $border;
+    font-family: $font;
+    font-size: .75rem;
+    font-weight: 600;
+    color: $text-mid;
+    background: $white;
+    cursor: pointer;
+    transition: all $t;
+    text-align: center;
+
+    svg { width: 16px; height: 16px; }
+
+    &--low    { &.cn__priority-card--active { background: $green-light; border-color: $green; color: $green; } }
+    &--medium { &.cn__priority-card--active { background: $amber-light; border-color: $amber; color: $amber; } }
+    &--high   { &.cn__priority-card--active { background: $rose-light;  border-color: $rose;  color: $rose;  } }
+
+    &:hover:not(&--active) {
+      border-color: $primary;
+      background: $primary-light;
+      color: $primary;
+    }
+  }
+
+  // ── Toggle switches ──────────────────────────────────────────────────────
+  &__toggles {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 16px;
+    background: $bg;
+    border-radius: $radius-md;
+    border: 1px solid $border;
+    gap: 12px;
+
+    &-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      svg { width: 15px; height: 15px; }
+    }
+
+    &-label  { font-size: .82rem; font-weight: 600; color: $text-dark; }
+    &-sub    { font-size: .7rem; color: $text-light; margin-top: 1px; }
+  }
+
+  // Switch component
+  &__switch {
+    position: relative;
+    width: 42px;
+    height: 24px;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+
+    &-track {
+      position: absolute;
+      inset: 0;
+      background: $border;
+      border-radius: 12px;
+      transition: background $t;
+    }
+
+    &-thumb {
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      background: $white;
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0,0,0,.2);
+      transition: transform $t;
+    }
+
+    input:checked ~ &-track { background: $primary; }
+    input:checked ~ &-thumb { transform: translateX(18px); }
+  }
+
+  // ── Attachment uploader ──────────────────────────────────────────────────
+  &__upload {
+    border: 2px dashed $border;
+    border-radius: $radius-lg;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color $t, background $t;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    &:hover {
+      border-color: $primary;
+      background: $primary-light;
+
+      .cn__upload-icon { color: $primary; }
+    }
+
+    &-icon {
+      width: 40px;
+      height: 40px;
+      background: $bg;
+      border-radius: $radius-md;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $text-light;
+      transition: color $t;
+      svg { width: 20px; height: 20px; }
+    }
+
+    &-title { font-size: .84rem; font-weight: 600; color: $text-dark; }
+    &-sub   { font-size: .72rem; color: $text-light; }
+    &-types {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 4px;
+
+      span {
+        background: $bg;
+        border: 1px solid $border;
+        border-radius: 4px;
+        padding: 2px 8px;
+        font-size: .66rem;
+        font-weight: 600;
+        color: $text-mid;
+        text-transform: uppercase;
+        letter-spacing: .4px;
+      }
+    }
+  }
+
+  // ── Live Preview card ────────────────────────────────────────────────────
+  &__preview {
+    position: sticky;
+    top: 24px;
+  }
+
+  &__preview-notice {
+    padding: 18px 20px;
+    border-radius: $radius-lg;
+    border: 1px solid $border;
+    background: $white;
+    position: relative;
+    transition: all $t;
+
+    // coloured left accent line
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 14px; bottom: 14px;
+      width: 3px;
+      border-radius: 0 3px 3px 0;
+      background: $primary;
+    }
+
+    &--pinned { border-color: rgba(245,158,11,.4); background: rgba(245,158,11,.03); &::before { background: $amber; } }
+    &--high   { border-color: rgba(244,63,94,.35); background: rgba(244,63,94,.03);  &::before { background: $rose; } }
+
+    &-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+
+    &-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: $primary-light;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      svg { width: 17px; height: 17px; color: $primary; }
+    }
+
+    &-pin {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: .72rem;
+      font-weight: 600;
+      color: $amber;
+      svg { width: 12px; height: 12px; }
+    }
+
+    &-title {
+      font-size: .9rem;
+      font-weight: 700;
+      color: $text-dark;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+
+    &-body {
+      font-size: .78rem;
+      color: $text-mid;
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    &-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    &-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: .7rem;
+      font-weight: 600;
+      svg { width: 10px; height: 10px; }
+
+      &--event   { background: $primary-light; color: $primary; }
+      &--fee     { background: $orange-light;  color: $orange; }
+      &--exam    { background: $rose-light;    color: $rose; }
+      &--general { background: $blue-light;    color: $blue; }
+      &--holiday { background: $green-light;   color: $green; }
+      &--sports  { background: $purple-light;  color: $purple; }
+    }
+
+    &-date {
+      font-size: .72rem;
+      color: $text-light;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      svg { width: 12px; height: 12px; }
+    }
+  }
+
+  &__preview-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 20px;
+    gap: 10px;
+    text-align: center;
+
+    &-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: $radius-lg;
+      background: $bg;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      svg { width: 24px; height: 24px; color: $text-light; }
+    }
+
+    p { font-size: .8rem; color: $text-light; line-height: 1.5; }
+  }
+
+  // ── Target audience preview ──────────────────────────────────────────────
+  &__preview-audience {
+    margin-top: 14px;
+    padding: 12px 16px;
+    background: $bg;
+    border-radius: $radius-md;
+    border: 1px solid $border;
+
+    &-label { font-size: .68rem; font-weight: 700; color: $text-light; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+
+    &-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    &-chip {
+      font-size: .7rem;
+      font-weight: 600;
+      color: $primary;
+      background: $primary-light;
+      border-radius: 20px;
+      padding: 3px 10px;
+    }
+  }
+
+  // ── Stats bar (notice summary) ───────────────────────────────────────────
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  &__stat {
+    background: $bg;
+    border-radius: $radius-md;
+    border: 1px solid $border;
+    padding: 12px 14px;
+    text-align: center;
+
+    &-val {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: $text-dark;
+      display: block;
+    }
+
+    &-lbl {
+      font-size: .68rem;
+      color: $text-light;
+      margin-top: 1px;
+    }
+  }
+
+  // ── Action buttons ───────────────────────────────────────────────────────
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 24px;
+    border-top: 1px solid $border;
+    background: #fafbff;
+    justify-content: flex-end;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 11px 22px;
+    border-radius: $radius-md;
+    font-family: $font;
+    font-size: .86rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: transform $t, opacity $t, box-shadow $t;
+    white-space: nowrap;
+
+    svg { width: 15px; height: 15px; }
+    &:active { transform: scale(.97); }
+
+    &--ghost {
+      background: $white;
+      color: $text-mid;
+      border: 1.5px solid $border;
+      &:hover { border-color: $primary; color: $primary; }
+    }
+
+    &--draft {
+      background: $white;
+      color: $primary;
+      border: 1.5px solid $primary-border;
+      &:hover { background: $primary-light; }
+    }
+
+    &--schedule {
+      background: $amber-light;
+      color: darken($amber, 10%);
+      border: 1.5px solid rgba(245,158,11,.3);
+      &:hover { opacity: .85; }
+    }
+
+    &--publish {
+      background: $primary;
+      color: $white;
+      box-shadow: $shadow-btn;
+      &:hover { opacity: .9; }
+    }
+  }
+
+  // ── Success toast ────────────────────────────────────────────────────────
+  &__toast {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 999;
+    background: $text-dark;
+    color: $white;
+    border-radius: $radius-lg;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .84rem;
+    font-weight: 500;
+    box-shadow: 0 8px 30px rgba(30,30,47,.25);
+    animation: fadeSlideUp .3s ease;
+
+    svg { width: 18px; height: 18px; color: $green; flex-shrink: 0; }
+
+    &--hide { animation: none; opacity: 0; pointer-events: none; }
+  }
+
+  // ── Divider ──────────────────────────────────────────────────────────────
+  &__divider {
+    height: 1px;
+    background: $border;
+    margin: 6px 0 18px;
+  }
+
+  &__section-label {
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    color: $text-light;
+    margin-bottom: 10px;
+  }
+
+
+  // ════════════════════════════════════════════════════════════════════════
+  // TABLET (≤ 1024px)
+  // ════════════════════════════════════════════════════════════════════════
+  @media (max-width: 1024px) {
+    &__layout {
+      grid-template-columns: 1fr;
+    }
+
+    &__preview {
+      position: static;
+      order: -1; // show preview at top on tablet
+    }
+  }
+
+  // ════════════════════════════════════════════════════════════════════════
+  // MOBILE (≤ 600px)
+  // ════════════════════════════════════════════════════════════════════════
+  @media (max-width: 600px) {
+    padding-bottom: 90px; 
+
+    &__header {
+      margin-bottom: 16px;
+    }
+
+    &__header-top {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    &__title { font-size: 1.25rem; }
+
+    &__preview-toggle { padding: 7px 12px; font-size: .76rem; }
+
+    // Single column rows on mobile
+    &__row--2,
+    &__row--3 {
+      grid-template-columns: 1fr;
+    }
+
+    &__card-body { padding: 16px; }
+    &__card-head { padding: 14px 16px 12px; }
+
+    &__priority-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+    &__priority-card { padding: 10px 6px; font-size: .7rem; }
+
+    &__cat-pill   { font-size: .74rem; padding: 6px 12px; }
+    &__audience-chip { font-size: .74rem; padding: 6px 12px; }
+
+    &__upload { padding: 18px 14px; }
+
+    // stats 3-col still fine on mobile
+    &__stat-val { font-size: 1.1rem; }
+
+    // Sticky action bar on mobile
+    &__actions {
+      z-index: 200;
+      padding: 0;
+      flex-direction: column;
+      gap: 0;
+      border-radius: 0;
+      background: $white;
+      box-shadow: 0 -4px 16px rgba(30,30,47,.1);
+      border-top: 1px solid $border;
+    }
+
+    &__actions-row {
+      display: flex;
+      width: 100%;
+    }
+
+    &__btn {
+      border-radius: 0;
+      justify-content: center;
+      font-size: .82rem;
+
+      &--ghost    { flex: 1; padding: 13px 8px; border: none; border-right: 1px solid $border; border-bottom: 1px solid $border; }
+      &--draft    { flex: 1; padding: 13px 8px; border: none; border-right: 1px solid rgba(108,99,255,.2); border-bottom: 1px solid rgba(108,99,255,.2); background: $primary-light; }
+      &--schedule { display: none; } // hide schedule on mobile — too crowded
+      &--publish  { width: 100%; padding: 14px 8px; border-radius: 0; box-shadow: none; font-size: .88rem; }
+    }
+
+    &__toast { bottom: 96px; right: 16px; left: 16px; }
+  }
+}

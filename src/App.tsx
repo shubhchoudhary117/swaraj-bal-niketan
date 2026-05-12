@@ -3,6 +3,7 @@ import { BrowserRouter, Routes } from 'react-router-dom'
 import PublicRoutes from './routes/public/PublicRoutes'
 import ScrollToTop from './shared/common/ScrollTop/ScrollTop'
 import PrivateRoutes from './routes/private/PrivateRoutes'
+import TeacherRoutes from './routes/private/TeacherRoutes'
 
 const App = () => {
 
@@ -29,6 +30,7 @@ const App = () => {
       <ScrollToTop />
       <PublicRoutes />
       <PrivateRoutes />
+      <TeacherRoutes/>
     </BrowserRouter>
   </>
 }

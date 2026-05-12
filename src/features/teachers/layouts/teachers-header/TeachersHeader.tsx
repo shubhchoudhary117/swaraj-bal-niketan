@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './StudentHeader.scss';
+import './TeachersHeader.scss';
 import { Menu, Search, Bell, ChevronDown } from 'lucide-react';
-import StudentSidebar from '../student-sidebar/StudentSidebar';
+import TeachersSidebar from '../teachers-sidebar/TeachersSidebar';
 
 interface StudentHeaderProps {
   onMenuToggle?: () => void;
@@ -11,7 +11,7 @@ interface StudentHeaderProps {
   userAvatar?: string;
 }
 
-const StudentHeader: React.FC<StudentHeaderProps> = ({
+const TeachersHeader: React.FC<StudentHeaderProps> = ({
   onMenuToggle,
   notifCount = 3,
   userName = 'Ananya Sharma',
@@ -22,19 +22,19 @@ const StudentHeader: React.FC<StudentHeaderProps> = ({
   const isMobile = window.matchMedia("(max-width:768px)").matches;
 
   return (
-    <header className="stu-header">
+    <header className="tech-header">
 
-      <div className="stu-header__left">
+      <div className="tech-header__left">
         {
           isMobile && <>
             <button
-              className="stu-header__menu-btn"
+              className="tech-header__menu-btn"
               onClick={onMenuToggle}
               aria-label="Toggle sidebar">
               <Menu strokeWidth={1.8} />
             </button>
-            <div className="stu-header__logo">
-              <img src="/assets/comman/school-logo.png" alt="" className="stu-header__logo-img" />
+            <div className="tech-header__logo">
+              <img src="/assets/comman/school-logo.png" alt="" className="tech-header__logo-img" />
             </div>
           </>
         }
@@ -42,42 +42,42 @@ const StudentHeader: React.FC<StudentHeaderProps> = ({
 
 
       {/* ================= RIGHT ================= */}
-      <div className="stu-header__right">
+      <div className="tech-header__right">
 
         <button
-          className="stu-header__notif"
+          className="tech-header__notif"
           aria-label="Notifications"
         >
           <Bell strokeWidth={1.8} />
 
           {notifCount > 0 && (
-            <span className="stu-header__notif-badge">
+            <span className="tech-header__notif-badge">
               {notifCount}
             </span>
           )}
         </button>
 
         <button
-          className="stu-header__user"
+          className="tech-header__user"
           aria-label="User menu"
         >
           <img
-            className="stu-header__avatar"
+            className="tech-header__avatar"
             src={userAvatar}
             alt={userName}
           />
 
-          <div className="stu-header__user-info">
-            <span className="stu-header__user-name">
+          <div className="tech-header__user-info">
+            <span className="tech-header__user-name">
               {userName}
             </span>
 
-            <span className="stu-header__user-sub">
+            <span className="tech-header__user-sub">
               {userSub}
             </span>
           </div>
 
-          <span className="stu-header__chevron">
+          <span className="tech-header__chevron">
             <ChevronDown strokeWidth={2} />
           </span>
         </button>
@@ -87,6 +87,6 @@ const StudentHeader: React.FC<StudentHeaderProps> = ({
   );
 };
 
-<StudentSidebar />
+<TeachersSidebar />
 
-export default StudentHeader;
+export default TeachersHeader;
