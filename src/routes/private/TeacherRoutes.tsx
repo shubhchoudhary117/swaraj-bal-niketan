@@ -6,9 +6,10 @@ import TeacherClasses from '../../features/teachers/pages/teacher-classes/Teache
 import { Students } from '../../features/teachers/pages/students/Students'
 import TakeAttendance from '../../features/teachers/pages/take-attendance/TakeAttendance'
 import CreateExam from '../../features/teachers/pages/create-exam/CreateExam'
-import CreateTimetable from '../../features/teachers/pages/create-timetable/CreateTimeTable'
+
 import UploadMarks from '../../features/teachers/pages/upload-marks/UploadMarks'
 import CreateNotice from '../../features/teachers/pages/create-notice/CreateNotice'
+import CreateTimetable from '../../features/teachers/pages/create-timetable/CreateTimeTable'
 
 const TeacherRoutes = () => {
     const routes=useRoutes([
