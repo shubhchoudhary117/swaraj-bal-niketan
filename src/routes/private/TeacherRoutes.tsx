@@ -7,6 +7,8 @@ import { Students } from '../../features/teachers/pages/students/Students'
 import TakeAttendance from '../../features/teachers/pages/take-attendance/TakeAttendance'
 import CreateExam from '../../features/teachers/pages/create-exam/CreateExam'
 import CreateTimetable from '../../features/teachers/pages/create-timetable/CreateTimeTable'
+import UploadMarks from '../../features/teachers/pages/upload-marks/UploadMarks'
+import CreateNotice from '../../features/teachers/pages/create-notice/CreateNotice'
 
 const TeacherRoutes = () => {
     const routes=useRoutes([
@@ -37,6 +39,14 @@ const TeacherRoutes = () => {
         {
             path:"create-timetable",
             element:<CreateTimetable/>
+        },
+         {
+            path:"upload-marks",
+            element:<UploadMarks/>
+        },
+        {
+            path:"create-notice",
+            element:<CreateNotice/>
         }
     ]
     }

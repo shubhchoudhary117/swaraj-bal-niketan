@@ -18,15 +18,12 @@ interface StudentSidebarProps {
 const NAV_ITEMS = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard, badge: null, chevron: false, route: '' },
     { id: 'attendance', label: 'Attendance', icon: CalendarCheck, badge: null, chevron: false, route: 'attendance' },
-    { id: 'crete exam', label: 'Create Exam', icon: CalendarCheck, badge: null, chevron: false, route: 'create-exam' },
-        { id: 'crete timetable', label: 'Create Table', icon: CalendarCheck, badge: null, chevron: false, route: 'create-timetable' },
-            { id: 'students', label: 'Students', icon: CalendarCheck, badge: null, chevron: false, route: 'students' },
-                { id: 'my classes', label: 'My Classes', icon: CalendarCheck, badge: null, chevron: false, route: 'classes' },
-    { id: 'exams', label: 'Exams', icon: FileText, badge: null, chevron: false, route: 'exams' },
-    { id: 'timetable', label: 'Timetable', icon: Clock, badge: null, chevron: false, route: 'time-tables' },
-    { id: 'results', label: 'Results', icon: Clock, badge: null, chevron: false, route: 'results' },
-    { id: 'fees', label: 'Fees & Payments', icon: IndianRupee, badge: null, chevron: false, route: 'fees' },
-    { id: 'notices', label: 'Notices', icon: Bell, badge: 3, chevron: false, route: 'notices' },
+    { id: 'crete_exam', label: 'Create Exam', icon: CalendarCheck, badge: null, chevron: false, route: 'create-exam' },
+    { id: 'crete_timetable', label: 'Create Time Table', icon: CalendarCheck, badge: null, chevron: false, route: 'create-timetable' },
+    { id: 'students', label: 'Students', icon: CalendarCheck, badge: null, chevron: false, route: 'students' },
+    { id: 'my_classes', label: 'My Classes', icon: CalendarCheck, badge: null, chevron: false, route: 'classes' },
+    { id: 'upload_marks', label: 'Upload Marks', icon: FileText, badge: null, chevron: false, route: 'upload-marks' },
+    { id: 'notices', label: 'Notices', icon: Bell, badge: 3, chevron: false, route: 'create-notice' },
 ];
 
 
@@ -48,7 +45,7 @@ const TeachersSidebar: React.FC<StudentSidebarProps> = ({
         }
     }
 
-    const handleLogout=()=>{
+    const handleLogout = () => {
         navigate("/")
     }
 
