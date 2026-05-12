@@ -707,9 +707,9 @@ export const Students = () => {
                         <tr>
                             <th>#</th>
                             <th>Student</th>
-                            <th>Section</th>
                             <th>Rll Number</th>
-                             <th>Gender</th>
+                            <th>Section</th>
+                            <th>Gender</th>
                             <th>Status</th>
                         </tr>
                     </thead>
@@ -727,7 +727,6 @@ export const Students = () => {
                                         <span className="sp__student-name">{student.name}</span>
                                     </div>
                                 </td>
-                                <td>{student.section}</td>
                                 <td>{student.rollNumber}</td>
                                 <td>
                                     <span className="sp__section-badge">{student.section}</span>

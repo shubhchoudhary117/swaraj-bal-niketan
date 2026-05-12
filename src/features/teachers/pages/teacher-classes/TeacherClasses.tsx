@@ -268,7 +268,7 @@ export default function TeacherClasses() {
           })}
         </div>
 
-        <div className="teach-cls__filter-bar">
+        {/* <div className="teach-cls__filter-bar">
           <div className="teach-cls__filter-search">
             <input
               type="text"
@@ -291,7 +291,7 @@ export default function TeacherClasses() {
             <option>Science</option>
             <option>English</option>
           </select>
-        </div>
+        </div> */}
 
         <div className="teach-cls__list">
           {CLASSES.map((cls: any) => (
