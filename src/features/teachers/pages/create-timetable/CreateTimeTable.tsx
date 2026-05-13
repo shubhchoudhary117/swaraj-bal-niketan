@@ -19,6 +19,8 @@ import {
   BookOpen,
 } from "lucide-react";
 import "./CreateTimeTable.scss";
+import Breadcrumb from "../../../../shared/common/breadcrumb/Breadcrumb";
+import { CustomSelect } from "../../../../shared/ui/forms/CustomSelect/CustomSelect";
 
 // ─── Types ─────────────────────────────────────────────────
 type TabType = "exam" | "test";
@@ -97,52 +99,7 @@ const timetableSchema = z.object({
 
 type TimetableFormValues = z.infer<typeof timetableSchema>;
 
-// ─── Custom Select ──────────────────────────────────────────
-function CustomSelect({
-  options, placeholder, value, onChange, error, icon,
-}: {
-  options: string[]; placeholder: string; value: string;
-  onChange: (v: string) => void; error?: boolean; icon?: React.ReactNode;
-}) {
-  const [open, setOpen] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const handler = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
-    };
-    document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
-  }, []);
-
-  return (
-    <div className={`c-select ${error ? "c-select--error" : ""}`} ref={ref}>
-      {icon && <span className="c-select__icon">{icon}</span>}
-      <button
-        type="button"
-        className={`c-select__trigger ${open ? "c-select__trigger--open" : ""} ${!value ? "c-select__trigger--placeholder" : ""} ${icon ? "c-select__trigger--with-icon" : ""}`}
-        onClick={() => setOpen((o) => !o)}
-      >
-        <span>{value || placeholder}</span>
-        <ChevronDown size={14} className={`c-select__chevron ${open ? "c-select__chevron--open" : ""}`} />
-      </button>
-      {open && (
-        <div className="c-select__dropdown">
-          {options.map((opt) => (
-            <div
-              key={opt}
-              className={`c-select__option ${value === opt ? "c-select__option--selected" : ""}`}
-              onClick={() => { onChange(opt); setOpen(false); }}
-            >
-              {value === opt && <Check size={13} />}
-              {opt}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
 
 // ─── Add Subject Modal ──────────────────────────────────────
 function AddSubjectModal({
@@ -354,21 +311,9 @@ export default function CreateTimetable() {
 
   return (
     <div className="ct">
+      <Breadcrumb title="Create Time Table" pageName="Create Time Table"/>
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
 
-        {/* ── Page Header ── */}
-        <div className="ct__header">
-          <div className="ct__header-left">
-            <h1 className="ct__title">Create Timetable</h1>
-            <p className="ct__subtitle">Create a new exam or test timetable and share with students.</p>
-          </div>
-          <button type="button" className="ct__back-btn">
-            <ArrowLeft size={15} />
-            Back to Timetables
-          </button>
-        </div>
-
-        {/* ── Tabs ── */}
         <div className="ct__tabs">
           <button
             type="button"
@@ -756,33 +701,6 @@ export default function CreateTimetable() {
             </div>
           </div>
 
-          {/* Attachments */}
-          <div className="ct__field" style={{ marginTop: 20 }}>
-            <label className="ct__label">Attachments <span className="ct__label-opt">(Optional)</span></label>
-            <div
-              className="ct__upload"
-              onClick={() => fileRef.current?.click()}
-            >
-              <input
-                ref={fileRef}
-                type="file"
-                style={{ display: "none" }}
-                accept=".pdf,.doc,.docx"
-                onChange={(e) => {
-                  const f = e.target.files?.[0];
-                  if (f) setFileSelected(f.name);
-                }}
-              />
-              <Upload size={20} className="ct__upload-icon" />
-              <p className="ct__upload-title">Upload PDF / Doc (Syllabus, Instructions etc.)</p>
-              <p className="ct__upload-sub">PDF, DOC, DOCX (Max. 10MB)</p>
-              {fileSelected ? (
-                <p className="ct__upload-file">{fileSelected}</p>
-              ) : (
-                <button type="button" className="ct__upload-btn">Choose File</button>
-              )}
-            </div>
-          </div>
         </div>
 
         {/* ── Actions ── */}

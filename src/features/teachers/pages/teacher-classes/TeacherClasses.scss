@@ -18,6 +18,7 @@ $badge-red: #ef4444;
 
     &__page-header {
         margin-bottom: 24px;
+
         h1 {
             font-size: 24px;
             color: $text-dark;
@@ -41,7 +42,7 @@ $badge-red: #ef4444;
         background: white;
         border: 1px solid $border;
         border-radius: 12px;
-        padding:14px  20px;
+        padding: 14px 20px;
         display: flex;
         align-items: center;
         gap: 16px;
@@ -68,7 +69,8 @@ $badge-red: #ef4444;
         display: flex;
         align-items: center;
         justify-content: center;
-        .icon{
+
+        .icon {
             width: 20px;
             height: 20px;
         }
@@ -158,6 +160,11 @@ $badge-red: #ef4444;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        .icon{
+            width: 20px;
+            height: 20px;
+        }
     }
 
     &__card-subject {
@@ -215,6 +222,7 @@ $badge-red: #ef4444;
             gap: 8px;
             cursor: pointer;
             font-weight: 600;
+            color: #000;
         }
     }
 
@@ -229,6 +237,17 @@ $badge-red: #ef4444;
         border: 1px solid $border;
         background: white;
         cursor: pointer;
+
+        .icon {
+            width: 17px;
+            height: 17px;
+            color: #000;
+
+            @media screen and (max-width:768px) {
+                width: 20px;
+                height: 20px;
+            }
+        }
     }
 
     &__dropdown-menu {
@@ -242,6 +261,7 @@ $badge-red: #ef4444;
         overflow: hidden;
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
         z-index: 50;
+
     }
 
     &__dropdown-item {
@@ -288,12 +308,56 @@ $badge-red: #ef4444;
 
         &__stats-grid {
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
+            gap: 6px;
+        }
+
+        &__stat-card {
+            padding: 10px 14px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            small {
+                font-size: 13px;
+                text-wrap: nowrap;
+            }
+
+            h2 {
+                font-size: 23px;
+            }
+
+            p {
+                font-size: 12px;
+                text-wrap: nowrap;
+            }
+        }
+
+        &__stat-icon {
+            width: 34px;
+            height: 34px;
+
+            .icon {
+                width: 16px;
+                height: 16px;
+            }
         }
 
         &__card {
             flex-direction: column;
             align-items: flex-start;
+            padding: 14px 18px;
+            gap: 17px;
+        }
+
+
+        &__card-icon {
+            width: 44px;
+            height: 44px;
+
+            .icon{
+                width: 20px;
+                height: 20px;
+            }
         }
 
         &__card-meta {
@@ -310,15 +374,16 @@ $badge-red: #ef4444;
                 flex: 1;
             }
         }
+
         &__info-banner {
-        margin-top: 16px;
-        padding: 10px 10px;
-        font-size: 13px;
-        gap: 10px;
-    }
+            margin-top: 16px;
+            padding: 10px 10px;
+            font-size: 13px;
+            gap: 10px;
+        }
     }
 
-    
+
 }
 
 // @media (max-width: 480px) {
