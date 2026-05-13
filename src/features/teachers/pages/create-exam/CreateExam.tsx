@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 import "./CreateExam.scss";
 import Breadcrumb from "../../../../shared/common/breadcrumb/Breadcrumb";
+import { CustomSelect } from "../../../../shared/ui/forms/CustomSelect/CustomSelect";
 
 // ─── Zod Schema ───────────────────────────────────────────
 const examSchema = z.object({
@@ -81,53 +82,6 @@ const NAV_ITEMS = [
     { icon: Bell, label: "Notices", badge: 3 },
     { icon: BarChart2, label: "Reports" },
 ];
-
-// ─── Custom Select Component ──────────────────────────────
-function CustomSelect({ options, placeholder, value, onChange, error }: any) {
-    const [open, setOpen] = useState(false);
-    const ref = useRef<any>(null);
-
-    useEffect(() => {
-        const handler = (e: any) => {
-            if (ref.current && !ref.current.contains(e.target)) setOpen(false);
-        };
-        document.addEventListener("mousedown", handler);
-        return () => document.removeEventListener("mousedown", handler);
-    }, []);
-
-    return (
-        <div className="custom-select" ref={ref}>
-            <button
-                type="button"
-                className={`custom-select__trigger ${open ? "custom-select__trigger--open" : ""} ${error ? "custom-select__trigger--error" : ""} ${!value ? "custom-select__trigger--placeholder" : ""}`}
-                onClick={() => setOpen((o) => !o)}
-                aria-haspopup="listbox"
-                aria-expanded={open}
-            >
-                <span>{value || placeholder}</span>
-            </button>
-            <ChevronDown
-                size={15}
-                className={`custom-select__chevron ${open ? "custom-select__chevron--open" : ""}`}
-            />
-            {open && (
-                <div className="custom-select__dropdown" role="listbox">
-                    {options.map((opt: any) => (
-                        <div
-                            key={opt}
-                            className={`custom-select__option ${value === opt ? "custom-select__option--selected" : ""}`}
-                            onClick={() => { onChange(opt); setOpen(false); }}
-                            role="option"
-                            aria-selected={value === opt}
-                        >
-                            {opt}
-                        </div>
-                    ))}
-                </div>
-            )}
-        </div>
-    );
-}
 
 
 // ─── Main Component ───────────────────────────────────────
@@ -277,7 +231,7 @@ export default function CreateExam() {
                                             <CustomSelect
                                                 options={SECTIONS}
                                                 placeholder="Select Section"
-                                                value={field.value}
+                                                value={field.value??""}
                                                 onChange={field.onChange}
                                             />
                                         )}
@@ -356,7 +310,7 @@ export default function CreateExam() {
                                             <CustomSelect
                                                 options={EXAM_CATEGORIES}
                                                 placeholder="Select Category"
-                                                value={field.value}
+                                                value={field.value??""}
                                                 onChange={field.onChange}
                                             />
                                         )}
@@ -396,8 +350,6 @@ export default function CreateExam() {
                                         control={control}
                                         render={({ field }) => (
                                             <div className="input-wrapper">
-                                                <span className="input-wrapper__icon"><Timer size={14} /></span>
-                                                <div style={{ width: "100%", paddingLeft: 28 }}>
                                                     <CustomSelect
                                                         options={TIMES}
                                                         placeholder="Select start time"
@@ -405,7 +357,6 @@ export default function CreateExam() {
                                                         onChange={field.onChange}
                                                         error={!!errors.startTime}
                                                     />
-                                                </div>
                                             </div>
                                         )}
                                     />
@@ -436,16 +387,14 @@ export default function CreateExam() {
                                         control={control}
                                         render={({ field }) => (
                                             <div className="input-wrapper">
-                                                <span className="input-wrapper__icon"><Timer size={14} /></span>
-                                                <div style={{ width: "100%", paddingLeft: 28 }}>
                                                     <CustomSelect
                                                         options={TIMES}
                                                         placeholder="Select end time"
                                                         value={field.value}
                                                         onChange={field.onChange}
                                                         error={!!errors.endTime}
+                                                         icon={<Timer size={14}/>}
                                                     />
-                                                </div>
                                             </div>
                                         )}
                                     />
@@ -461,16 +410,14 @@ export default function CreateExam() {
                                         control={control}
                                         render={({ field }) => (
                                             <div className="input-wrapper">
-                                                <span className="input-wrapper__icon"><Timer size={14} /></span>
-                                                <div style={{ width: "100%", paddingLeft: 28 }}>
                                                     <CustomSelect
                                                         options={DURATIONS}
                                                         placeholder="Select duration"
                                                         value={field.value}
                                                         onChange={field.onChange}
                                                         error={!!errors.duration}
+                                                       icon={<Timer size={14}/>}
                                                     />
-                                                </div>
                                             </div>
                                         )}
                                     />

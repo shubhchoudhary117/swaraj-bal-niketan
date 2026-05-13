@@ -127,7 +127,7 @@ function TeachClsDropdown({ color }: any) {
         className="teach-cls__dropdown-trigger"
         onClick={() => setOpen(!open)}
       >
-        <MoreVertical size={17} />
+        <MoreVertical className="icon"  />
       </button>
 
       {open && (
@@ -164,7 +164,7 @@ function TeachClsCard({ cls }: any) {
             color: cm.accent,
           }}
         >
-          <GraduationCap size={26} />
+          <GraduationCap   className="icon" />
         </div>
 
         <div>
