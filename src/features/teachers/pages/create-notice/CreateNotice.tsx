@@ -187,310 +187,294 @@ export default function CreateNotice() {
                 className="cn__layout"
                 style={{ gridTemplateColumns: showPreview ? undefined : "1fr" }}
             >
-                <div>
 
-                    {/* ── Notice Content ──────────────────────────────────── */}
-                    <div className="cn__card" style={{ marginBottom: 22 }}>
-                        <div className="cn__card-head">
-                            <div className="cn__card-head-icon"><FileText /></div>
-                            <div>
-                                <div className="cn__card-head-title">Notice Content</div>
-                                <div className="cn__card-head-sub">Write the title and body of your notice</div>
-                            </div>
-                        </div>
-                        <div className="cn__card-body">
-                            <div className="cn__form">
 
-                                {/* Title */}
-                                <div className="cn__row cn__row--1">
-                                    <div className="cn__field">
-                                        <label className="cn__label cn__label--required">Notice Title</label>
-                                        <input
-                                            className="cn__input"
-                                            type="text"
-                                            placeholder="e.g. Independence Day Celebration – Attendance Mandatory"
-                                            maxLength={120}
-                                            value={form.title}
-                                            onChange={(e) => set("title", e.target.value)}
-                                        />
-                                        <span className={`cn__char-count${titleLen > 100 ? " cn__char-count--warn" : ""}${titleLen >= 120 ? " cn__char-count--limit" : ""}`}>
-                                            {titleLen} / 120
-                                        </span>
-                                    </div>
-                                </div>
-
-                                {/* Body */}
-                                <div className="cn__row cn__row--1">
-                                    <div className="cn__field">
-                                        <label className="cn__label cn__label--required">Notice Body</label>
-                                        <textarea
-                                            className="cn__textarea"
-                                            placeholder="Write the full notice here. Be clear and concise for students and parents to understand easily..."
-                                            maxLength={1000}
-                                            rows={5}
-                                            value={form.body}
-                                            onChange={(e) => set("body", e.target.value)}
-                                        />
-                                        <span className={`cn__char-count${bodyLen > 800 ? " cn__char-count--warn" : ""}${bodyLen >= 1000 ? " cn__char-count--limit" : ""}`}>
-                                            {bodyLen} / 1000
-                                        </span>
-                                    </div>
-                                </div>
-
-                                {/* Publish + Expire Date */}
-                                <div className="cn__row cn__row--2">
-                                    <div className="cn__field">
-                                        <label className="cn__label cn__label--required">
-                                            <Calendar /> Publish Date
-                                        </label>
-                                        <input
-                                            className="cn__input"
-                                            type="date"
-                                            value={form.publishDate}
-                                            onChange={(e) => set("publishDate", e.target.value)}
-                                        />
-                                    </div>
-                                    <div className="cn__field">
-                                        <label className="cn__label">
-                                            <Clock /> Expiry Date <small style={{ textTransform: "none", fontWeight: 400, color: "#8a94b0" }}>(optional)</small>
-                                        </label>
-                                        <input
-                                            className="cn__input"
-                                            type="date"
-                                            value={form.expireDate}
-                                            min={form.publishDate}
-                                            onChange={(e) => set("expireDate", e.target.value)}
-                                        />
-                                    </div>
-                                </div>
-
-                            </div>
+                {/* ── Notice Content ──────────────────────────────────── */}
+                <div className="cn__card" style={{ marginBottom: 22 }}>
+                    <div className="cn__card-head">
+                        <div className="cn__card-head-icon"><FileText /></div>
+                        <div>
+                            <div className="cn__card-head-title">Notice Content</div>
+                            <div className="cn__card-head-sub">Write the title and body of your notice</div>
                         </div>
                     </div>
+                    <div className="cn__card-body">
+                        <div className="cn__form">
 
-                    {/* ── Category & Priority ──────────────────────────── */}
-                    <div className="cn__card" style={{ marginBottom: 22 }}>
-                        <div className="cn__card-head">
-                            <div className="cn__card-head-icon"><Tag /></div>
-                            <div>
-                                <div className="cn__card-head-title">Category &amp; Priority</div>
-                                <div className="cn__card-head-sub">Tag your notice for easy filtering</div>
-                            </div>
-                        </div>
-                        <div className="cn__card-body">
-
-                            {/* Category */}
-                            <div className="cn__section-label">Select Category *</div>
-                            <div className="cn__category-grid">
-                                {CATEGORIES.map(({ id, label, Icon }) => (
-                                    <button
-                                        key={id}
-                                        data-cat={id}
-                                        className={`cn__cat-pill${form.category === id ? " cn__cat-pill--active" : ""}`}
-                                        onClick={() => set("category", form.category === id ? "" : id)}
-                                    >
-                                        <Icon /> {label}
-                                    </button>
-                                ))}
+                            {/* Title */}
+                            <div className="cn__row cn__row--1">
+                                <div className="cn__field">
+                                    <label className="cn__label cn__label--required">Notice Title</label>
+                                    <input
+                                        className="cn__input"
+                                        type="text"
+                                        placeholder="e.g. Independence Day Celebration – Attendance Mandatory"
+                                        maxLength={120}
+                                        value={form.title}
+                                        onChange={(e) => set("title", e.target.value)}
+                                    />
+                                    <span className={`cn__char-count${titleLen > 100 ? " cn__char-count--warn" : ""}${titleLen >= 120 ? " cn__char-count--limit" : ""}`}>
+                                        {titleLen} / 120
+                                    </span>
+                                </div>
                             </div>
 
-                            <div className="cn__divider" style={{ marginTop: 18 }} />
-
-                            {/* Priority */}
-                            <div className="cn__section-label">Priority Level</div>
-                            <div className="cn__priority-grid">
-                                {PRIORITIES.map(({ id, label, Icon, mod }) => (
-                                    <button
-                                        key={id}
-                                        className={`cn__priority-card cn__priority-card${mod}${form.priority === id ? ` cn__priority-card--active` : ""}`}
-                                        onClick={() => set("priority", form.priority === id ? "" : id)}
-                                    >
-                                        <Icon /> {label}
-                                    </button>
-                                ))}
+                            {/* Body */}
+                            <div className="cn__row cn__row--1">
+                                <div className="cn__field">
+                                    <label className="cn__label cn__label--required">Notice Body</label>
+                                    <textarea
+                                        className="cn__textarea"
+                                        placeholder="Write the full notice here. Be clear and concise for students and parents to understand easily..."
+                                        maxLength={1000}
+                                        rows={5}
+                                        value={form.body}
+                                        onChange={(e) => set("body", e.target.value)}
+                                    />
+                                    <span className={`cn__char-count${bodyLen > 800 ? " cn__char-count--warn" : ""}${bodyLen >= 1000 ? " cn__char-count--limit" : ""}`}>
+                                        {bodyLen} / 1000
+                                    </span>
+                                </div>
                             </div>
 
-                        </div>
-                    </div>
-
-                    {/* ── Target Audience ──────────────────────────────── */}
-                    <div className="cn__card" style={{ marginBottom: 22 }}>
-                        <div className="cn__card-head">
-                            <div className="cn__card-head-icon"><Users /></div>
-                            <div>
-                                <div className="cn__card-head-title">Target Audience</div>
-                                <div className="cn__card-head-sub">Choose who can see this notice</div>
-                            </div>
-                        </div>
-                        <div className="cn__card-body">
-                            <div className="cn__section-label">Select recipients *</div>
-                            <div className="cn__audience-grid">
-                                {AUDIENCE_OPTIONS.map(({ id, label, Icon }) => (
-                                    <button
-                                        key={id}
-                                        className={`cn__audience-chip${form.audience.includes(id) ? " cn__audience-chip--active" : ""}`}
-                                        onClick={() => toggleAudience(id)}
-                                    >
-                                        <Icon /> {label}
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* ── Settings & Options ───────────────────────────── */}
-                    <div className="cn__card" style={{ marginBottom: 22 }}>
-                        <div className="cn__card-head">
-                            <div className="cn__card-head-icon"><Settings /></div>
-                            <div>
-                                <div className="cn__card-head-title">Notice Settings</div>
-                                <div className="cn__card-head-sub">Control visibility and notifications</div>
-                            </div>
-                        </div>
-                        <div className="cn__card-body">
-                            <div className="cn__toggles">
-
-                                {/* Pinned */}
-                                <div className="cn__toggle-row">
-                                    <div className="cn__toggle-row-info">
-                                        <div className="cn__toggle-row-icon" style={{ background: "rgba(245,158,11,.1)", color: "#f59e0b" }}>
-                                            <Pin />
-                                        </div>
-                                        <div>
-                                            <div className="cn__toggle-row-label">Pin Notice</div>
-                                            <div className="cn__toggle-row-sub">Always show at the top of the board</div>
-                                        </div>
-                                    </div>
-                                    <label className="cn__switch">
-                                        <input type="checkbox" checked={form.pinned} onChange={(e) => set("pinned", e.target.checked)} />
-                                        <span className="cn__switch-track" />
-                                        <span className="cn__switch-thumb" />
+                            {/* Publish + Expire Date */}
+                            <div className="cn__row cn__row--2">
+                                <div className="cn__field">
+                                    <label className="cn__label cn__label--required">
+                                        <Calendar /> Publish Date
                                     </label>
+                                    <input
+                                        className="cn__input"
+                                        type="date"
+                                        value={form.publishDate}
+                                        onChange={(e) => set("publishDate", e.target.value)}
+                                    />
                                 </div>
-
-                                {/* Push Notification */}
-                                <div className="cn__toggle-row">
-                                    <div className="cn__toggle-row-info">
-                                        <div className="cn__toggle-row-icon" style={{ background: "rgba(59,130,246,.1)", color: "#3b82f6" }}>
-                                            <Bell />
-                                        </div>
-                                        <div>
-                                            <div className="cn__toggle-row-label">Send Push Notification</div>
-                                            <div className="cn__toggle-row-sub">Notify recipients via app notification</div>
-                                        </div>
-                                    </div>
-                                    <label className="cn__switch">
-                                        <input type="checkbox" checked={form.notify} onChange={(e) => set("notify", e.target.checked)} />
-                                        <span className="cn__switch-track" />
-                                        <span className="cn__switch-thumb" />
+                                <div className="cn__field">
+                                    <label className="cn__label">
+                                        <Clock /> Expiry Date <small style={{ textTransform: "none", fontWeight: 400, color: "#8a94b0" }}>(optional)</small>
                                     </label>
+                                    <input
+                                        className="cn__input"
+                                        type="date"
+                                        value={form.expireDate}
+                                        min={form.publishDate}
+                                        onChange={(e) => set("expireDate", e.target.value)}
+                                    />
                                 </div>
-
-                                {/* Publicly Visible */}
-                                <div className="cn__toggle-row">
-                                    <div className="cn__toggle-row-info">
-                                        <div className="cn__toggle-row-icon" style={{ background: "rgba(34,197,94,.1)", color: "#22c55e" }}>
-                                            <Globe />
-                                        </div>
-                                        <div>
-                                            <div className="cn__toggle-row-label">Visible on Notice Board</div>
-                                            <div className="cn__toggle-row-sub">Show this notice on the student portal</div>
-                                        </div>
-                                    </div>
-                                    <label className="cn__switch">
-                                        <input type="checkbox" checked={form.visible} onChange={(e) => set("visible", e.target.checked)} />
-                                        <span className="cn__switch-track" />
-                                        <span className="cn__switch-thumb" />
-                                    </label>
-                                </div>
-
                             </div>
+
                         </div>
                     </div>
-
-                    {/* ── Attachments ──────────────────────────────────── */}
-                    <div className="cn__card" style={{ marginBottom: 0 }}>
-                        <div className="cn__card-head">
-                            <div className="cn__card-head-icon"><Paperclip /></div>
-                            <div>
-                                <div className="cn__card-head-title">Attachments</div>
-                                <div className="cn__card-head-sub">Upload supporting files (optional)</div>
-                            </div>
-                        </div>
-                        <div className="cn__card-body">
-
-                            {/* Upload zone */}
-                            <div className="cn__upload" onClick={() => fileRef.current?.click()}>
-                                <input
-                                    ref={fileRef}
-                                    type="file"
-                                    multiple
-                                    accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
-                                    style={{ display: "none" }}
-                                    onChange={handleFiles}
-                                />
-                                <div className="cn__upload-icon"><Upload /></div>
-                                <div className="cn__upload-title">Click to upload or drag &amp; drop</div>
-                                <div className="cn__upload-sub">Maximum file size: 10 MB</div>
-                                <div className="cn__upload-types">
-                                    <span>PDF</span><span>DOC</span><span>JPG</span><span>PNG</span>
-                                </div>
-                            </div>
-
-                            {/* Attached files */}
-                            {attachments.length > 0 && (
-                                <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 6 }}>
-                                    {attachments.map((name) => (
-                                        <div
-                                            key={name}
-                                            style={{
-                                                display: "flex",
-                                                alignItems: "center",
-                                                justifyContent: "space-between",
-                                                padding: "9px 12px",
-                                                background: "#f4f6fb",
-                                                borderRadius: 8,
-                                                border: "1px solid #e4e8f2",
-                                                fontSize: ".8rem",
-                                                color: "#4b5575",
-                                                gap: 8,
-                                            }}
-                                        >
-                                            <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                                                <ImageIcon size={14} /> {name}
-                                            </span>
-                                            <button
-                                                onClick={() => removeAttachment(name)}
-                                                style={{ background: "none", border: "none", cursor: "pointer", color: "#8a94b0", padding: 0 }}
-                                            >
-                                                <X size={14} />
-                                            </button>
-                                        </div>
-                                    ))}
-                                </div>
-                            )}
-
-                        </div>
-
-                        {/* ── Action Buttons ───────────────────────────────── */}
-                        <div className="cn__actions">
-                            <div className="cn__actions-row">
-                                <button className="cn__btn cn__btn--ghost" onClick={() => setForm({ title: "", body: "", category: "", priority: "", audience: [], pinned: false, notify: true, visible: true, publishDate: TODAY, expireDate: "" })}>
-                                    <X /> Clear
-                                </button>
-                                <button className="cn__btn cn__btn--draft" onClick={handleDraft}>
-                                    <Save /> Save Draft
-                                </button>
-                            </div>
-                            <button className="cn__btn cn__btn--publish" onClick={handlePublish}>
-                                <Send /> Publish Notice
-                            </button>
-                        </div>
-                    </div>
-
                 </div>
 
-               
+                {/* ── Category & Priority ──────────────────────────── */}
+                <div className="cn__card" style={{ marginBottom: 22 }}>
+                    <div className="cn__card-head">
+                        <div className="cn__card-head-icon"><Tag /></div>
+                        <div>
+                            <div className="cn__card-head-title">Category &amp; Priority</div>
+                            <div className="cn__card-head-sub">Tag your notice for easy filtering</div>
+                        </div>
+                    </div>
+                    <div className="cn__card-body">
+
+                        {/* Category */}
+                        <div className="cn__section-label">Select Category *</div>
+                        <div className="cn__category-grid">
+                            {CATEGORIES.map(({ id, label, Icon }) => (
+                                <button
+                                    key={id}
+                                    data-cat={id}
+                                    className={`cn__cat-pill${form.category === id ? " cn__cat-pill--active" : ""}`}
+                                    onClick={() => set("category", form.category === id ? "" : id)}
+                                >
+                                    <Icon /> {label}
+                                </button>
+                            ))}
+                        </div>
+
+                        <div className="cn__divider" style={{ marginTop: 18 }} />
+
+                        {/* Priority */}
+                        <div className="cn__section-label">Priority Level</div>
+                        <div className="cn__priority-grid">
+                            {PRIORITIES.map(({ id, label, Icon, mod }) => (
+                                <button
+                                    key={id}
+                                    className={`cn__priority-card cn__priority-card${mod}${form.priority === id ? ` cn__priority-card--active` : ""}`}
+                                    onClick={() => set("priority", form.priority === id ? "" : id)}
+                                >
+                                    <Icon /> {label}
+                                </button>
+                            ))}
+                        </div>
+
+                    </div>
+                </div>
+
+                {/* ── Target Audience ──────────────────────────────── */}
+                <div className="cn__card" style={{ marginBottom: 22 }}>
+                    <div className="cn__card-head">
+                        <div className="cn__card-head-icon"><Users /></div>
+                        <div>
+                            <div className="cn__card-head-title">Target Audience</div>
+                            <div className="cn__card-head-sub">Choose who can see this notice</div>
+                        </div>
+                    </div>
+                    <div className="cn__card-body">
+                        <div className="cn__section-label">Select recipients *</div>
+                        <div className="cn__audience-grid">
+                            {AUDIENCE_OPTIONS.map(({ id, label, Icon }) => (
+                                <button
+                                    key={id}
+                                    className={`cn__audience-chip${form.audience.includes(id) ? " cn__audience-chip--active" : ""}`}
+                                    onClick={() => toggleAudience(id)}
+                                >
+                                    <Icon /> {label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                {/* ── Settings & Options ───────────────────────────── */}
+                <div className="cn__card" style={{ marginBottom: 22 }}>
+                    <div className="cn__card-head">
+                        <div className="cn__card-head-icon"><Settings /></div>
+                        <div>
+                            <div className="cn__card-head-title">Notice Settings</div>
+                            <div className="cn__card-head-sub">Control visibility and notifications</div>
+                        </div>
+                    </div>
+                    <div className="cn__card-body">
+                        <div className="cn__toggles">
+
+                            {/* Pinned */}
+                            <div className="cn__toggle-row">
+                                <div className="cn__toggle-row-info">
+                                    <div className="cn__toggle-row-icon" style={{ background: "rgba(245,158,11,.1)", color: "#f59e0b" }}>
+                                        <Pin />
+                                    </div>
+                                    <div>
+                                        <div className="cn__toggle-row-label">Pin Notice</div>
+                                        <div className="cn__toggle-row-sub">Always show at the top of the board</div>
+                                    </div>
+                                </div>
+                                <label className="cn__switch">
+                                    <input type="checkbox" checked={form.pinned} onChange={(e) => set("pinned", e.target.checked)} />
+                                    <span className="cn__switch-track" />
+                                    <span className="cn__switch-thumb" />
+                                </label>
+                            </div>
+
+                            {/* Push Notification */}
+                            <div className="cn__toggle-row">
+                                <div className="cn__toggle-row-info">
+                                    <div className="cn__toggle-row-icon" style={{ background: "rgba(59,130,246,.1)", color: "#3b82f6" }}>
+                                        <Bell />
+                                    </div>
+                                    <div>
+                                        <div className="cn__toggle-row-label">Send Push Notification</div>
+                                        <div className="cn__toggle-row-sub">Notify recipients via app notification</div>
+                                    </div>
+                                </div>
+                                <label className="cn__switch">
+                                    <input type="checkbox" checked={form.notify} onChange={(e) => set("notify", e.target.checked)} />
+                                    <span className="cn__switch-track" />
+                                    <span className="cn__switch-thumb" />
+                                </label>
+                            </div>
+
+                            {/* Publicly Visible */}
+                            <div className="cn__toggle-row">
+                                <div className="cn__toggle-row-info">
+                                    <div className="cn__toggle-row-icon" style={{ background: "rgba(34,197,94,.1)", color: "#22c55e" }}>
+                                        <Globe />
+                                    </div>
+                                    <div>
+                                        <div className="cn__toggle-row-label">Visible on Notice Board</div>
+                                        <div className="cn__toggle-row-sub">Show this notice on the student portal</div>
+                                    </div>
+                                </div>
+                                <label className="cn__switch">
+                                    <input type="checkbox" checked={form.visible} onChange={(e) => set("visible", e.target.checked)} />
+                                    <span className="cn__switch-track" />
+                                    <span className="cn__switch-thumb" />
+                                </label>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                {/* ── Attachments ──────────────────────────────────── */}
+                <div className="cn__card" style={{ marginBottom: 0 }}>
+                    <div className="cn__card-head">
+                        <div className="cn__card-head-icon"><Paperclip /></div>
+                        <div>
+                            <div className="cn__card-head-title">Attachments</div>
+                            <div className="cn__card-head-sub">Upload supporting files (optional)</div>
+                        </div>
+                    </div>
+                    <div className="cn__card-body">
+
+                        {/* Upload zone */}
+                        <div className="cn__upload" onClick={() => fileRef.current?.click()}>
+                            <input
+                                ref={fileRef}
+                                type="file"
+                                multiple
+                                accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                                style={{ display: "none" }}
+                                onChange={handleFiles}
+                            />
+                            <div className="cn__upload-icon"><Upload /></div>
+                            <div className="cn__upload-title">Click to upload or drag &amp; drop</div>
+                            <div className="cn__upload-sub">Maximum file size: 10 MB</div>
+                            <div className="cn__upload-types">
+                                <span>PDF</span><span>DOC</span><span>JPG</span><span>PNG</span>
+                            </div>
+                        </div>
+
+                        {/* Attached files */}
+                        {attachments.length > 0 && (
+                            <div style={{ marginTop: 12, display: "flex", flexDirection: "column", gap: 6 }}>
+                                {attachments.map((name) => (
+                                    <div
+                                        key={name}
+                                        style={{
+                                            display: "flex",
+                                            alignItems: "center",
+                                            justifyContent: "space-between",
+                                            padding: "9px 12px",
+                                            background: "#f4f6fb",
+                                            borderRadius: 8,
+                                            border: "1px solid #e4e8f2",
+                                            fontSize: ".8rem",
+                                            color: "#4b5575",
+                                            gap: 8,
+                                        }}
+                                    >
+                                        <span style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                                            <ImageIcon size={14} /> {name}
+                                        </span>
+                                        <button
+                                            onClick={() => removeAttachment(name)}
+                                            style={{ background: "none", border: "none", cursor: "pointer", color: "#8a94b0", padding: 0 }}
+                                        >
+                                            <X size={14} />
+                                        </button>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
+                    </div>
+                </div>
+
+
+
                 {showPreview && (
                     <div className="cn__preview">
 
@@ -605,9 +589,49 @@ export default function CreateNotice() {
 
                             </div>
                         </div>
-
                     </div>
                 )}
+
+                <div className="cn__actions">
+                    <div className="cn__actions-row">
+                        <button
+                            className="cn__btn cn__btn--ghost"
+                            onClick={() =>
+                                setForm({
+                                    title: "",
+                                    body: "",
+                                    category: "",
+                                    priority: "",
+                                    audience: [],
+                                    pinned: false,
+                                    notify: true,
+                                    visible: true,
+                                    publishDate: TODAY,
+                                    expireDate: ""
+                                })
+                            }
+                        >
+                            <X />
+                            <span>Clear</span>
+                        </button>
+
+                        <button
+                            className="cn__btn cn__btn--draft"
+                            onClick={handleDraft}
+                        >
+                            <Save />
+                            <span>Save Draft</span>
+                        </button>
+                    </div>
+
+                    <button
+                        className="cn__btn cn__btn--publish"
+                        onClick={handlePublish}
+                    >
+                        <Send />
+                        <span>Publish Notice</span>
+                    </button>
+                </div>
             </div>
 
             {/* ── Toast ─────────────────────────────────────────────────── */}
