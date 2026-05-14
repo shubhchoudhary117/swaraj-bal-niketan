@@ -253,7 +253,7 @@
     margin-bottom: 4px;
   }
 
- 
+
   .nb__tabs {
     padding: 5px;
   }
@@ -347,7 +347,7 @@
 
 
 
- 
+
 
   .nb__notice-date {
     display: flex;
@@ -365,5 +365,30 @@
     background: var(--primary);
     flex-shrink: 0;
     margin-top: 5px;
+  }
+}
+
+
+@media screen and (max-width:768px) {
+
+  .nb__bottom-actions {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 999;
+    padding: 12px 16px;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+    border-top: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .nb-page {
+    padding-bottom: 90px;
   }
 }

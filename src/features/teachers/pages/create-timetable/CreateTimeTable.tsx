@@ -311,7 +311,7 @@ export default function CreateTimetable() {
 
   return (
     <div className="ct">
-      <Breadcrumb title="Create Time Table" pageName="Create Time Table"/>
+      <Breadcrumb title="Create Time Table" pageName="Create Time Table" />
       <form onSubmit={handleSubmit(onSubmit)} noValidate>
 
         <div className="ct__tabs">
@@ -563,174 +563,176 @@ export default function CreateTimetable() {
           )}
 
           {fields.length > 0 && (
-            <div className="ct__table">
-              <div className="ct__table-head">
-                <span className="ct__th ct__th--num">#</span>
-                <span className="ct__th">Subject <span>*</span></span>
-                <span className="ct__th">Subject Code <span className="ct__th-opt">(Optional)</span></span>
-                <span className="ct__th">Exam Date <span>*</span></span>
-                <span className="ct__th">Start Time <span className="ct__th-opt">(Optional)</span></span>
-                <span className="ct__th">End Time <span className="ct__th-opt">(Optional)</span></span>
-                <span className="ct__th ct__th--action">Action</span>
-              </div>
+            <div className="ct__table-wrapper">
+              <table className="ct__table">
+                <thead className="ct__thead">
+                  <th className="ct__th ct__th--num">#</th>
+                  <th className="ct__th">Subject <span>*</span></th>
+                  <th className="ct__th">Subject Code <span className="ct__th-opt">(Optional)</span></th>
+                  <th className="ct__th">Exam Date <span>*</span></th>
+                  <th className="ct__th">Start Time <span className="ct__th-opt">(Optional)</span></th>
+                  <th className="ct__th">End Time <span className="ct__th-opt">(Optional)</span></th>
+                  <th className="ct__th ct__th--action">Action</th>
+                </thead>
 
-              {fields.map((field, index) => (
-                <div className="ct__table-row" key={field.id}>
-                  <span className="ct__td ct__td--num">{index + 1}</span>
+                {fields.map((field, index) => (
+                  <tbody className="ct__tbody">
+                    <tr className="ct__table-row" key={field.id}>
+                      <td className="ct__td ct__td--num">{index + 1}</td>
 
-                  <div className="ct__td">
-                    <Controller
-                      name={`subjects.${index}.subject`}
-                      control={control}
-                      render={({ field: f }) => (
-                        <CustomSelect
-                          options={CLASS_SUBJECTS[watchedClass] || SUBJECTS_FALLBACK}
-                          placeholder="Subject"
-                          value={f.value}
-                          onChange={f.onChange}
-                          error={!!errors.subjects?.[index]?.subject}
+                      <td className="ct__td">
+                        <Controller
+                          name={`subjects.${index}.subject`}
+                          control={control}
+                          render={({ field: f }) => (
+                            <CustomSelect
+                              options={CLASS_SUBJECTS[watchedClass] || SUBJECTS_FALLBACK}
+                              placeholder="Subject"
+                              value={f.value}
+                              onChange={f.onChange}
+                              error={!!errors.subjects?.[index]?.subject}
+                            />
+                          )}
                         />
-                      )}
-                    />
-                  </div>
+                      </td>
 
-                  <div className="ct__td">
-                    <input
-                      className="ct__input"
-                      placeholder="e.g. MATH101"
-                      {...register(`subjects.${index}.subjectCode`)}
-                    />
-                  </div>
+                      <td className="ct__td">
+                        <input
+                          className="ct__input"
+                          placeholder="e.g. MATH101"
+                          {...register(`subjects.${index}.subjectCode`)}
+                        />
+                      </td>
 
-                  <div className="ct__td">
-                    <div className="ct__input-wrap">
-                      <CalendarDays size={13} className="ct__input-icon" />
-                      <input
-                        type="date"
-                        className={`ct__input ct__input--icon ${errors.subjects?.[index]?.examDate ? "ct__input--error" : ""}`}
-                        {...register(`subjects.${index}.examDate`)}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="ct__td">
-                    <Controller
-                      name={`subjects.${index}.startTime`}
-                      control={control}
-                      render={({ field: f }) => (
+                      <td className="ct__td">
                         <div className="ct__input-wrap">
-                          <Clock size={13} className="ct__input-icon" />
-                          <div style={{ width: "100%", paddingLeft: 26 }}>
-                            <CustomSelect
-                              options={TIMES}
-                              placeholder="09:00 AM"
-                              value={f.value || ""}
-                              onChange={f.onChange}
-                            />
-                          </div>
+                          <CalendarDays size={13} className="ct__input-icon" />
+                          <input
+                            type="date"
+                            className={`ct__input ct__input--icon ${errors.subjects?.[index]?.examDate ? "ct__input--error" : ""}`}
+                            {...register(`subjects.${index}.examDate`)}
+                          />
                         </div>
-                      )}
-                    />
-                  </div>
+                      </td>
 
-                  <div className="ct__td">
-                    <Controller
-                      name={`subjects.${index}.endTime`}
-                      control={control}
-                      render={({ field: f }) => (
-                        <div className="ct__input-wrap">
-                          <Clock size={13} className="ct__input-icon" />
-                          <div style={{ width: "100%", paddingLeft: 26 }}>
-                            <CustomSelect
-                              options={TIMES}
-                              placeholder="12:00 PM"
-                              value={f.value || ""}
-                              onChange={f.onChange}
-                            />
-                          </div>
-                        </div>
-                      )}
-                    />
-                  </div>
+                      <td className="ct__td">
+                        <Controller
+                          name={`subjects.${index}.startTime`}
+                          control={control}
+                          render={({ field: f }) => (
+                            <div className="ct__input-wrap">
+                              <CustomSelect
+                                options={TIMES}
+                                placeholder="09:00 AM"
+                                value={f.value || ""}
+                                onChange={f.onChange}
+                                icon={<Clock/>}
+                              />
+                            </div>
+                          )}
+                        />
+                      </td>
 
-                  <div className="ct__td ct__td--action">
-                    <button type="button" className="ct__delete-btn" onClick={() => remove(index)}>
-                      <Trash2 size={15} />
-                    </button>
-                  </div>
-                </div>
-              ))}
+                      <td className="ct__td">
+                        <Controller
+                          name={`subjects.${index}.endTime`}
+                          control={control}
+                          render={({ field: f }) => (
+                            <div className="ct__input-wrap">
+                              <CustomSelect
+                                options={TIMES}
+                                placeholder="12:00 PM"
+                                value={f.value || ""}
+                                onChange={f.onChange}
+                              />
+                            </div>
+                          )}
+                        />
+                      </td>
+
+                      <td className="ct__td ct__td--action">
+                        <button type="button" className="ct__delete-btn" onClick={() => remove(index)}>
+                          <Trash2 size={15} />
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+
+                ))}
+            </table>
             </div>
+
           )}
 
-          {fields.length === 0 && (
-            <div className="ct__empty">
-              <BookOpen size={32} />
-              <p>No subjects added yet. Click "Add Subject" to get started.</p>
-            </div>
-          )}
-        </div>
-
-        {/* ── Instructions ── */}
-        <div className="ct__card">
-          <div className="ct__grid ct__grid--2">
-            <div className="ct__field">
-              <label className="ct__label">
-                General Instructions <span className="ct__label-vis">(Visible to Students)</span>
-              </label>
-              <textarea
-                className={`ct__textarea ${errors.instructions ? "ct__textarea--error" : ""}`}
-                placeholder="• Write exam instructions here..."
-                maxLength={500}
-                {...register("instructions")}
-              />
-              <p className="ct__counter">{instructionsVal.length} / 500</p>
-            </div>
-
-            <div className="ct__field">
-              <label className="ct__label">
-                Additional Note <span className="ct__label-opt">(Optional)</span>
-              </label>
-              <textarea
-                className="ct__textarea"
-                placeholder="Add any additional note for students or teachers..."
-                maxLength={300}
-                {...register("additionalNote")}
-              />
-              <p className="ct__counter">{additionalNoteVal.length} / 300</p>
-            </div>
+        {fields.length === 0 && (
+          <div className="ct__empty">
+            <BookOpen size={32} />
+            <p>No subjects added yet. Click "Add Subject" to get started.</p>
           </div>
-
-        </div>
-
-        {/* ── Actions ── */}
-        <div className="ct__actions">
-          <button type="button" className="ct__btn ct__btn--cancel">Cancel</button>
-          <div className="ct__actions-right">
-            <button type="button" className="ct__btn ct__btn--preview">
-              <Eye size={15} />
-              Preview Timetable
-            </button>
-            <button type="submit" className="ct__btn ct__btn--save">
-              <Save size={15} />
-              Save Timetable
-            </button>
-          </div>
-        </div>
-
-      </form>
-
-      {/* ── Modal ── */}
-      <AddSubjectModal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        onAdd={handleAddSubjects}
-        selectedClass={watchedClass}
-        existingSubjects={existingSubjects}
-        defaultStartTime={watchedStartTime}
-        defaultEndTime={watchedEndTime}
-        defaultDate={watchedStartDate}
-      />
+        )}
     </div>
+
+        {/* ── Instructions ── */ }
+  <div className="ct__card">
+    <div className="ct__grid ct__grid--2">
+      <div className="ct__field">
+        <label className="ct__label">
+          General Instructions <span className="ct__label-vis">(Visible to Students)</span>
+        </label>
+        <textarea
+          className={`ct__textarea ${errors.instructions ? "ct__textarea--error" : ""}`}
+          placeholder="• Write exam instructions here..."
+          maxLength={500}
+          {...register("instructions")}
+        />
+        <p className="ct__counter">{instructionsVal.length} / 500</p>
+      </div>
+
+      <div className="ct__field">
+        <label className="ct__label">
+          Additional Note <span className="ct__label-opt">(Optional)</span>
+        </label>
+        <textarea
+          className="ct__textarea"
+          placeholder="Add any additional note for students or teachers..."
+          maxLength={300}
+          {...register("additionalNote")}
+        />
+        <p className="ct__counter">{additionalNoteVal.length} / 300</p>
+      </div>
+    </div>
+
+  </div>
+
+  {/* ── Actions ── */ }
+  <div className="ct__actions">
+    <button type="button" className="ct__btn ct__btn--cancel">Cancel</button>
+    <div className="ct__actions-right">
+      <button type="button" className="ct__btn ct__btn--preview">
+        <Eye size={15} />
+        Preview Timetable
+      </button>
+      <button type="submit" className="ct__btn ct__btn--save">
+        <Save size={15} />
+        Save Timetable
+      </button>
+    </div>
+  </div>
+
+      </form >
+
+    {/* ── Modal ── */ }
+    < AddSubjectModal
+  open = { modalOpen }
+  onClose = {() => setModalOpen(false)
+}
+onAdd = { handleAddSubjects }
+selectedClass = { watchedClass }
+existingSubjects = { existingSubjects }
+defaultStartTime = { watchedStartTime }
+defaultEndTime = { watchedEndTime }
+defaultDate = { watchedStartDate }
+  />
+    </div >
   );
 }

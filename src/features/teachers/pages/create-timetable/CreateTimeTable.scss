@@ -1,33 +1,33 @@
 // ─── Design Tokens ─────────────────────────────────────────
-$primary:        #4f46e5;
-$primary-hover:  #4338ca;
-$primary-light:  #ede9fe;
-$accent:         #6366f1;
-$danger:         #ef4444;
-$danger-light:   #fee2e2;
-$info-bg:        #eff6ff;
-$info-border:    #bfdbfe;
-$info-text:      #1e40af;
+$primary: #4f46e5;
+$primary-hover: #4338ca;
+$primary-light: #ede9fe;
+$accent: #6366f1;
+$danger: #ef4444;
+$danger-light: #fee2e2;
+$info-bg: #eff6ff;
+$info-border: #bfdbfe;
+$info-text: #1e40af;
 
-$bg-page:        #f3f4f6;
-$bg-card:        #ffffff;
-$border:         #e5e7eb;
-$border-focus:   #6366f1;
+$bg-page: #f3f4f6;
+$bg-card: #ffffff;
+$border: #e5e7eb;
+$border-focus: #6366f1;
 
-$text-heading:   #111827;
-$text-body:      #374151;
-$text-sub:       #6b7280;
-$text-muted:     #9ca3af;
-$text-label:     #374151;
-$text-required:  #ef4444;
-$text-accent:    #4f46e5;
+$text-heading: #111827;
+$text-body: #374151;
+$text-sub: #6b7280;
+$text-muted: #9ca3af;
+$text-label: #374151;
+$text-required: #ef4444;
+$text-accent: #4f46e5;
 
-$radius-sm:      6px;
-$radius-md:      8px;
-$radius-lg:      12px;
+$radius-sm: 6px;
+$radius-md: 8px;
+$radius-lg: 12px;
 
-$shadow-card:    0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.04);
-$shadow-dropdown:0 8px 24px rgba(0,0,0,.12);
+$shadow-card: 0 1px 3px rgba(0, 0, 0, .08), 0 1px 2px rgba(0, 0, 0, .04);
+$shadow-dropdown: 0 8px 24px rgba(0, 0, 0, .12);
 
 $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
@@ -76,9 +76,14 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     transition: background .15s, border-color .15s;
     white-space: nowrap;
 
-    &:hover { background: #f9fafb; border-color: #d1d5db; }
+    &:hover {
+      background: #f9fafb;
+      border-color: #d1d5db;
+    }
 
-    svg { color: $text-sub; }
+    svg {
+      color: $text-sub;
+    }
   }
 
   // ── Tabs ──
@@ -101,7 +106,9 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     cursor: pointer;
     transition: color .15s, border-color .15s;
 
-    &:hover { color: $text-body; }
+    &:hover {
+      color: $text-body;
+    }
 
     &--active {
       color: $text-accent;
@@ -137,15 +144,26 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     display: grid;
     gap: 16px;
 
-    &--4 { grid-template-columns: repeat(4, 1fr); }
-    &--2 { grid-template-columns: repeat(2, 1fr); }
+    &--4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &--2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     @media (max-width: 1100px) {
-      &--4 { grid-template-columns: repeat(2, 1fr); }
+      &--4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 680px) {
-      &--4, &--2 { grid-template-columns: 1fr; }
+
+      &--4,
+      &--2 {
+        grid-template-columns: 1fr;
+      }
     }
   }
 
@@ -193,19 +211,26 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     outline: none;
     transition: border-color .15s, box-shadow .15s;
 
-    &::placeholder { color: $text-muted; }
+    &::placeholder {
+      color: $text-muted;
+    }
 
     &:focus {
       border-color: $border-focus;
-      box-shadow: 0 0 0 3px rgba(99,102,241,.12);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, .12);
     }
 
     &--error {
       border-color: $danger;
-      &:focus { box-shadow: 0 0 0 3px rgba(239,68,68,.1); }
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, .1);
+      }
     }
 
-    &--icon { padding-left: 34px; }
+    &--icon {
+      padding-left: 34px;
+    }
 
     &[type="date"] {
       color-scheme: light;
@@ -243,14 +268,18 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
     transition: border-color .15s, box-shadow .15s;
 
-    &::placeholder { color: $text-muted; }
+    &::placeholder {
+      color: $text-muted;
+    }
 
     &:focus {
       border-color: $border-focus;
-      box-shadow: 0 0 0 3px rgba(99,102,241,.12);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, .12);
     }
 
-    &--error { border-color: $danger; }
+    &--error {
+      border-color: $danger;
+    }
   }
 
   &__counter {
@@ -269,7 +298,10 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: $danger;
     margin-top: 2px;
 
-    &--block { display: flex; margin-bottom: 12px; }
+    &--block {
+      display: flex;
+      margin-bottom: 12px;
+    }
   }
 
   // ── Info Banner ──
@@ -283,7 +315,11 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     padding: 11px 14px;
     margin-top: 16px;
 
-    svg { color: #3b82f6; flex-shrink: 0; margin-top: 1px; }
+    svg {
+      color: #3b82f6;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
 
     p {
       font-size: 12.5px;
@@ -316,166 +352,63 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     cursor: pointer;
     white-space: nowrap;
     transition: background .15s, box-shadow .15s;
-    box-shadow: 0 1px 4px rgba(79,70,229,.25);
-
-    &:hover { background: $primary-hover; box-shadow: 0 2px 8px rgba(79,70,229,.35); }
-  }
-
-  // ── Table ──
-  &__table {
-    border: 1px solid $border;
-    border-radius: $radius-md;
-    overflow: hidden;
-  }
-
-  &__table-head {
-    display: grid;
-    grid-template-columns: 40px 1fr 140px 155px 150px 150px 56px;
-    background: #f9fafb;
-    border-bottom: 1px solid $border;
-    padding: 0 12px;
-    gap: 8px;
-    align-items: center;
-  }
-
-  &__th {
-    font-size: 11px;
-    font-weight: 600;
-    color: $text-sub;
-    text-transform: uppercase;
-    letter-spacing: .04em;
-    padding: 10px 4px;
-
-    span { color: $text-required; margin-left: 2px; }
-
-    &--num { text-align: center; }
-    &--action { text-align: center; }
-  }
-
-  &__th-opt {
-    text-transform: none;
-    font-weight: 400;
-    letter-spacing: 0;
-    color: $text-muted;
-  }
-
-  &__table-row {
-    display: grid;
-    grid-template-columns: 40px 1fr 140px 155px 150px 150px 56px;
-    padding: 8px 12px;
-    gap: 8px;
-    align-items: center;
-    border-bottom: 1px solid $border;
-    transition: background .12s;
-
-    &:last-child { border-bottom: none; }
-    &:hover { background: #fafafa; }
-  }
-
-  &__td {
-    font-size: 13px;
-
-    &--num {
-      text-align: center;
-      font-size: 13px;
-      color: $text-sub;
-      font-weight: 500;
-    }
-
-    &--action { display: flex; justify-content: center; }
-  }
-
-  &__delete-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    background: $danger-light;
-    border: 1px solid #fecaca;
-    border-radius: $radius-sm;
-    color: $danger;
-    cursor: pointer;
-    transition: background .15s, border-color .15s;
-
-    &:hover { background: #fecaca; border-color: #fca5a5; }
-  }
-
-  // ── Empty State ──
-  &__empty {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 48px 24px;
-    color: $text-muted;
-    gap: 10px;
-
-    svg { opacity: .4; }
-
-    p {
-      font-size: 13px;
-      margin: 0;
-      text-align: center;
-    }
-  }
-
-  // ── Upload Zone ──
-  &__upload {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    border: 1.5px dashed $border;
-    border-radius: $radius-md;
-    padding: 28px 24px;
-    cursor: pointer;
-    background: #fafafa;
-    transition: border-color .15s, background .15s;
+    box-shadow: 0 1px 4px rgba(79, 70, 229, .25);
 
     &:hover {
-      border-color: $accent;
-      background: #f5f3ff;
+      background: $primary-hover;
+      box-shadow: 0 2px 8px rgba(79, 70, 229, .35);
     }
   }
 
-  &__upload-icon { color: $text-muted; }
-
-  &__upload-title {
-    font-size: 13px;
-    font-weight: 500;
-    color: $text-body;
-    margin: 0;
+  // ───────────────── TABLE WRAPPER ─────────────────
+  &__table-wrapper{
+    width: 100%;
   }
-
-  &__upload-sub {
-    font-size: 11.5px;
-    color: $text-muted;
-    margin: 0;
-  }
-
-  &__upload-file {
-    font-size: 12px;
-    color: $primary;
-    font-weight: 500;
-    margin: 4px 0 0;
-  }
-
-  &__upload-btn {
-    font-size: 12px;
-    font-weight: 500;
-    color: $text-body;
-    background: $bg-card;
+  &__table{
+    width: 100%;
     border: 1px solid $border;
-    border-radius: $radius-sm;
-    padding: 5px 14px;
-    cursor: pointer;
-    margin-top: 4px;
-    transition: background .15s;
-
-    &:hover { background: #f3f4f6; }
   }
+  &__thead{
+    width: 100%;
+  }
+  &__th{
+    padding: 10px 10px;
+    text-align: center;
+    border: 1px solid $border;
+  }
+  &__tbody{
+    width: 100%;
+  }
+  &__tr{
+    width: 100%;
+  }
+  &__td{
+    padding: 10px;
+    text-align: center;
+    border: 1px solid $border;
+  }
+
+  // ───────────────── DELETE BUTTON ─────────────────
+  &__delete-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    border: 1px solid #fecaca;
+    background: $danger-light;
+    color: $danger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .18s ease;
+    flex-shrink: 0;
+
+    &:hover {
+      background: #fee2e2;
+      transform: scale(1.04);
+    }
+  }
+
 
   // ── Actions Bar ──
   &__actions {
@@ -510,7 +443,9 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: $bg-card;
       border-color: $border;
 
-      &:hover { background: #f3f4f6; }
+      &:hover {
+        background: #f3f4f6;
+      }
     }
 
     &--preview {
@@ -518,16 +453,21 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: $primary-light;
       border-color: #c4b5fd;
 
-      &:hover { background: #ddd6fe; }
+      &:hover {
+        background: #ddd6fe;
+      }
     }
 
     &--save {
       color: #fff;
       background: $primary;
       border-color: $primary;
-      box-shadow: 0 1px 4px rgba(79,70,229,.3);
+      box-shadow: 0 1px 4px rgba(79, 70, 229, .3);
 
-      &:hover { background: $primary-hover; box-shadow: 0 2px 8px rgba(79,70,229,.4); }
+      &:hover {
+        background: $primary-hover;
+        box-shadow: 0 2px 8px rgba(79, 70, 229, .4);
+      }
     }
   }
 }
@@ -538,7 +478,7 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,.45);
+  background: rgba(0, 0, 0, .45);
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -555,7 +495,7 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   max-height: 90vh;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 60px rgba(0,0,0,.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .2);
   overflow: hidden;
 
   &__header {
@@ -610,7 +550,10 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     cursor: pointer;
     transition: background .15s;
 
-    &:hover { background: #f3f4f6; color: $text-body; }
+    &:hover {
+      background: #f3f4f6;
+      color: $text-body;
+    }
   }
 
   &__body {
@@ -648,7 +591,10 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     transition: background .15s, border-color .15s, color .15s;
     user-select: none;
 
-    &:hover { background: #e9e9fb; border-color: #a5b4fc; }
+    &:hover {
+      background: #e9e9fb;
+      border-color: #a5b4fc;
+    }
 
     &--selected {
       background: $primary-light;
@@ -657,7 +603,9 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
   }
 
-  &__date-section { margin-top: 4px; }
+  &__date-section {
+    margin-top: 4px;
+  }
 
   &__date-label {
     font-size: 12.5px;
@@ -665,7 +613,10 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     color: $text-label;
     margin: 0 0 10px;
 
-    span { font-weight: 400; color: $text-muted; }
+    span {
+      font-weight: 400;
+      color: $text-muted;
+    }
   }
 
   &__date-table {
@@ -696,7 +647,9 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     align-items: center;
     border-bottom: 1px solid $border;
 
-    &:last-child { border-bottom: none; }
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
   &__date-subject {
@@ -719,7 +672,9 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     cursor: pointer;
     transition: border-color .15s;
 
-    &:focus { border-color: $border-focus; }
+    &:focus {
+      border-color: $border-focus;
+    }
   }
 
   &__footer {
@@ -744,7 +699,9 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     cursor: pointer;
     transition: background .15s;
 
-    &:hover { background: #f3f4f6; }
+    &:hover {
+      background: #f3f4f6;
+    }
   }
 
   &__add-btn {
@@ -761,13 +718,380 @@ $font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     padding: 8px 16px;
     cursor: pointer;
     transition: background .15s;
-    box-shadow: 0 1px 4px rgba(79,70,229,.25);
+    box-shadow: 0 1px 4px rgba(79, 70, 229, .25);
 
-    &:hover:not(:disabled) { background: $primary-hover; }
+    &:hover:not(:disabled) {
+      background: $primary-hover;
+    }
 
     &:disabled {
       opacity: .5;
       cursor: not-allowed;
     }
   }
+}
+
+
+
+
+@media screen and (max-width:768px) {
+
+
+  .ct {
+    width: 100%;
+    font-size: 14px;
+    min-height: 100vh;
+    padding-bottom: 100px;
+
+
+    &__header {
+      display: flex;
+      margin-bottom: 10px;
+    }
+
+    &__title {
+      font-size: 20px;
+      margin: 0 0 4px;
+    }
+
+    &__subtitle {
+      font-size: 12px;
+    }
+
+    &__back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      padding: 8px 14px;
+
+
+    }
+
+    // ── Tabs ──
+    &__tabs {
+      display: flex;
+      margin-bottom: 15px;
+    }
+
+    &__tab {
+      font-size: 14px;
+      margin-bottom: -2px;
+      padding: 10px 16px;
+    }
+
+    // ── Cards ──
+    &__card {
+      padding: 20px;
+      margin-bottom: 14px;
+    }
+
+    &__section-title {
+      font-size: 15px;
+      margin: 0 0 16px;
+    }
+
+    &__section-subtitle {
+      font-size: 12px;
+      margin: 2px 0 0;
+    }
+
+    // ── Grids ──
+    &__grid {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
+
+    // ── Fields ──
+    &__field {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    &__label {
+      font-size: 12.5px;
+
+      span {
+        margin-left: 2px;
+      }
+    }
+
+    &__label-opt {
+      font-weight: 400;
+      font-size: 11.5px;
+    }
+
+    &__label-vis {
+      font-size: 11.5px;
+    }
+
+    // ── Inputs ──
+    &__input {
+      width: 100%;
+      height: 38px;
+      padding: 0 12px;
+      ;
+      font-size: 13.5px;
+    }
+
+    &__input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    &__input-icon {
+      position: absolute;
+      left: 10px;
+    }
+
+    // ── Textarea ──
+    &__textarea {
+      width: 100%;
+      min-height: 120px;
+      padding: 10px 12px;
+      font-size: 13px;
+
+    }
+
+    &__counter {
+      font-size: 11px;
+      margin: 2px 0 0;
+    }
+
+    // ── Error ──
+    &__error {
+      gap: 4px;
+      font-size: 11.5px;
+      margin-top: 2px;
+
+      &--block {
+        display: flex;
+        margin-bottom: 12px;
+      }
+    }
+
+    // ── Info Banner ──
+    &__info-banner {
+      padding: 11px 14px;
+      margin-top: 16px;
+
+      svg {
+        margin-top: 1px;
+      }
+
+      p {
+        font-size: 12.5px;
+        margin: 0;
+      }
+    }
+
+    // ── Subjects Section ──
+    &__subjects-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      gap: 12px;
+    }
+
+    &__add-subject-btn {
+      gap: 6px;
+      font-size: 13px;
+      padding: 9px 16px;
+    }
+
+    
+    &__table-wrapper{
+      max-width: 100%;
+      overflow-x: auto;
+    }
+    &__th{
+      padding: 10px 7px;
+      text-wrap: nowrap;
+      font-size: 14px;
+    }
+    &__td{
+      text-wrap: nowrap;
+      padding: 10px 7px;
+    }
+
+
+
+
+
+    // ── Actions Bar ──
+    &__actions {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 12px 16px;
+      gap: 8px;
+      background: #fff;
+      box-shadow: 0 -4px 20px rgba(30, 30, 47, .1);
+      border-top: 1px solid $border;
+      border-radius: 0;
+      justify-content: stretch;
+    }
+
+    &__actions-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      font-family: $font;
+      font-size: 13px;
+      font-weight: 500;
+      padding: 9px 10px;
+      text-wrap: nowrap;
+      height: 40px;
+
+    }
+  }
+
+
+
+  // ─── Modal ──────────────────────────────────────────────────
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    padding: 10px;
+    backdrop-filter: blur(2px);
+    max-width: 100%;
+  }
+
+  .modal {
+    width: 100%;
+    max-width: 100%;
+    max-height: 80vh;
+
+    &__header {
+      padding: 18px 20px;
+    }
+
+    &__title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    &__icon {
+      width: 33px;
+      height: 33px;
+    }
+
+    &__title {
+      font-size: 15px;
+    }
+
+    &__subtitle {
+      font-size: 12px;
+    }
+
+    &__close {
+      width: 28px;
+      height: 28px;
+    }
+
+    &__body {
+      padding: 17px;
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    &__empty {
+      font-size: 13px;
+      padding: 20px 0;
+    }
+
+    &__subject-grid {
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    &__subject-chip {
+      gap: 5px;
+      padding: 6px 14px;
+      font-size: 13px;
+    }
+
+    &__date-section {
+      margin-top: 4px;
+    }
+
+    &__date-label {
+      font-size: 12.5px;
+      font-weight: 500;
+      color: $text-label;
+      margin: 0 0 10px;
+
+      span {
+        font-weight: 400;
+        color: $text-muted;
+      }
+    }
+
+    &__date-table {
+      border: 1px solid $border;
+      border-radius: $radius-md;
+      overflow: hidden;
+    }
+
+    &__date-table-head {
+      display: grid;
+      grid-template-columns: 1fr 150px 130px 130px;
+      padding: 8px 12px;
+      gap: 8px;
+      font-size: 11px;
+    }
+
+    &__date-row {
+      display: grid;
+      grid-template-columns: 1fr 150px 130px 130px;
+      padding: 8px 12px;
+      gap: 8px;
+    }
+
+    &__date-subject {
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    &__date-input {
+      width: 100%;
+      height: 34px;
+      padding: 0 8px;
+    }
+
+    &__footer {
+      gap: 10px;
+      padding: 14px 20px;
+    }
+
+    &__cancel {
+      font-size: 13px;
+      font-weight: 500;
+      padding: 8px 16px;
+    }
+
+    &__add-btn {
+      gap: 6px;
+      font-size: 13px;
+      padding: 8px 16px;
+
+
+    }
+  }
+
+
+
 }

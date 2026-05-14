@@ -18,28 +18,28 @@ import {
 } from "lucide-react";
 
 const STUDENTS = [
-    { roll: 1, admission: "SPS/2023/1001", name: "Aarav Sharma",  marks: "78" },
-    { roll: 2, admission: "SPS/2023/1002", name: "Prisha Verma",  marks: "91" },
-    { roll: 3, admission: "SPS/2023/1003", name: "Kabir Singh",   marks: "66" },
-    { roll: 4, admission: "SPS/2023/1004", name: "Ananya Patel",  marks: "88" },
-    { roll: 5, admission: "SPS/2023/1005", name: "Rohan Mehta",   marks: "73" },
-    { roll: 6, admission: "SPS/2023/1006", name: "Diya Gupta",    marks: "85" },
+    { roll: 1, admission: "SPS/2023/1001", name: "Aarav Sharma", marks: "78" },
+    { roll: 2, admission: "SPS/2023/1002", name: "Prisha Verma", marks: "91" },
+    { roll: 3, admission: "SPS/2023/1003", name: "Kabir Singh", marks: "66" },
+    { roll: 4, admission: "SPS/2023/1004", name: "Ananya Patel", marks: "88" },
+    { roll: 5, admission: "SPS/2023/1005", name: "Rohan Mehta", marks: "73" },
+    { roll: 6, admission: "SPS/2023/1006", name: "Diya Gupta", marks: "85" },
 ];
 
 const STATS = [
-    { key: "total",   label: "Total Students", value: 52, mod: "--total",   Icon: Users     },
-    { key: "present", label: "Present",         value: 48, mod: "--present", Icon: UserCheck },
-    { key: "absent",  label: "Absent",           value: 4,  mod: "--absent",  Icon: UserX     },
-    { key: "pending", label: "Not Entered",      value: 0,  mod: "--pending", Icon: Clock     },
+    { key: "total", label: "Total Students", value: 52, mod: "--total", Icon: Users },
+    { key: "present", label: "Present", value: 48, mod: "--present", Icon: UserCheck },
+    { key: "absent", label: "Absent", value: 4, mod: "--absent", Icon: UserX },
+    { key: "pending", label: "Not Entered", value: 0, mod: "--pending", Icon: Clock },
 ];
 
 export default function UploadMarks() {
-    const [activeTab,    setActiveTab]    = useState("exam");
-    const [marks,        setMarks]        = useState(
+    const [activeTab, setActiveTab] = useState("exam");
+    const [marks, setMarks] = useState(
         Object.fromEntries(STUDENTS.map((s) => [s.roll, s.marks]))
     );
-    const [absent,       setAbsent]       = useState<Record<number, boolean>>({});
-    const [currentPage,  setCurrentPage]  = useState(1);
+    const [absent, setAbsent] = useState<Record<number, boolean>>({});
+    const [currentPage, setCurrentPage] = useState(1);
     const totalPages = 6;
 
     return (
@@ -60,8 +60,8 @@ export default function UploadMarks() {
             <div className="upload-marks__tabs">
                 <div className="upload-marks__tab-group">
                     {[
-                        { id: "exam", label: "Exam", Icon: Calendar      },
-                        { id: "test", label: "Test", Icon: ClipboardList  },
+                        { id: "exam", label: "Exam", Icon: Calendar },
+                        { id: "test", label: "Test", Icon: ClipboardList },
                     ].map(({ id, label, Icon }) => (
                         <button
                             key={id}
@@ -203,7 +203,7 @@ export default function UploadMarks() {
                     </table>
                 </div>
 
-              
+
 
                 {/* ── Pagination ─────────────────────────────────── */}
                 <div className="upload-marks__pagination">
@@ -254,19 +254,17 @@ export default function UploadMarks() {
                         </button>
                     </div>
                 </div>
-
-                {/* ── Action Buttons ─────────────────────────────── */}
-                <div className="upload-marks__actions">
-                    <button className="upload-marks__btn upload-marks__btn--draft">
-                        <Save /> <span>Save Draft</span>
-                    </button>
-                    <button className="upload-marks__btn upload-marks__btn--next">
-                        <ArrowRight /> Save &amp; Next
-                    </button>
-                    <button className="upload-marks__btn upload-marks__btn--publish">
-                        <Upload /> Publish
-                    </button>
-                </div>
+            </div>
+            <div className="upload-marks__actions">
+                <button className="upload-marks__btn upload-marks__btn--draft">
+                    <Save /> <span>Save Draft</span>
+                </button>
+                <button className="upload-marks__btn upload-marks__btn--next">
+                    <ArrowRight /> Save &amp; Next
+                </button>
+                <button className="upload-marks__btn upload-marks__btn--publish">
+                    <Upload /> Publish
+                </button>
             </div>
         </div>
     );

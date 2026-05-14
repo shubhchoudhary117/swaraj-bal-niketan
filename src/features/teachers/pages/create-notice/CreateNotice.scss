@@ -1,47 +1,52 @@
 // ── Design Tokens (matching Sunrise Public School system) ─────────────────
-$primary:        #6c63ff;
-$primary-dark:   #5a52e0;
-$primary-light:  #eef2ff;
+$primary: #6c63ff;
+$primary-dark: #5a52e0;
+$primary-light: #eef2ff;
 $primary-border: #c7d2fe;
-$green:          #22c55e;
-$green-light:    rgba(34, 197, 94, .1);
-$orange:         #f97316;
-$orange-light:   rgba(249, 115, 22, .1);
-$rose:           #f43f5e;
-$rose-light:     rgba(244, 63, 94, .1);
-$blue:           #3b82f6;
-$blue-light:     rgba(59, 130, 246, .1);
-$amber:          #f59e0b;
-$amber-light:    rgba(245, 158, 11, .1);
-$purple:         #a855f7;
-$purple-light:   rgba(168, 85, 247, .1);
+$green: #22c55e;
+$green-light: rgba(34, 197, 94, .1);
+$orange: #f97316;
+$orange-light: rgba(249, 115, 22, .1);
+$rose: #f43f5e;
+$rose-light: rgba(244, 63, 94, .1);
+$blue: #3b82f6;
+$blue-light: rgba(59, 130, 246, .1);
+$amber: #f59e0b;
+$amber-light: rgba(245, 158, 11, .1);
+$purple: #a855f7;
+$purple-light: rgba(168, 85, 247, .1);
 
-$bg:             #f4f6fb;
-$white:          #ffffff;
-$text-dark:      #1e1e2f;
-$text-mid:       #4b5575;
-$text-light:     #8a94b0;
-$border:         #e4e8f2;
+$bg: #f4f6fb;
+$white: #ffffff;
+$text-dark: #1e1e2f;
+$text-mid: #4b5575;
+$text-light: #8a94b0;
+$border: #e4e8f2;
 
-$radius-sm:      6px;
-$radius-md:      10px;
-$radius-lg:      14px;
-$radius-xl:      18px;
-$shadow:         0 2px 12px rgba(108, 99, 255, .08);
-$shadow-md:      0 4px 20px rgba(108, 99, 255, .12);
-$shadow-btn:     0 4px 14px rgba(108, 99, 255, .35);
-$font:           'Poppins', sans-serif;
-$t:              .18s ease;
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-lg: 14px;
+$radius-xl: 18px;
+$shadow: 0 2px 12px rgba(108, 99, 255, .08);
+$shadow-md: 0 4px 20px rgba(108, 99, 255, .12);
+$shadow-btn: 0 4px 14px rgba(108, 99, 255, .35);
+$font: 'Poppins', sans-serif;
+$t: .18s ease;
 
-// ── Animations ─────────────────────────────────────────────────────────────
-@keyframes fadeSlideUp {
-  from { opacity: 0; transform: translateY(14px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+
 
 @keyframes pulse-dot {
-  0%, 100% { transform: scale(1); opacity: 1; }
-  50%       { transform: scale(1.4); opacity: .6; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: .6;
+  }
 }
 
 // ── Page ───────────────────────────────────────────────────────────────────
@@ -80,9 +85,24 @@ $t:              .18s ease;
     margin-top: 5px;
     flex-wrap: wrap;
 
-    span { color: $text-mid; }
-    a    { color: $text-mid; text-decoration: none; &:hover { color: $primary; } }
-    svg  { width: 12px; height: 12px; flex-shrink: 0; }
+    span {
+      color: $text-mid;
+    }
+
+    a {
+      color: $text-mid;
+      text-decoration: none;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    svg {
+      width: 12px;
+      height: 12px;
+      flex-shrink: 0;
+    }
   }
 
   // Live preview toggle badge
@@ -101,9 +121,13 @@ $t:              .18s ease;
     cursor: pointer;
     transition: border-color $t, color $t, background $t;
 
-    svg { width: 15px; height: 15px; }
+    svg {
+      width: 15px;
+      height: 15px;
+    }
 
-    &:hover, &--active {
+    &:hover,
+    &--active {
       border-color: $primary;
       color: $primary;
       background: $primary-light;
@@ -115,7 +139,6 @@ $t:              .18s ease;
     display: grid;
     grid-template-columns: 1fr 360px;
     gap: 22px;
-    animation: fadeSlideUp .45s .08s ease both;
   }
 
   // ── Card (shared) ────────────────────────────────────────────────────────
@@ -143,7 +166,12 @@ $t:              .18s ease;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      svg { width: 16px; height: 16px; color: $primary; }
+
+      svg {
+        width: 16px;
+        height: 16px;
+        color: $primary;
+      }
     }
 
     &-title {
@@ -175,9 +203,17 @@ $t:              .18s ease;
     gap: 16px;
     margin-bottom: 18px;
 
-    &--1 { grid-template-columns: 1fr; }
-    &--2 { grid-template-columns: 1fr 1fr; }
-    &--3 { grid-template-columns: 1fr 1fr 1fr; }
+    &--1 {
+      grid-template-columns: 1fr;
+    }
+
+    &--2 {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    &--3 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 
   &__field {
@@ -196,9 +232,16 @@ $t:              .18s ease;
     align-items: center;
     gap: 5px;
 
-    &--required::after { content: ' *'; color: $rose; }
+    &--required::after {
+      content: ' *';
+      color: $rose;
+    }
 
-    svg { width: 12px; height: 12px; color: $text-light; }
+    svg {
+      width: 12px;
+      height: 12px;
+      color: $text-light;
+    }
   }
 
   // shared input/select/textarea styles
@@ -215,7 +258,9 @@ $t:              .18s ease;
     transition: border-color $t, box-shadow $t, background $t;
     outline: none;
 
-    &::placeholder { color: $text-light; }
+    &::placeholder {
+      color: $text-light;
+    }
 
     &:focus {
       border-color: $primary;
@@ -224,8 +269,17 @@ $t:              .18s ease;
     }
   }
 
-  &__input    { @extend %input-base; }
-  &__select   { @extend %input-base; appearance: none; cursor: pointer; padding-right: 36px; }
+  &__input {
+    @extend %input-base;
+  }
+
+  &__select {
+    @extend %input-base;
+    appearance: none;
+    cursor: pointer;
+    padding-right: 36px;
+  }
+
   &__textarea {
     @extend %input-base;
     resize: vertical;
@@ -236,6 +290,7 @@ $t:              .18s ease;
   // Select wrapper
   &__select-wrap {
     position: relative;
+
     svg.cn__chevron {
       position: absolute;
       right: 11px;
@@ -255,8 +310,13 @@ $t:              .18s ease;
     text-align: right;
     margin-top: -2px;
 
-    &--warn  { color: $orange; }
-    &--limit { color: $rose; }
+    &--warn {
+      color: $orange;
+    }
+
+    &--limit {
+      color: $rose;
+    }
   }
 
   // ── Category pills ───────────────────────────────────────────────────────
@@ -282,21 +342,92 @@ $t:              .18s ease;
     cursor: pointer;
     transition: all $t;
 
-    svg { width: 13px; height: 13px; }
+    svg {
+      width: 13px;
+      height: 13px;
+    }
 
-    &:hover { border-color: $primary; color: $primary; background: $primary-light; }
+    &:hover {
+      border-color: $primary;
+      color: $primary;
+      background: $primary-light;
+    }
 
     &--active {
       color: $white !important;
       border-color: transparent !important;
     }
 
-    &[data-cat="event"]   { &.cn__cat-pill--active { background: $primary; } &:hover:not(.cn__cat-pill--active) { border-color: $primary; color: $primary; } }
-    &[data-cat="fee"]     { &.cn__cat-pill--active { background: $orange; } &:hover:not(.cn__cat-pill--active) { border-color: $orange; color: $orange; background: $orange-light; } }
-    &[data-cat="exam"]    { &.cn__cat-pill--active { background: $rose; } &:hover:not(.cn__cat-pill--active) { border-color: $rose; color: $rose; background: $rose-light; } }
-    &[data-cat="general"] { &.cn__cat-pill--active { background: $blue; } &:hover:not(.cn__cat-pill--active) { border-color: $blue; color: $blue; background: $blue-light; } }
-    &[data-cat="holiday"] { &.cn__cat-pill--active { background: $green; } &:hover:not(.cn__cat-pill--active) { border-color: $green; color: $green; background: $green-light; } }
-    &[data-cat="sports"]  { &.cn__cat-pill--active { background: $purple; } &:hover:not(.cn__cat-pill--active) { border-color: $purple; color: $purple; background: $purple-light; } }
+    &[data-cat="event"] {
+      &.cn__cat-pill--active {
+        background: $primary;
+      }
+
+      &:hover:not(.cn__cat-pill--active) {
+        border-color: $primary;
+        color: $primary;
+      }
+    }
+
+    &[data-cat="fee"] {
+      &.cn__cat-pill--active {
+        background: $orange;
+      }
+
+      &:hover:not(.cn__cat-pill--active) {
+        border-color: $orange;
+        color: $orange;
+        background: $orange-light;
+      }
+    }
+
+    &[data-cat="exam"] {
+      &.cn__cat-pill--active {
+        background: $rose;
+      }
+
+      &:hover:not(.cn__cat-pill--active) {
+        border-color: $rose;
+        color: $rose;
+        background: $rose-light;
+      }
+    }
+
+    &[data-cat="general"] {
+      &.cn__cat-pill--active {
+        background: $blue;
+      }
+
+      &:hover:not(.cn__cat-pill--active) {
+        border-color: $blue;
+        color: $blue;
+        background: $blue-light;
+      }
+    }
+
+    &[data-cat="holiday"] {
+      &.cn__cat-pill--active {
+        background: $green;
+      }
+
+      &:hover:not(.cn__cat-pill--active) {
+        border-color: $green;
+        color: $green;
+        background: $green-light;
+      }
+    }
+
+    &[data-cat="sports"] {
+      &.cn__cat-pill--active {
+        background: $purple;
+      }
+
+      &:hover:not(.cn__cat-pill--active) {
+        border-color: $purple;
+        color: $purple;
+        background: $purple-light;
+      }
+    }
   }
 
   // ── Target audience chips ────────────────────────────────────────────────
@@ -321,9 +452,16 @@ $t:              .18s ease;
     cursor: pointer;
     transition: all $t;
 
-    svg { width: 13px; height: 13px; }
+    svg {
+      width: 13px;
+      height: 13px;
+    }
 
-    &:hover { border-color: $primary; color: $primary; background: $primary-light; }
+    &:hover {
+      border-color: $primary;
+      color: $primary;
+      background: $primary-light;
+    }
 
     &--active {
       background: $primary-light;
@@ -356,11 +494,34 @@ $t:              .18s ease;
     transition: all $t;
     text-align: center;
 
-    svg { width: 16px; height: 16px; }
+    svg {
+      width: 16px;
+      height: 16px;
+    }
 
-    &--low    { &.cn__priority-card--active { background: $green-light; border-color: $green; color: $green; } }
-    &--medium { &.cn__priority-card--active { background: $amber-light; border-color: $amber; color: $amber; } }
-    &--high   { &.cn__priority-card--active { background: $rose-light;  border-color: $rose;  color: $rose;  } }
+    &--low {
+      &.cn__priority-card--active {
+        background: $green-light;
+        border-color: $green;
+        color: $green;
+      }
+    }
+
+    &--medium {
+      &.cn__priority-card--active {
+        background: $amber-light;
+        border-color: $amber;
+        color: $amber;
+      }
+    }
+
+    &--high {
+      &.cn__priority-card--active {
+        background: $rose-light;
+        border-color: $rose;
+        color: $rose;
+      }
+    }
 
     &:hover:not(&--active) {
       border-color: $primary;
@@ -400,11 +561,24 @@ $t:              .18s ease;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      svg { width: 15px; height: 15px; }
+
+      svg {
+        width: 15px;
+        height: 15px;
+      }
     }
 
-    &-label  { font-size: .82rem; font-weight: 600; color: $text-dark; }
-    &-sub    { font-size: .7rem; color: $text-light; margin-top: 1px; }
+    &-label {
+      font-size: .82rem;
+      font-weight: 600;
+      color: $text-dark;
+    }
+
+    &-sub {
+      font-size: .7rem;
+      color: $text-light;
+      margin-top: 1px;
+    }
   }
 
   // Switch component
@@ -438,12 +612,17 @@ $t:              .18s ease;
       height: 18px;
       background: $white;
       border-radius: 50%;
-      box-shadow: 0 1px 4px rgba(0,0,0,.2);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, .2);
       transition: transform $t;
     }
 
-    input:checked ~ &-track { background: $primary; }
-    input:checked ~ &-thumb { transform: translateX(18px); }
+    input:checked~&-track {
+      background: $primary;
+    }
+
+    input:checked~&-thumb {
+      transform: translateX(18px);
+    }
   }
 
   // ── Attachment uploader ──────────────────────────────────────────────────
@@ -463,7 +642,9 @@ $t:              .18s ease;
       border-color: $primary;
       background: $primary-light;
 
-      .cn__upload-icon { color: $primary; }
+      .cn__upload-icon {
+        color: $primary;
+      }
     }
 
     &-icon {
@@ -476,11 +657,24 @@ $t:              .18s ease;
       justify-content: center;
       color: $text-light;
       transition: color $t;
-      svg { width: 20px; height: 20px; }
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
     }
 
-    &-title { font-size: .84rem; font-weight: 600; color: $text-dark; }
-    &-sub   { font-size: .72rem; color: $text-light; }
+    &-title {
+      font-size: .84rem;
+      font-weight: 600;
+      color: $text-dark;
+    }
+
+    &-sub {
+      font-size: .72rem;
+      color: $text-light;
+    }
+
     &-types {
       display: flex;
       gap: 6px;
@@ -520,14 +714,31 @@ $t:              .18s ease;
     &::before {
       content: '';
       position: absolute;
-      left: 0; top: 14px; bottom: 14px;
+      left: 0;
+      top: 14px;
+      bottom: 14px;
       width: 3px;
       border-radius: 0 3px 3px 0;
       background: $primary;
     }
 
-    &--pinned { border-color: rgba(245,158,11,.4); background: rgba(245,158,11,.03); &::before { background: $amber; } }
-    &--high   { border-color: rgba(244,63,94,.35); background: rgba(244,63,94,.03);  &::before { background: $rose; } }
+    &--pinned {
+      border-color: rgba(245, 158, 11, .4);
+      background: rgba(245, 158, 11, .03);
+
+      &::before {
+        background: $amber;
+      }
+    }
+
+    &--high {
+      border-color: rgba(244, 63, 94, .35);
+      background: rgba(244, 63, 94, .03);
+
+      &::before {
+        background: $rose;
+      }
+    }
 
     &-top {
       display: flex;
@@ -546,7 +757,12 @@ $t:              .18s ease;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      svg { width: 17px; height: 17px; color: $primary; }
+
+      svg {
+        width: 17px;
+        height: 17px;
+        color: $primary;
+      }
     }
 
     &-pin {
@@ -556,7 +772,11 @@ $t:              .18s ease;
       font-size: .72rem;
       font-weight: 600;
       color: $amber;
-      svg { width: 12px; height: 12px; }
+
+      svg {
+        width: 12px;
+        height: 12px;
+      }
     }
 
     &-title {
@@ -590,14 +810,41 @@ $t:              .18s ease;
       border-radius: 20px;
       font-size: .7rem;
       font-weight: 600;
-      svg { width: 10px; height: 10px; }
 
-      &--event   { background: $primary-light; color: $primary; }
-      &--fee     { background: $orange-light;  color: $orange; }
-      &--exam    { background: $rose-light;    color: $rose; }
-      &--general { background: $blue-light;    color: $blue; }
-      &--holiday { background: $green-light;   color: $green; }
-      &--sports  { background: $purple-light;  color: $purple; }
+      svg {
+        width: 10px;
+        height: 10px;
+      }
+
+      &--event {
+        background: $primary-light;
+        color: $primary;
+      }
+
+      &--fee {
+        background: $orange-light;
+        color: $orange;
+      }
+
+      &--exam {
+        background: $rose-light;
+        color: $rose;
+      }
+
+      &--general {
+        background: $blue-light;
+        color: $blue;
+      }
+
+      &--holiday {
+        background: $green-light;
+        color: $green;
+      }
+
+      &--sports {
+        background: $purple-light;
+        color: $purple;
+      }
     }
 
     &-date {
@@ -606,7 +853,11 @@ $t:              .18s ease;
       display: flex;
       align-items: center;
       gap: 4px;
-      svg { width: 12px; height: 12px; }
+
+      svg {
+        width: 12px;
+        height: 12px;
+      }
     }
   }
 
@@ -627,10 +878,19 @@ $t:              .18s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-      svg { width: 24px; height: 24px; color: $text-light; }
+
+      svg {
+        width: 24px;
+        height: 24px;
+        color: $text-light;
+      }
     }
 
-    p { font-size: .8rem; color: $text-light; line-height: 1.5; }
+    p {
+      font-size: .8rem;
+      color: $text-light;
+      line-height: 1.5;
+    }
   }
 
   // ── Target audience preview ──────────────────────────────────────────────
@@ -641,7 +901,14 @@ $t:              .18s ease;
     border-radius: $radius-md;
     border: 1px solid $border;
 
-    &-label { font-size: .68rem; font-weight: 700; color: $text-light; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+    &-label {
+      font-size: .68rem;
+      font-weight: 700;
+      color: $text-light;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 6px;
+    }
 
     &-chips {
       display: flex;
@@ -692,58 +959,75 @@ $t:              .18s ease;
   &__actions {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 20px 24px;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 20px 22px;
     border-top: 1px solid $border;
     background: #fafbff;
-    justify-content: flex-end;
+  }
+
+  &__actions-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 
   &__btn {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 7px;
-    padding: 11px 22px;
+    padding: 10px 22px;
     border-radius: $radius-md;
     font-family: $font;
-    font-size: .86rem;
+    font-size: .88rem;
     font-weight: 600;
     cursor: pointer;
     border: none;
-    transition: transform $t, opacity $t, box-shadow $t;
+    transition: transform $t, box-shadow $t, opacity $t;
     white-space: nowrap;
 
-    svg { width: 15px; height: 15px; }
-    &:active { transform: scale(.97); }
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    &:active {
+      transform: scale(.97);
+    }
 
     &--ghost {
       background: $white;
       color: $text-mid;
       border: 1.5px solid $border;
-      &:hover { border-color: $primary; color: $primary; }
+
+      &:hover {
+        border-color: $primary;
+        color: $primary;
+      }
     }
 
     &--draft {
       background: $white;
       color: $primary;
       border: 1.5px solid $primary-border;
-      &:hover { background: $primary-light; }
-    }
 
-    &--schedule {
-      background: $amber-light;
-      color: darken($amber, 10%);
-      border: 1.5px solid rgba(245,158,11,.3);
-      &:hover { opacity: .85; }
+      &:hover {
+        background: $primary-light;
+      }
     }
 
     &--publish {
       background: $primary;
       color: $white;
       box-shadow: $shadow-btn;
-      &:hover { opacity: .9; }
+
+      &:hover {
+        opacity: .9;
+      }
     }
   }
+
 
   // ── Success toast ────────────────────────────────────────────────────────
   &__toast {
@@ -760,12 +1044,21 @@ $t:              .18s ease;
     gap: 10px;
     font-size: .84rem;
     font-weight: 500;
-    box-shadow: 0 8px 30px rgba(30,30,47,.25);
+    box-shadow: 0 8px 30px rgba(30, 30, 47, .25);
     animation: fadeSlideUp .3s ease;
 
-    svg { width: 18px; height: 18px; color: $green; flex-shrink: 0; }
+    svg {
+      width: 18px;
+      height: 18px;
+      color: $green;
+      flex-shrink: 0;
+    }
 
-    &--hide { animation: none; opacity: 0; pointer-events: none; }
+    &--hide {
+      animation: none;
+      opacity: 0;
+      pointer-events: none;
+    }
   }
 
   // ── Divider ──────────────────────────────────────────────────────────────
@@ -803,7 +1096,7 @@ $t:              .18s ease;
   // MOBILE (≤ 600px)
   // ════════════════════════════════════════════════════════════════════════
   @media (max-width: 600px) {
-    padding-bottom: 90px; 
+    padding-bottom: 90px;
 
     &__header {
       margin-bottom: 16px;
@@ -814,9 +1107,14 @@ $t:              .18s ease;
       align-items: flex-start;
     }
 
-    &__title { font-size: 1.25rem; }
+    &__title {
+      font-size: 1.25rem;
+    }
 
-    &__preview-toggle { padding: 7px 12px; font-size: .76rem; }
+    &__preview-toggle {
+      padding: 7px 12px;
+      font-size: .76rem;
+    }
 
     // Single column rows on mobile
     &__row--2,
@@ -824,48 +1122,86 @@ $t:              .18s ease;
       grid-template-columns: 1fr;
     }
 
-    &__card-body { padding: 16px; }
-    &__card-head { padding: 14px 16px 12px; }
+    &__card-body {
+      padding: 16px;
+    }
 
-    &__priority-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
-    &__priority-card { padding: 10px 6px; font-size: .7rem; }
+    &__card-head {
+      padding: 14px 16px 12px;
+    }
 
-    &__cat-pill   { font-size: .74rem; padding: 6px 12px; }
-    &__audience-chip { font-size: .74rem; padding: 6px 12px; }
+    &__priority-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
 
-    &__upload { padding: 18px 14px; }
+    &__priority-card {
+      padding: 10px 6px;
+      font-size: .7rem;
+    }
+
+    &__cat-pill {
+      font-size: .74rem;
+      padding: 6px 12px;
+    }
+
+    &__audience-chip {
+      font-size: .74rem;
+      padding: 6px 12px;
+    }
+
+    &__upload {
+      padding: 18px 14px;
+    }
 
     // stats 3-col still fine on mobile
-    &__stat-val { font-size: 1.1rem; }
+    &__stat-val {
+      font-size: 1.1rem;
+    }
 
-    // Sticky action bar on mobile
     &__actions {
-      z-index: 200;
-      padding: 0;
-      flex-direction: column;
-      gap: 0;
-      border-radius: 0;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 12px 16px;
+      gap: 8px;
       background: $white;
-      box-shadow: 0 -4px 16px rgba(30,30,47,.1);
+      box-shadow: 0 -4px 20px rgba(30, 30, 47, .1);
       border-top: 1px solid $border;
+      border-radius: 0;
+      justify-content: stretch;
     }
 
     &__actions-row {
       display: flex;
-      width: 100%;
+      flex: 1;
+      gap: 5px;
     }
 
     &__btn {
-      border-radius: 0;
+      flex: 1;
       justify-content: center;
-      font-size: .82rem;
+      padding: 11px 5px;
+      font-size: .78rem;
+      border-radius: $radius-sm;
 
-      &--ghost    { flex: 1; padding: 13px 8px; border: none; border-right: 1px solid $border; border-bottom: 1px solid $border; }
-      &--draft    { flex: 1; padding: 13px 8px; border: none; border-right: 1px solid rgba(108,99,255,.2); border-bottom: 1px solid rgba(108,99,255,.2); background: $primary-light; }
-      &--schedule { display: none; } // hide schedule on mobile — too crowded
-      &--publish  { width: 100%; padding: 14px 8px; border-radius: 0; box-shadow: none; font-size: .88rem; }
+      svg {
+        width: 14px;
+        height: 14px;
+      }
     }
 
-    &__toast { bottom: 96px; right: 16px; left: 16px; }
+    // Optional: hide clear text on extra small screens
+    &__btn--ghost span {
+      display: none;
+    }
+
+    &__toast {
+      bottom: 96px;
+      right: 16px;
+      left: 16px;
+    }
   }
 }
