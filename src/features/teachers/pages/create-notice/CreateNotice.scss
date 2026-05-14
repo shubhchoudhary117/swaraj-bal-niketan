@@ -1192,12 +1192,6 @@ $t: .18s ease;
         height: 14px;
       }
     }
-
-    // Optional: hide clear text on extra small screens
-    &__btn--ghost span {
-      display: none;
-    }
-
     &__toast {
       bottom: 96px;
       right: 16px;

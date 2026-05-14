@@ -614,14 +614,6 @@ export default function CreateNotice() {
                             <X />
                             <span>Clear</span>
                         </button>
-
-                        <button
-                            className="cn__btn cn__btn--draft"
-                            onClick={handleDraft}
-                        >
-                            <Save />
-                            <span>Save Draft</span>
-                        </button>
                     </div>
 
                     <button
